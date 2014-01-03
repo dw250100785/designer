@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+paper_group_designer_customer_ae,paper_group_designer_customer_ae,model_designer_paper,group_designer_customer_ae,1,1,1,1
+paper_group_designer_customer_manager,paper_group_designer_customer_manager,model_designer_paper,group_designer_customer_manager,1,1,0,0
+paper_group_designer_manager,paper_group_designer_manager,model_designer_paper,group_designer_manager,1,1,0,0

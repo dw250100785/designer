@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--询价单-->
+        <record model="ir.ui.view" id="designer_view_inquiry_form">
+            <field name="name">designer.inquiry.form</field>
+            <field name="model">designer.inquiry</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="工作卡物料单" version="7.0">
+                    <header>
+                        <button name="designer_inquiry_open" string="开启" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "项目制作明细,印刷、拍摄、动画、3D、插画、摄影、网站等…"/>
+
+                        <button name="designer_inquiry_close" string="提交报价" type="workflow_ok" states="open"  class="oe_highlight" groups="designer.group_designer_make_ae" help = "客户签字" />
+                        <button name="designer_inquiry_cancel" string="拒绝"  type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_make_ae"  help = "客户签字" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="work_id"/>
+                            <field name="partner_id"/>
+                            <field name="project_ids"/>
+                            <field name="date_order"/>
+                            <field name="state" attrs="{'invisible':1}"/>
+                            <field name="card_line">
+                                    <tree editable="bottom" string="物料清单">
+                                        <field name="line_no"/>
+                                        <field name="project_request"/>
+                                        <field name="number" />
+                                        <field name="price"/>
+                                        <field name="subprice"/>
+                                        <!--<field name="subprice" attrs="{'invisible':[('_is_zhizuo', '==', 'true')]}" />&lt;!&ndash;在草稿状态，也就是ae处理时，不显示总价&ndash;&gt;-->
+                                        <field name="note"/>
+                                    </tree>
+                            </field>
+                            <field name="wkf_logs">
+                                    <tree string="xxx" colors="red:status== 'no'">
+                                        <field name="uid"/>
+                                        <field name="time" />
+                                        <field name="status"/>
+                                        <field name="info"/>
+                                    </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="designer_view_inquiry_tree">
+            <field name="name">designer.inquiry.tree</field>
+            <field name="model">designer.inquiry</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree  string="物料单">
+                    <field name="work_id"/>
+                    <field name="partner_id"/>
+                    <field name="project_ids"/>
+                    <field name="date_order"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- designer.purchase.line  询价单 card.line-->
+
+
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_inquiry_line_form">
+            <field name="name">designer.inquiry.line.form</field>
+            <field name="model">designer.inquiry.line</field>
+            <field name="arch" type="xml">
+                <form string="工作卡物料单" version="7.0">
+                    <sheet>
+                        <field name="line_no"/>
+                        <field name="project_request"/>
+                        <field name="number"/>
+                        <field name="price"/>
+                        <field name="subprice"/>
+                        <field name="note"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_inquiry_line_tree">
+            <field name="name">designer.inquiry.line.tree</field>
+            <field name="model">designer.inquiry.line</field>
+            <field name="arch" type="xml">
+            <tree  string="工作卡物料单">
+                <field name="line_no"/>
+                <field name="project_request"/>
+                <field name="number"/>
+                <field name="price"/>
+                <field name="subprice"/>
+                <field name="note"/>
+            </tree>
+            </field>
+        </record>
+
+        <record id="designer_inquiry_view_search" model="ir.ui.view">
+            <field name="name">designer.inquiry.view.search</field>
+            <field name="model">designer.inquiry</field>
+            <field name="arch" type="xml">
+                <search string="内部询价单搜素">
+                   <field name="work_id" string="工作卡"/>
+               </search>
+            </field>
+        </record>
+
+
+
+        <!--询价单-->
+        <record id="action_designer_inquiry" model="ir.actions.act_window">
+            <field name="name">内部询价单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">designer.inquiry</field>
+            <field name="context">{}</field>
+            <!--<field name="domain">[('state','in',('draft','sent','confirmed'))]</field>-->
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="designer_inquiry_view_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                点击新增询价单.
+              </p>
+            </field>
+        </record>
+        <menuitem action="action_designer_inquiry" name = "询价单" id="designer_inquiry" parent="base.menu_base_designer_ask_price_4" sequence="0"/>
+
+
+
+        <!--设置自增id-->
+        <!-- Sequences for  -->
+        <record id="seq_type_designer_inquiry_line" model="ir.sequence.type">
+            <field name="name">designer inquiry line</field>
+            <field name="code">designer.inquiry.line</field>
+        </record>
+        <record id="seq_designer_inquiry_line" model="ir.sequence">
+            <field name="name">designer inquiry line</field>
+            <field name="code">designer.inquiry.line</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field><!--自然数自增-->
+        </record>
+    </data>
+</openerp>
+

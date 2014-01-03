@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bill_group_designer_finance_ae,bill_group_designer_finance_ae,model_designer_bill,group_designer_finance_ae,1,1,0,1
+bill_group_designer_customer_ae,bill_group_designer_customer_ae,model_designer_bill,group_designer_customer_ae,1,1,1,0
+bill_group_designer_finance_manager,bill_group_designer_finance_manager,model_designer_bill,group_designer_finance_manager,1,0,0,0
+bill_group_designer_manager,bill_group_designer_manager,model_designer_bill,group_designer_manager,1,0,0,0

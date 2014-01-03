@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--报价单-->
+        <record model="ir.ui.view" id="designer_view_offer_form">
+            <field name="name">designer.offer.form</field>
+            <field name="model">designer.offer</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="报价单" version="7.0">
+                    <header>
+                        <button name="designer_offer_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "明确注明制作内容、要求、数量等信息"/>
+                        <button name="designer_offer_verify1" string="确认1" states="open" class="oe_highlight" groups="designer.group_designer_customer_manager" help = "确认工单及制作文件" />
+                        <button name="designer_offer_cancel1" string="拒绝" states="open"  class="oe_highlight" groups="designer.group_designer_customer_manager" help = "确认工单及制作文件" />
+
+                        <button name="designer_offer_verify2" string="确认2" states="verify1"  class="oe_highlight" groups="designer.group_designer_customer_ae" help = "客户确认" /><!--制作部-->
+                        <button name="designer_offer_cancel2" string="拒绝" states="verify1"  class="oe_highlight" groups="designer.group_designer_customer_ae" help = "确认及回复制作时长等信息" /><!--制作部-->
+                        <!--wizard-->
+                        <button name="designer_offer_cancel2" string="创建客户收货单" states="verify2"  class="oe_highlight" groups="designer.group_designer_customer_ae" /><!--制作部-->
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,verify1,verify2,close"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="work_id"/>
+                            <field name="partner_id"/>
+                            <field name="project_ids"/>
+                            <field name="date_order"/>
+                            <field name="card_line">
+                                    <tree editable="bottom" string="清单">
+                                        <field name="line_no"/>
+                                        <field name="project_request"/>
+                                        <field name="number" />
+                                        <field name="price"/>
+                                        <field name="subprice"/>
+                                        <field name="note"/>
+                                    </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="designer_view_offer_tree">
+            <field name="name">designer.offer.tree</field>
+            <field name="model">designer.offer</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree  string="报价单">
+                    <field name="work_id"/>
+                    <field name="partner_id"/>
+                    <field name="project_ids"/>
+                    <field name="date_order"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+
+        <record model="ir.ui.view" id="view_designer_offer_line_form">
+            <field name="name">designer.offer.line.form</field>
+            <field name="model">designer.offer.line</field>
+            <field name="arch" type="xml">
+                <form string="物料单" version="7.0">
+                    <sheet>
+                        <field name="line_no"/>
+                        <field name="project_request"/>
+                        <field name="number"/>
+                        <field name="price"/>
+                        <field name="subprice"/>
+                        <field name="note"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_designer_offer_line_tree">
+            <field name="name">designer.offer.line.tree</field>
+            <field name="model">designer.offer.line</field>
+            <field name="arch" type="xml">
+            <tree  string="物料单">
+                <field name="line_no"/>
+                <field name="project_request"/>
+                <field name="number"/>
+                <field name="price"/>
+                <field name="subprice"/>
+                <field name="note"/>
+            </tree>
+            </field>
+        </record>
+
+
+        <record id="designer_offer_view_search" model="ir.ui.view">
+            <field name="name">designer.offer.view.search</field>
+            <field name="model">designer.offer</field>
+            <field name="arch" type="xml">
+                <search string="报价单搜素">
+                   <field name="work_id" string="工作卡"/>
+               </search>
+            </field>
+        </record>
+
+
+
+        <!--报价单 -->
+        <record id="action_designer_offer" model="ir.actions.act_window">
+            <field name="name">报价单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">designer.offer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <!--<field name="domain">[('state','in',('draft','sent','cancel'))]</field>-->
+            <field name="search_view_id" ref="designer_offer_view_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                点击新增报价单.
+              </p>
+            </field>
+        </record>
+                <menuitem id="designer_offer" name = "报价单"  action="action_designer_offer" parent="base.menu_base_designer_price_report_5" sequence="0"/>
+
+         <!--设置自增id-->
+        <!-- Sequences for  -->
+        <record id="seq_type_designer_offer_line" model="ir.sequence.type">
+            <field name="name">designer offer line</field>
+            <field name="code">designer.offer.line</field>
+        </record>
+        <record id="seq_designer_offer_line" model="ir.sequence">
+            <field name="name">designer offer line</field>
+            <field name="code">designer.offer.line</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field><!--自然数自增-->
+        </record>
+    </data>
+</openerp>
+

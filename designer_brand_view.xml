@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--定义品牌 form-->
+        <record model="ir.ui.view" id="view_designer_brand_form">
+            <field name="name">designer.brand.form</field>
+            <field name="model">designer.brand</field>
+            <field name="arch" type="xml">
+                <form string="品牌" version="7.0">
+                    <sheet>
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                        <label for="comment"/>
+                        <field name="comment"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义品牌 tree-->
+
+        <record model="ir.ui.view" id="view_designer_brand_tree">
+            <field name="name">designer.brand.tree</field>
+            <field name="model">designer.brand</field>
+            <field name="arch" type="xml">
+            <tree string="品牌">
+                <field name="name"/>
+                <field name="comment"/>
+            </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_designer_brand">
+            <field name="name">品牌</field>
+            <field name="res_model">designer.brand</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="idea.view_idea_idea_search"/>-->
+        </record>
+        <menuitem name="品牌" parent="base.menu_base_designer_idea_report_3" id="menu_designer_brand_report" action="action_designer_brand" sequence="2"/>
+
+    </data>
+</openerp>

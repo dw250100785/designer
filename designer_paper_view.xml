@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--竟稿申请 form-->
+        <record model="ir.ui.view" id="view_designer_paper_form">
+            <field name="name">designer.paper.form</field>
+            <field name="model">designer.paper</field>
+            <field name="arch" type="xml">
+                <form string="竟稿申请" version="7.0">
+                    <header>
+                        <button name="designer_paper_open" string="总监提交意见" type="workflow_ok" states="draft" class="oe_highlight" groups="designer.group_designer_customer_manager" help = "意见" /><!--客户部总监 提交并添写意见-->
+                        <button name="designer_paper_close" string="批准"  type="workflow_ok" states="open" class="oe_highlight" groups="designer.group_designer_manager" />
+                        <button name="designer_paper_cancel" string="拒绝" type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_manager" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,cancel,close"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="work_id"/>
+                        </group>
+                        <label for="paper_no"/>
+                        <h1><field name="paper_no"/></h1>
+                        <group>
+                            <field name="project_id"/>
+                            <field name="reason"/>
+                            <!--<field name="comment"/>-->
+                            <field name="state"/>
+                            <field name="wkf_logs">
+                                    <tree string="xxx" colors="red:status== 'no'">
+                                        <field name="uid"/>
+                                        <field name="time" />
+                                        <field name="status"/>
+                                        <field name="info"/>
+                                    </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--竟稿申请 tree-->
+
+        <record model="ir.ui.view" id="view_designer_paper_tree">
+            <field name="name">designer.paper.tree</field>
+            <field name="model">designer.paper</field>
+            <field name="arch" type="xml">
+            <tree string="竟稿申请">
+                <field name="project_id"/>
+                <field name="paper_no"/>
+                <field name="reason"/>
+                <!--<field name="comment"/>-->
+                <field name="state"/>
+            </tree>
+            </field>
+        </record>
+
+
+        <record id="designer_paper_view_search" model="ir.ui.view">
+            <field name="name">designer.paper.view.search</field>
+            <field name="model">designer.paper</field>
+            <field name="arch" type="xml">
+                <search string="竟稿申请搜素">
+                   <field name="work_id" string="工作卡"/>
+               </search>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_designer_paper">
+            <field name="name">竟稿申请</field>
+            <field name="res_model">designer.paper</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="designer_paper_view_search"/>
+        </record>
+        <menuitem name="竟稿申请" parent="base.menu_base_designer_vote_paper_8" id="menu_designer_paper_report" action="action_designer_paper" sequence="1"/>
+
+    </data>
+</openerp>

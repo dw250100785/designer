@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--发票-->
+        <record model="ir.ui.view" id="designer_view_bill_form">
+            <field name="name">designer.bill.form</field>
+            <field name="model">designer.bill</field>
+            <field name="type">form</field>
+            <!--<field name="inherit_id" ref="account.invoice_form" />-->
+            <field name="arch" type="xml">
+                <form string="发票信息" version="7.0">
+                    <header>
+                        <!--
+                        ('draft', '草稿中'),
+                        ('send', '已提交申请'),
+                        ('makeout', '已开出'),
+                        ('refuse', '已拒绝'),
+                        ('accept', '已领取'),
+                        ('done', '已确认')],
+                        -->
+                        <button name="designer_bill_send" string="提交开票申请" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+
+                        <button name="designer_bill_notifer" string="通知AE"      states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务开出发票并通知ae-->
+                        <button name="designer_bill_makeout" string="开出发票"    states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务开出-->
+                        <!--共享拒绝操作-->
+                        <button name="designer_bill_refuse" string="拒绝发票"     states="send,makeout,accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
+
+                        <button name="designer_bill_accept" string="领取发票"     states="makeout" class="oe_highlight" groups="designer.group_designer_customer_ae"/><!--客户部ae领取-->
+
+                        <button name="designer_bill_done" string="确认发票"       states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务确认发票-->
+                        <field name="state" widget="statusbar" statusbar_visible="draft,refuse,accept,makeout,done"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="work_id"/>
+                            <field name="partner_id"/>
+                            <field name="project_ids"/>
+                            <field name="invoice_head"/>
+                            <field name="invoice_amount"/>
+                            <field name="date"/>
+
+                            <field readonly="1" name="state_apply"/>
+                            <field readonly="1" name="state_make_out"/>
+                            <field readonly="1" name="state_draw"/>
+                            <field readonly="1" name="state_arrive"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="designer_view_bill_tree">
+            <field name="name">designer.bill.tree</field>
+            <field name="model">designer.bill</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <!--
+                        ('draft', '草稿中'),
+                        ('send', '已提交申请'),
+                        ('makeout', '已开出'),
+                        ('refuse', '已拒绝'),
+                        ('accept', '已领取'),
+                        ('done', '已确认')],
+                        -->
+                <tree colors="blue:draft;pink:send;black:makeout;red:refuse;green:accept;gray:done" string="发票">
+                    <field name="work_id"/>
+                    <field name="partner_id"/>
+                    <field name="project_ids"/>
+                    <field name="invoice_head"/>
+                    <field name="invoice_amount"/>
+                    <field name="state_apply"/>
+                    <field name="state_make_out"/>
+                    <field name="state_draw"/>
+                    <field name="state_arrive"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--发票-->
+
+        <record id="designer_bill_view_search" model="ir.ui.view">
+            <field name="name">designer.bill.view.search</field>
+            <field name="model">designer.bill</field>
+            <field name="arch" type="xml">
+                <search string="发票搜素">
+                   <field name="work_id" string="工作卡"/>
+               </search>
+            </field>
+        </record>
+
+        <record id="action_designer_bill" model="ir.actions.act_window">
+            <field name="name">发票</field>
+            <field name="res_model">designer.bill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field eval="False" name="view_id"/>-->
+            <!--<field name="domain">[('type','=','out_invoice')]</field>-->
+            <!--<field name="context">{'default_type':'out_invoice', 'type':'out_invoice', 'journal_type': 'sale'}</field>-->
+            <field name="search_view_id" ref="designer_bill_view_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                点击创建发票
+              </p>
+            </field>
+        </record>
+
+                <menuitem action="action_designer_bill" id="designer_action_bill_menu" name = "发票" parent="base.menu_base_designer_invoce_7" sequence="0"/>
+
+
+    </data>
+</openerp>
+

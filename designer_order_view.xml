@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_order_form">
+            <field name="name">designer.order.form</field>
+            <field name="model">designer.order</field>
+            <field name="arch" type="xml">
+                <form string="工作卡" version="7.0">
+                    <header>
+                        <button name="designer_order_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "明确注明制作内容、要求、数量等信息"/>
+                        <button name="designer_order_verify1" string="确认1" states="open" class="oe_highlight" groups="designer.group_designer_customer_ae,designer.group_designer_idea_ae,designer.group_designer_design_ae" help = "确认工单及制作文件" />
+                        <button name="designer_order_cancel1" string="拒绝" states="open"  class="oe_highlight" groups="designer.group_designer_customer_ae,designer.group_designer_idea_ae,designer.group_designer_design_ae" help = "确认工单及制作文件" />
+
+                        <button name="designer_order_verify2" string="确认2" states="verify1"  class="oe_highlight" groups="designer.group_designer_make_ae" help = "确认及回复制作时长等信息" /><!--制作部-->
+                        <button name="designer_order_cancel2" string="拒绝" states="verify1"  class="oe_highlight" groups="designer.group_designer_make_ae" help = "确认及回复制作时长等信息" /><!--制作部-->
+                        <!--wizard-->
+                        <button name="designer_order_cancel2" string="创建客户收货单" states="verify2"  class="oe_highlight" groups="designer.group_designer_customer_ae" /><!--制作部-->
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,verify1,verify2,close"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="work_id"/>
+                        </group>
+                        <label for="project_type"/>
+                        <h1><field name="project_type"/></h1>
+                        <label for="project_id"/>
+                        <h1><field name="project_id"/></h1>
+                        <h1><field name="partner_id"/></h1>
+                        <label for="order_no"/>
+                        <h1><field name="order_no"/></h1>
+                    <group>
+                        <field name="order_line">
+                                <tree editable="bottom" string="制作明细">
+                                    <field name="line_no"/>
+                                    <field name="content"/>
+                                    <field name="number" />
+                                    <field name="size"/>
+                                    <field name="p_number"/>
+                                    <field name="print_type"/>
+                                    <field name="face_page"/>
+                                    <field name="inside_page"/>
+                                    <field name="other_craft"/>
+                                    <field name="binding_style"/>
+                                    <field name="date"/>
+                                </tree>
+                        </field>
+                    </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_order_tree">
+            <field name="name">designer.order.tree</field>
+            <field name="model">designer.order</field>
+            <field name="arch" type="xml">
+            <tree colors="blue:state == 'draft';black:state in ('open','close');gray:state == 'cancel'" string="工作卡">
+                <field name="work_id"/>
+                <field name="order_no"/>
+                <field name="project_id"/>
+                <field name="project_type"/>
+                <field name="state"/>
+            </tree>
+            </field>
+        </record>
+
+        <record id="designer_order_view_search" model="ir.ui.view">
+            <field name="name">designer.order.view.search</field>
+            <field name="model">designer.order</field>
+            <field name="arch" type="xml">
+                <search string="工单搜素">
+                   <field name="work_id" string="工作卡"/>
+               </search>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_designer_order">
+            <field name="name">工单</field>
+            <field name="res_model">designer.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="designer_order_view_search"/>
+        </record>
+
+        <menuitem name="制作工单" parent="base.menu_base_designer_work_order_11" id="menu_designer_order_report" action="action_designer_order" sequence="1"/>
+
+
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_order_line_form">
+            <field name="name">designer.order.line.form</field>
+            <field name="model">designer.order.line</field>
+            <field name="arch" type="xml">
+                <form string="制作明细" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="line_no"/>
+                            <field name="content"/>
+                            <field name="number" />
+                            <field name="size"/>
+                            <field name="p_number"/>
+                            <field name="print_type"/>
+                            <field name="face_page"/>
+                            <field name="inside_page"/>
+                            <field name="other_craft"/>
+                            <field name="binding_style"/>
+                            <field name="date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_order_line_tree">
+            <field name="name">designer.order.line.tree</field>
+            <field name="model">designer.order.line</field>
+            <field name="arch" type="xml">
+            <tree  string="制作明细">
+                <field name="line_no"/>
+                <field name="content"/>
+                <field name="number" />
+                <field name="size"/>
+                <field name="p_number"/>
+                <field name="print_type"/>
+                <field name="face_page"/>
+                <field name="inside_page"/>
+                <field name="other_craft"/>
+                <field name="binding_style"/>
+                <field name="date"/>
+            </tree>
+            </field>
+        </record>
+
+        <!--工单编号-->
+        <record id="seq_type_designer_order" model="ir.sequence.type">
+            <field name="name">designer order</field>
+            <field name="code">designer.order</field>
+        </record>
+        <record id="seq_designer_order" model="ir.sequence">
+            <field name="name">designer order</field>
+            <field name="code">designer.order</field>
+            <field name="prefix">GD</field>
+            <field name="padding">0</field>
+        </record>
+
+    </data>
+</openerp>

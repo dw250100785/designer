@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--项目简报-->
+        <!--工作流三元素-->
+        <!--1.声明一个工作流-->
+        <record model="workflow" id="wkf_designer_project">
+            <field name="name">designer.project.wkf</field>
+            <field name="osv">designer.project</field>
+            <field name="on_create" eval='True' />
+            <!--<field name="on_create">True</field>-->
+        </record>
+        <!--2.定义工作流的 activity  有效节点-->
+        <record model="workflow.activity" id="act_project_draft">
+            <field name="wkf_id" ref="wkf_designer_project" />
+            <field name="flow_start">True</field>
+            <field name="name">draft</field>
+            <field name="kind">function</field>
+            <field name="action">designer_project_draft()</field>
+        </record>
+
+        <record model="workflow.activity" id="act_project_open">
+            <field name="wkf_id" ref="wkf_designer_project" />
+            <field name="name">open</field>
+            <field name="kind">function</field>
+            <field name="action">designer_project_open()</field>
+        </record>
+
+        <record model="workflow.activity" id="act_project_close">
+            <field name="wkf_id" ref="wkf_designer_project" />
+            <field name="name">close</field>
+            <field name="kind">function</field>
+            <field name="action">designer_project_close()</field>
+            <field name="flow_stop">True</field>
+        </record>
+
+        <record model="workflow.activity" id="act_project_cancel">
+            <field name="wkf_id" ref="wkf_designer_project" />
+            <field name="name">cancel</field>
+            <field name="kind">function</field>
+            <field name="action">designer_project_cancel()</field>
+            <field name="flow_stop">True</field>
+        </record>
+        <!--2.定义工作流的 transition  迁移条件-->
+        <record model="workflow.transition" id="project_t1">
+            <field name="act_from" ref="act_project_draft" />
+            <field name="act_to" ref="act_project_open" />
+            <field name="signal">designer_project_open</field>
+        </record>
+
+        <record model="workflow.transition" id="project_t2">
+            <field name="act_from" ref="act_project_open" />
+            <field name="act_to" ref="act_project_close" />
+            <field name="signal">designer_project_close</field>
+        </record>
+
+        <record model="workflow.transition" id="project_t4">
+            <field name="act_from" ref="act_project_open" />
+            <field name="act_to" ref="act_project_cancel" />
+            <field name="signal">designer_project_cancel</field>
+        </record>
+
+    </data>
+</openerp>

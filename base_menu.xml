@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--设计师erp所有菜单项定义区域-->
+        <menuitem icon="terp-partner" id="base.menu_base_designer" name="项目工作卡" groups="group_designer_base_user"  sequence="30" /><!--top menu-->
+        <!--侧边栏-->
+            <menuitem id="base.menu_base_designer_card_1" name="工作卡" parent="base.menu_base_designer" sequence="1"/>
+            <menuitem id="base.menu_base_designer_project_report_2" name="项目简报" parent="base.menu_base_designer" sequence="2"/>
+            <menuitem id="base.menu_base_designer_idea_report_3" name="创意简报" parent="base.menu_base_designer" sequence="3"/>
+            <menuitem id="base.menu_base_designer_ask_price_4" name="内部询价单" parent="base.menu_base_designer" sequence="4"/>
+            <menuitem id="base.menu_base_designer_price_report_5" name="报价单" parent="base.menu_base_designer" sequence="5"/>
+            <menuitem id="base.menu_base_designer_contract_6" name="合同" parent="base.menu_base_designer" sequence="6"/>
+            <menuitem id="base.menu_base_designer_invoce_7" name="发票" parent="base.menu_base_designer" sequence="7"/>
+            <menuitem id="base.menu_base_designer_vote_paper_8" name="竟稿申请" parent="base.menu_base_designer" sequence="8"/>
+            <menuitem id="base.menu_base_designer_idea_ strategy_9" name="创意策略" parent="base.menu_base_designer" sequence="9"/>
+            <menuitem id="base.menu_base_designer_project_process_10" name="项目完成进度" parent="base.menu_base_designer" sequence="10"/>
+            <menuitem id="base.menu_base_designer_work_order_11" name="制作工单" parent="base.menu_base_designer" sequence="9"/>
+            <menuitem id="base.menu_base_designer_project_pool_12" name="项目备档单" parent="base.menu_base_designer" sequence="10"/>
+            <menuitem id="base.menu_base_designer_partner_13" name="客户管理" parent="base.menu_base_designer" sequence="11"/>
+            <menuitem id="base.menu_base_designer_attachment_14" name="附件管理" parent="base.menu_base_designer" sequence="12"/>
+                <!--重用项目-->
+
+
+                <record id="open_view_project_all" model="ir.actions.act_window">
+                        <field name="name">项目</field>
+                        <field name="res_model">project.project</field>
+                        <field name="view_type">form</field>
+                        <field name="domain">[]</field>
+                        <field name="view_mode">kanban,tree,form,gantt</field>
+                        <field name="view_id" ref="project.view_project_kanban"/>
+                        <field name="search_view_id" ref="project.view_project_project_filter"/>
+                        <field name="context">{'search_default_Current': 1}</field>
+                        <field name="help" type="html">
+                            <p class="oe_view_nocontent_create">
+                              Click to start a new project.
+                            </p><p>
+                              Projects are used to organize your activities; plan
+                              tasks, track issues, invoice timesheets. You can define
+                              internal projects (R&amp;D, Improve Sales Process),
+                              private projects (My Todos) or customer ones.
+                            </p><p>
+                              You will be able collaborate with internal users on
+                              projects or invite customers to share your activities.
+                            </p>
+                        </field>
+                </record>
+
+
+                <menuitem action="open_view_project_all" id="designer_project_projects" name="项目管理" parent="base.menu_base_designer_project_process_10" sequence="1"/>
+
+                <record id="action_attachment" model="ir.actions.act_window">
+                    <field name="name">附件</field>
+                    <field name="type">ir.actions.act_window</field>
+                    <field name="res_model">ir.attachment</field>
+                    <field name="view_type">form</field>
+                    <field name="view_id" eval="False"/>
+                   <!-- <field name="search_view_id" ref="view_attachment_search"/>-->
+                </record>
+
+                <record id="designer.view_attachment_search" model="ir.ui.view">
+                    <field name="model">ir.attachment</field>
+                    <field name="arch" type="xml">
+                        <search string="Attachments">
+                            <field name="name" filter_domain="['|', ('name','ilike',self), ('datas_fname','ilike',self)]" string="Attachment"/>
+                            <field name="create_date"/>
+                            <filter icon="terp-stage"
+                                string="URL"
+                                domain="[('type','=','url')]"/>
+                            <filter icon="terp-stock_align_left_24"
+                                string="Binary"
+                                domain="[('type','=','binary')]"/>
+                            <separator/>
+                            <filter name="my_documents_filter"
+                                string="My Document(s)"
+                                icon="terp-personal"
+                                domain="[('create_uid','=',uid)]"
+                                help="Filter on my documents"/>
+                            <field name="create_uid"/>
+                            <field name="type"/>
+                            <group expand="0" string="Group By...">
+                                <filter string="Owner" icon="terp-personal" domain="[]" context="{'group_by':'create_uid'}"/>
+                                <filter string="Type" icon="terp-stock_symbol-selection" domain="[]" context="{'group_by':'type'}" groups="base.group_no_one"/>
+                                <filter string="Company" icon="terp-gtk-home" domain="[]" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                                <filter string="Month" help="Creation Month" icon="terp-go-month" domain="[]" context="{'group_by':'create_date'}"/>
+                            </group>
+                        </search>
+                    </field>
+                </record>
+                <menuitem action="action_attachment" name = "附件" id="designer_action_attachment" parent="base.menu_base_designer_attachment_14"/>
+
+
+                <record id="action_partner_form" model="ir.actions.act_window">
+                    <field name="name">客户</field>
+                    <field name="type">ir.actions.act_window</field>
+                    <field name="res_model">res.partner</field>
+                    <field name="view_type">form</field>
+                    <field name="view_mode">kanban,tree,form</field>
+                    <field name="context">{"search_default_customer":1}</field>
+                    <!--<field name="search_view_id" ref="view_res_partner_filter"/>-->
+                    <field name="help" type="html">
+                      <p class="oe_view_nocontent_create">
+                        Click to add a contact in your address book.
+                      </p><p>
+                        OpenERP helps you easily track all activities related to
+                        a customer; discussions, history of business opportunities,
+                        documents, etc.
+                      </p>
+                    </field>
+                </record>
+
+                <menuitem id="designer_partner_form" name = "客户" parent="base.menu_base_designer_partner_13" action="action_partner_form" sequence="1"/>
+
+    </data>
+</openerp>
+

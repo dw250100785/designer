@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--工作卡 右侧按钮  跳转-->
+        <!--
+        工作卡连带起所有其他模块designer.card
+        designer_project        #项目简报
+        designer_idea           #创意简报
+        designer_inquiry        #询价单
+        designer_offer          #报价单
+        designer_agreement      #合同
+        designer_bill           #发票
+        designer_paper          #竟稿申请
+        designer_policy         #创意策略
+        project.project         #项目进度
+        designer_order          #项目工单
+        designer_archive        #项目备档单
+        -->
+
+        <!--工作卡进入项目简报-->
+        <record id="act_designer_card_2_designer_project" model="ir.actions.act_window">
+            <field name="res_model">designer.project</field>
+            <field name="view_type">form</field>
+            <field name="name">项目简报</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+        <!--工作卡进入创意简报-->
+        <record id="act_designer_card_2_designer_idea" model="ir.actions.act_window">
+            <field name="res_model">designer.idea</field>
+            <field name="view_type">form</field>
+            <field name="name">创意简报</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+        <!--工作卡进入询价单-->
+        <record id="act_designer_card_2_designer_inquiry" model="ir.actions.act_window">
+            <field name="res_model">designer.inquiry</field>
+            <field name="view_type">form</field>
+            <field name="name">询价单</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+        <!--工作卡进入报价单-->
+        <record id="act_designer_card_2_designer_offer" model="ir.actions.act_window">
+            <field name="res_model">designer.offer</field>
+            <field name="view_type">form</field>
+            <field name="name">报价单</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+        <!--工作卡进入合同-->
+        <record id="act_designer_card_2_designer_agreement" model="ir.actions.act_window">
+            <field name="res_model">designer.agreement</field>
+            <field name="view_type">form</field>
+            <field name="name">合同</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+        <!--工作卡进入发票-->
+        <record id="act_designer_card_2_designer_bill" model="ir.actions.act_window">
+            <field name="res_model">designer.bill</field>
+            <field name="view_type">form</field>
+            <field name="name">发票</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+        <!--工作卡进入竟稿申请-->
+        <record id="act_designer_card_2_designer_paper" model="ir.actions.act_window">
+            <field name="res_model">designer.paper</field>
+            <field name="view_type">form</field>
+            <field name="name">竟稿申请</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+        <!--工作卡进入创意策略-->
+        <record id="act_designer_card_2_designer_policy" model="ir.actions.act_window">
+            <field name="res_model">designer.policy</field>
+            <field name="view_type">form</field>
+            <field name="name">创意策略</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+         <!--工作卡进入项目进度-->
+
+        <record id="act_designer_card_2_project_project" model="ir.actions.act_window">
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="name">项目进度</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+
+         <!--工作卡进入工单-->
+        <record id="act_designer_card_2_designer_order" model="ir.actions.act_window">
+            <field name="res_model">designer.order</field>
+            <field name="view_type">form</field>
+            <field name="name">工单</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+
+         <!--工作卡进入项目备档单-->
+        <record id="act_designer_card_2_designer_archive" model="ir.actions.act_window">
+            <field name="res_model">designer.archive</field>
+            <field name="view_type">form</field>
+            <field name="name">项目备档单</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_work_id': [active_id], 'default_work_id': active_id}</field>
+        </record>
+        <!--工作卡 右侧按钮群  end-->
+
+
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_card_form">
+            <field name="name">designer.card.form</field>
+            <field name="model">designer.card</field>
+            <field name="arch" type="xml">
+                <form string="工作卡" version="7.0">
+                    <header>
+                        <button name="designer_card_open" string="提交" states="draft" class="oe_highlight"/>
+                        <button name="designer_card_close" string="批准" states="open" class="oe_highlight"/>
+                        <button name="designer_card_cancel" string="拒绝" states="open"  class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width:auto">
+                            <!--注意 因为xml_id导入先后顺序，工作卡模块要最后导入-->
+                            <button name="%(act_designer_card_2_project_project)d" string="项目进度" type="action" style="width:80px;height:24px"/>
+
+                            <button name="%(act_designer_card_2_designer_project)d" string="项目简报" type="action" style="width:80px;height:24px" />
+
+                            <button name="%(act_designer_card_2_designer_idea)d" string="创意简报" type="action" style="width:80px;height:24px"/>
+
+                            <button name="%(act_designer_card_2_designer_inquiry)d" string="询价单" type="action" style="width:80px;height:24px"/>
+
+                            <button name="%(act_designer_card_2_designer_offer)d" string="报价单" type="action" style="width:80px;height:24px"/>
+
+                            <button name="%(act_designer_card_2_designer_agreement)d" string="合同" type="action" style="width:80px;height:24px"/>
+
+                            <button name="%(act_designer_card_2_designer_bill)d" string="发票" type="action" style="width:80px;height:24px" />
+                            <br/>
+
+                            <button name="%(act_designer_card_2_designer_paper)d" string="竟稿申请" type="action" style="width:100px;height:24px"/>
+
+                            <button name="%(act_designer_card_2_designer_policy)d" string="创意策略" type="action" style="width:100px;height:24px"/>
+
+                            <button name="%(act_designer_card_2_designer_order)d" string="工单" type="action" style="width:100px;height:24px"/>
+
+                            <button name="%(act_designer_card_2_designer_archive)d" string="项目备档单" type="action" style="width:100px;height:24px"/>
+                        </div>
+                        <label for="project_id"/>
+                        <h1><field name="project_id"/></h1>
+                        <label for="partner_id"/>
+                        <h1><field name="partner_id"/></h1>
+                        <label for="card_no"/>
+                        <h1><field name="card_no"/></h1>
+                        <group>
+                            <field name="card_line">
+                                <tree editable="bottom" string="物料清单">
+                                    <field name="line_no"/>
+                                    <field name="project_request"/>
+                                    <field name="number" />
+                                    <field name="price"/>
+                                    <field name="subprice"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_card_tree">
+            <field name="name">designer.card.tree</field>
+            <field name="model">designer.card</field>
+            <field name="arch" type="xml">
+            <tree colors="blue:state == 'draft';black:state in ('open','close');gray:state == 'cancel'" string="工作卡">
+                <field name="partner_id"/>
+                <field name="card_no"/>
+                <field name="project_id"/>
+                <field name="state"/>
+            </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_designer_card">
+            <field name="name">工作卡</field>
+            <field name="res_model">designer.card</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="idea.view_idea_idea_search"/>-->
+        </record>
+        <menuitem name="工作卡" parent="base.menu_base_designer_card_1" id="menu_designer_card_report" action="action_designer_card" sequence="1"/>
+
+
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_card_line_form">
+            <field name="name">designer.card.line.form</field>
+            <field name="model">designer.card.line</field>
+            <field name="arch" type="xml">
+                <form string="工作卡物料单" version="7.0">
+                    <sheet>
+                        <field name="line_no"/>
+                        <field name="project_request"/>
+                        <field name="number"/>
+                        <field name="price"/>
+                        <field name="subprice"/>
+                        <field name="note"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_card_line_tree">
+            <field name="name">designer.card.line.tree</field>
+            <field name="model">designer.card.line</field>
+            <field name="arch" type="xml">
+            <tree  string="工作卡物料单">
+                <field name="line_no"/>
+                <field name="project_request"/>
+                <field name="number"/>
+                <field name="price"/>
+                <field name="subprice"/>
+                <field name="note"/>
+            </tree>
+            </field>
+        </record>
+        <!--设置自增id-->
+        <!-- Sequences for  -->
+        <record id="seq_type_designer_card_line" model="ir.sequence.type">
+            <field name="name">designer card line</field>
+            <field name="code">designer.card.line</field>
+        </record>
+        <record id="seq_designer_card_line" model="ir.sequence">
+            <field name="name">designer card line</field>
+            <field name="code">designer.card.line</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field><!--自然数自增-->
+        </record>
+    </data>
+</openerp>

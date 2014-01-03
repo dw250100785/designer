@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_archive_form">
+            <field name="name">designer.archive.form</field>
+            <field name="model">designer.archive</field>
+            <field name="arch" type="xml">
+                <form string="工作卡" version="7.0">
+                    <header>
+                        <button name="designer_project_open" string="提交" states="draft" class="oe_highlight"/>
+                        <button name="designer_project_close" string="批准" states="open" class="oe_highlight"/>
+                        <button name="designer_project_cancel" string="拒绝" states="open"  class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="work_id"/>
+                        </group>
+                        <label for="project_id"/>
+                        <h1><field name="project_id"/></h1>
+                        <h1><field name="partner_id"/></h1>
+                        <label for="archive_no"/>
+                        <h1><field name="archive_no"/></h1>
+                        <group>
+                            <separator string="项目资料" colspan="4"/>
+                        <field name="word_line">
+                                <tree string="文字">
+                                    <field name="line_no"/>
+                                    <field name="name"/>
+                                    <field name="note"/>
+                                    <field name="datas_fname"/>
+                                </tree>
+                        </field>
+                        <field name="image_line">
+                                <tree string="图片">
+                                    <field name="line_no"/>
+                                    <field name="name"/>
+                                    <field name="note"/>
+                                    <field name="datas_fname"/>
+                                </tree>
+                        </field>
+                        <separator string="项目物料" colspan="4"/>
+                        <field name="sample_line">
+                                <tree string="图片">
+                                    <field name="line_no"/>
+                                    <field name="name"/>
+                                    <field name="note"/>
+                                    <field name="datas_fname"/>
+                                </tree>
+                        </field>
+                        <field name="finished_line">
+                                <tree string="图片">
+                                    <field name="line_no"/>
+                                    <field name="name"/>
+                                    <field name="note"/>
+                                    <field name="datas_fname"/>
+                                </tree>
+                        </field>
+                        <separator string="项目实物" colspan="4"/>
+                        <field name="product_line">
+                                <tree string="实物照片">
+                                    <field name="line_no"/>
+                                    <field name="name"/>
+                                    <field name="note"/>
+                                    <field name="datas_fname"/>
+                                </tree>
+                        </field>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_archive_tree">
+            <field name="name">designer.archive.tree</field>
+            <field name="model">designer.archive</field>
+            <field name="arch" type="xml">
+            <tree colors="blue:state == 'draft';black:state in ('open','close');gray:state == 'cancel'" string="工作卡">
+                <field name="archive_no"/>
+                <field name="work_id"/>
+                <field name="project_id"/>
+                <field name="state"/>
+            </tree>
+            </field>
+        </record>
+
+
+        <record id="designer_archive_view_search" model="ir.ui.view">
+            <field name="name">designer.archive.view.search</field>
+            <field name="model">designer.archive</field>
+            <field name="arch" type="xml">
+                <search string="项目备档单搜素">
+                   <field name="work_id" string="工作卡"/>
+               </search>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_designer_archive">
+            <field name="name">项目备档单</field>
+            <field name="res_model">designer.archive</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="designer_archive_view_search"/>
+        </record>
+        <menuitem name="项目备档单" parent="base.menu_base_designer_project_pool_12" id="menu_designer_archive_report" action="action_designer_archive" sequence="1"/>
+
+
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_archive_word_line_form">
+            <field name="name">designer.archive.word.line.form</field>
+            <field name="model">designer.archive.word.line</field>
+            <field name="arch" type="xml">
+                <form string="工作卡物料单" version="7.0">
+                    <sheet>
+                        <group>
+                        <field name="name"/>
+                        <field name="line_no"/>
+                        <field name="datas" filename="datas_fname"/>
+                        <field name="datas_fname" invisible="1" class="oe_inline oe_right"/>
+                        <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_archive_word_line_tree">
+            <field name="name">designer.archive.word.line.tree</field>
+            <field name="model">designer.archive.word.line</field>
+            <field name="arch" type="xml">
+            <tree  string="工作卡物料单">
+                <field name="name"/>
+                <field name="line_no"/>
+                <field name="datas_fname" />
+                <field name="note"/>
+            </tree>
+            </field>
+        </record>
+
+        <!--图片 form-->
+        <record model="ir.ui.view" id="view_designer_archive_image_line_form">
+            <field name="name">designer.archive.image.line.form</field>
+            <field name="model">designer.archive.image.line</field>
+            <field name="arch" type="xml">
+                <form string="工作卡物料单" version="7.0">
+                    <sheet>
+                        <group>
+                        <field name="name"/>
+                        <field name="line_no"/>
+                        <field name="datas" filename="datas_fname"/>
+                        <field name="datas_fname" invisible="1" class="oe_inline oe_right"/>
+                        <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_archive_image_line_tree">
+            <field name="name">designer.archive.image.line.tree</field>
+            <field name="model">designer.archive.image.line</field>
+            <field name="arch" type="xml">
+            <tree  string="工作卡物料单">
+                <field name="name"/>
+                <field name="line_no"/>
+                <field name="datas_fname" />
+                <field name="note"/>
+            </tree>
+            </field>
+        </record>
+
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_archive_sample_line_form">
+            <field name="name">designer.archive.sample.line.form</field>
+            <field name="model">designer.archive.sample.line</field>
+            <field name="arch" type="xml">
+                <form string="工作卡物料单" version="7.0">
+                    <sheet>
+                        <group>
+                        <field name="name"/>
+                        <field name="line_no"/>
+                        <field name="datas" filename="datas_fname"/>
+                        <field name="datas_fname" invisible="1" class="oe_inline oe_right"/>
+                        <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_archive_sample_line_tree">
+            <field name="name">designer.archive.sample.line.tree</field>
+            <field name="model">designer.archive.sample.line</field>
+            <field name="arch" type="xml">
+            <tree  string="工作卡物料单">
+                <field name="name"/>
+                <field name="line_no"/>
+                <field name="datas_fname"/>
+                <field name="note"/>
+            </tree>
+            </field>
+        </record>
+
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_archive_finished_line_form">
+            <field name="name">designer.archive.finished.line.form</field>
+            <field name="model">designer.archive.finished.line</field>
+            <field name="arch" type="xml">
+                <form string="工作卡物料单" version="7.0">
+                    <sheet>
+                        <group>
+                        <field name="name"/>
+                        <field name="line_no"/>
+                        <field name="datas" filename="datas_fname"/>
+                        <field name="datas_fname" invisible="1" class="oe_inline oe_right"/>
+                        <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_archive_finished_line_tree">
+            <field name="name">designer.archive.finished.line.tree</field>
+            <field name="model">designer.archive.finished.line</field>
+            <field name="arch" type="xml">
+            <tree  string="工作卡物料单">
+                <field name="name"/>
+                <field name="line_no"/>
+                <field name="datas_fname"/>
+                <field name="note"/>
+            </tree>
+            </field>
+        </record>
+
+
+        <!--定义创意简报 form-->
+        <record model="ir.ui.view" id="view_designer_archive_product_line_form">
+            <field name="name">designer.archive.product.line.form</field>
+            <field name="model">designer.archive.product.line</field>
+            <field name="arch" type="xml">
+                <form string="工作卡物料单" version="7.0">
+                    <sheet>
+                        <group>
+                        <field name="name"/>
+                        <field name="line_no"/>
+                        <field name="datas" filename="datas_fname"/>
+                        <field name="datas_fname" invisible="1" class="oe_inline oe_right"/>
+                        <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--定义创意简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_archive_product_line_tree">
+            <field name="name">designer.archive.product.line.tree</field>
+            <field name="model">designer.archive.product.line</field>
+            <field name="arch" type="xml">
+            <tree  string="工作卡物料单">
+                <field name="name"/>
+                <field name="line_no"/>
+                <field name="datas_fname"/>
+                <field name="note"/>
+            </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

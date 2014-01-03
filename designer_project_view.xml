@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--定义项目简报 form-->
+        <record model="ir.ui.view" id="view_designer_project_form">
+            <field name="name">designer.project.form</field>
+            <field name="model">designer.project</field>
+            <field name="arch" type="xml">
+                <form string="项目简报" version="7.0">
+                    <header>
+                        <button name="designer_project_open" string="提交" states="draft" class="oe_highlight"/>
+                        <button name="designer_project_close" string="批准" type="workflow_ok" states="open" class="oe_highlight"/>
+                        <button name="designer_project_cancel" string="拒绝" type="workflow_no" states="open"  class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
+                    </header>
+                    <sheet>
+                       <!-- <group>
+                            <field name="work_id"/>
+                        </group>-->
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                        <label for="project_ids"/>
+                        <field name="project_ids" />
+                        <group>
+                               <group>
+                                   <field name="partner_id"/>
+                                   <field name="product_id"/>
+                                   <field name="create_uid"/>
+                                   <field name="receiver_uid"/>
+                               </group>
+                        </group>
+                        <label for="client_current_situation"/><newline/>
+                        <field name="client_current_situation"/>
+                        <label for="problem"/><newline/>
+                        <field name="problem"/>
+                        <label for="ad_requirement"/><newline/>
+                        <field name="ad_requirement"/>
+                        <label for="client_will"/><newline/>
+                        <field name="client_will"/>
+                        <label for="how_to_operating"/><newline/>
+                        <field name="how_to_operating"/>
+                        <label for="manager_will"/><newline/>
+                        <field name="manager_will"/>
+
+                    </sheet>
+                    <group>
+                        <!--<field name="datas" filename="datas_fname" attrs="{'readonly':['|',('is_manager', '==', 'false'),('state','not in','['draft']') ] }/>-->
+                        <field name="datas" filename="datas_fname" attrs="{'invisible': [('state','=','draft')]}" />
+                        <field name="datas_fname" invisible="1" class="oe_inline oe_right"/>
+
+                        <field name="wkf_logs">
+                                <tree string="xxx" colors="red:status== 'no'">
+                                    <field name="uid"/>
+                                    <field name="time" />
+                                    <field name="status"/>
+                                    <field name="info"/>
+                                </tree>
+                        </field>
+                    </group>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!--定义项目简报 tree-->
+
+        <record model="ir.ui.view" id="view_designer_project_tree">
+            <field name="name">designer.project.tree</field>
+            <field name="model">designer.project</field>
+            <field name="arch" type="xml">
+            <tree colors="blue:state == 'draft';black:state in ('open','close');gray:state == 'cancel'" string="创意简报">
+                <field name="name"/>
+                <field name="work_id"/>
+                <field name="create_uid"/>
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="project_ids"/>
+                <field name="receiver_uid"/>
+                <field name="state"/>
+            </tree>
+            </field>
+        </record>
+
+
+        <record id="designer_project_view_search" model="ir.ui.view">
+            <field name="name">designer.project.view.search</field>
+            <field name="model">designer.project</field>
+            <field name="arch" type="xml">
+                <search string="项目简报搜素">
+                   <field name="work_id" string="工作卡"/>
+               </search>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="action_designer_project">
+            <field name="name">项目简报</field>
+            <field name="res_model">designer.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="designer_project_view_search"/>
+        </record>
+        <menuitem name="项目简报" parent="base.menu_base_designer_project_report_2" id="menu_designer_project_report" action="action_designer_project" sequence="1"/>
+
+        <!--<record id="project_project_org_form_view" model="ir.ui.view">-->
+            <!--<field name="name">designer_project.project.form.inherit1</field>-->
+            <!--<field name="model">project.project</field>-->
+            <!--<field name="type">form</field>-->
+            <!--<field name="priority" eval="1"/>-->
+            <!--<field name="inherit_id" ref="project_project.edit_project"/>-->
+            <!--<field name="arch" type="xml">-->
+                 <!--<sheet position="inside">-->
+                    <!--<label for="work_id"/>-->
+                    <!--<div name="work_id">-->
+                        <!--<field name="work_id"/>-->
+                    <!--</div>-->
+                 <!--</sheet>-->
+            <!--</field>-->
+       <!--</record>-->
+
+
+    </data>
+</openerp>

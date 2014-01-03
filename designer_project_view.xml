@@ -105,21 +105,22 @@
         </record>
         <menuitem name="项目简报" parent="base.menu_base_designer_project_report_2" id="menu_designer_project_report" action="action_designer_project" sequence="1"/>
 
-        <!--<record id="project_project_org_form_view" model="ir.ui.view">-->
-            <!--<field name="name">designer_project.project.form.inherit1</field>-->
-            <!--<field name="model">project.project</field>-->
-            <!--<field name="type">form</field>-->
-            <!--<field name="priority" eval="1"/>-->
-            <!--<field name="inherit_id" ref="project_project.edit_project"/>-->
-            <!--<field name="arch" type="xml">-->
-                 <!--<sheet position="inside">-->
-                    <!--<label for="work_id"/>-->
-                    <!--<div name="work_id">-->
-                        <!--<field name="work_id"/>-->
-                    <!--</div>-->
-                 <!--</sheet>-->
-            <!--</field>-->
-       <!--</record>-->
+        <!--扩展项目管理-->
+        <record id="project_project_org_form_view" model="ir.ui.view">
+            <field name="name">designer_project.project.form.inherit1</field>
+            <field name="model">project.project</field>
+            <field name="type">form</field>
+            <field name="priority" eval="1"/>
+            <field name="inherit_id" ref="project.edit_project"/><!--ref project 前面是 class name -->
+            <field name="arch" type="xml">
+                 <notebook position="before">
+                    <label for="work_id"/>
+                    <div name="work_id">
+                        <field name="work_id"/>
+                    </div>
+                 </notebook>
+            </field>
+       </record>
 
 
     </data>

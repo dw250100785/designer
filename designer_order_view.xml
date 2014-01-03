@@ -27,6 +27,7 @@
                         <h1><field name="project_type"/></h1>
                         <label for="project_id"/>
                         <h1><field name="project_id"/></h1>
+                        <label for="partner_id"/>
                         <h1><field name="partner_id"/></h1>
                         <label for="order_no"/>
                         <h1><field name="order_no"/></h1>

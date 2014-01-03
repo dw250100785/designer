@@ -31,6 +31,11 @@ class designer_inquiry(osv.osv):
     """ 自定义的询价单"""
     _name = "designer.inquiry"
     _inherit = ['mail.thread']
+
+    def _get_seq(self, cr, uid, ids, context=None):
+        return self.pool.get('ir.sequence').get(cr, uid, 'designer.inquiry')
+
+
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         'name': fields.char('单号', size=64, required=True, select=True, help="Unique number of the purchase order, computed automatically when the purchase order is created."),
@@ -62,11 +67,11 @@ class designer_inquiry(osv.osv):
     _defaults = {
          'date_order': fields.date.context_today,
          'state': lambda *a: 'draft',
-         'name': lambda obj, cr, uid, context: '/',
+         'name': _get_seq,
     }
     _order = 'name asc'
 
-    def create(self, cr, uid, vals, context=None):
+    def create11(self, cr, uid, vals, context=None):
         if vals.get('name','/')=='/':
             vals['name'] = self.pool.get('ir.sequence').get(cr, uid, 'designer.inquiry') or '/'
         order =  super(designer_inquiry, self).create(cr, uid, vals, context=context)

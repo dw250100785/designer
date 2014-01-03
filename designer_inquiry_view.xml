@@ -18,6 +18,7 @@
                     <sheet>
                         <group>
                             <field name="work_id"/>
+                            <field name="name"/>
                             <field name="partner_id"/>
                             <field name="project_ids"/>
                             <field name="date_order"/>
@@ -28,7 +29,7 @@
                                         <field name="project_request"/>
                                         <field name="number" />
                                         <field name="price"/>
-                                        <field name="subprice"/>
+                                        <field name="subprice"/><!--如何在子列表上隐藏 列-->
                                         <!--<field name="subprice" attrs="{'invisible':[('_is_zhizuo', '==', 'true')]}" />&lt;!&ndash;在草稿状态，也就是ae处理时，不显示总价&ndash;&gt;-->
                                         <field name="note"/>
                                     </tree>
@@ -43,6 +44,10 @@
                             </field>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -130,7 +135,7 @@
 
 
 
-        <!--设置自增id-->
+        <!--询价单 childs 设置自增id-->
         <!-- Sequences for  -->
         <record id="seq_type_designer_inquiry_line" model="ir.sequence.type">
             <field name="name">designer inquiry line</field>
@@ -141,6 +146,18 @@
             <field name="code">designer.inquiry.line</field>
             <field name="prefix"></field>
             <field name="padding">0</field><!--自然数自增-->
+        </record>
+
+        <!-- 询价单 -->
+        <record id="seq_type_designer_inquiry" model="ir.sequence.type">
+            <field name="name">designer inquiry</field>
+            <field name="code">designer.inquiry</field>
+        </record>
+        <record id="seq_designer_inquiry" model="ir.sequence">
+            <field name="name">designer inquiry</field>
+            <field name="code">designer.inquiry</field>
+            <field name="prefix">PO</field>
+            <field name="padding">5</field>
         </record>
     </data>
 </openerp>

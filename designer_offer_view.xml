@@ -38,6 +38,10 @@
                             </field>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -135,6 +139,18 @@
             <field name="code">designer.offer.line</field>
             <field name="prefix"></field>
             <field name="padding">0</field><!--自然数自增-->
+        </record>
+
+        <!-- 报价单单号 -->
+        <record id="seq_type_designer_offer" model="ir.sequence.type">
+            <field name="name">designer offer</field>
+            <field name="code">designer.offer</field>
+        </record>
+        <record id="seq_designer_offer" model="ir.sequence">
+            <field name="name">designer offer</field>
+            <field name="code">designer.offer</field>
+            <field name="prefix">PO</field>
+            <field name="padding">5</field>
         </record>
     </data>
 </openerp>

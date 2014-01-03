@@ -28,6 +28,11 @@ import workflow_func
 class designer_paper(osv.osv):
     """ 竟稿申请"""
     _name = 'designer.paper'
+    _inherit = ['mail.thread']
+
+    def _get_seq(self, cr, uid, ids, context=None):
+        return self.pool.get('ir.sequence').get(cr, uid, 'designer.order')
+
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         'project_id': fields.many2one('designer.project', string='项目简报', readonly=True, states={'draft': [('readonly', False)]}),
@@ -57,6 +62,7 @@ class designer_paper(osv.osv):
 
     _defaults = {
         'state': lambda *a: 'draft',
+        'paper_no':_get_seq,
     }
 
     def designer_paper_cancel(self, cr, uid, ids, context=None):

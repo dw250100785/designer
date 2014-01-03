@@ -30,6 +30,11 @@ class designer_card(osv.osv):
     """ 项目工作卡"""
     _name = 'designer.card'
     _inherit = ['mail.thread']
+
+    def _get_seq(self, cr, uid, ids, context=None):
+        return self.pool.get('ir.sequence').get(cr, uid, 'designer.card')
+
+
     _columns = {
         'card_no': fields.char('编号', required=True, readonly=True,states={'draft': [('readonly', False)]}),
         'card_line': fields.one2many('designer.card.line', 'card_id', '物料清单',),
@@ -56,6 +61,7 @@ class designer_card(osv.osv):
     ]
     _defaults = {
         'state': lambda *a: 'draft',
+        'card_no':_get_seq
     }
     _order = 'card_no asc'
 

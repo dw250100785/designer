@@ -26,14 +26,15 @@ import time
 import workflow_func
 from openerp.addons.base.ir import ir_attachment
 
+#添加工作卡
 
-# class project_project(osv.osv):
-#     _name = 'project.project'
-#     _inherit = "project.project"
-#     _columns = {
-#         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
-#         }
-# project_project()
+class project_project(osv.osv):
+    _name = 'project.project'
+    _inherit = "project.project"
+    _columns = {
+        'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
+        }
+project_project()
 
 class designer_project(osv.osv):
     """ 项目简报"""

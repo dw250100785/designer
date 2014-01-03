@@ -41,6 +41,9 @@
         5. 自动评价，中差评预警
         6. 跟踪淘宝订单物流信息, 签收提醒
         7. ......
+        注意事项
+        1.安装成功后，代码包中不应该有project_long_term，发现卸载它时竟然也同时卸载了designer
+        2.怎么禁止卸载 designer
 """,
     'author': 'Evebit',
     'website': 'http://evebit.com',
@@ -48,8 +51,7 @@
         'web',
         'mail',
         'base',
-        'project',                  #项目 以及任务管理
-        'project_long_term',        #分阶段
+        'project',                  #项目任务管理 项目阶段，文档，讨论
         'document',                 #文档管理
         'audittrail',               #使用审核跟踪
         ],
@@ -81,14 +83,10 @@
         'designer_order_view.xml',
         'designer_paper_view.xml',
         'designer_policy_view.xml',
-        #'designer_quotation_view.xml',
-        #'designer_invoice_view.xml',
-        #'designer_contract_view.xml',
         'designer_inquiry_view.xml',
         'designer_offer_view.xml',
         'designer_bill_view.xml',
         'designer_agreement_view.xml',
-        'designer_sequence.xml',
         'workflow/designer_workflow.xml',
         'workflow/designer_idea_workflow.xml',
         'workflow/designer_order_workflow.xml',

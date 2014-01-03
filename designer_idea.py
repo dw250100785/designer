@@ -36,7 +36,7 @@ class designer_idea(osv.osv):
         'brand_id': fields.many2one('designer.brand', '品牌', required=True, change_default=True, select=True, track_visibility='always'),
         'partner_id': fields.many2one('res.partner', '客户', required=True, change_default=True, select=True, track_visibility='always'),
         #'product_id': fields.many2one('product.product', '产品', readonly=True, required=True, change_default=True, select=True,states={'draft': [('readonly', False)]}),
-        'date':fields.datetime('日期',required=True,track_visibility='onchange',),
+        'date':fields.date('日期',required=True,track_visibility='onchange',),
         'brand_definition': fields.text('品牌定义', help='品牌定义',track_visibility='onchange', ),
         'marketing_problem_definition': fields.text('行销问题', help='行销问题',track_visibility='onchange',),
         'role_and_aim_of_advertising': fields.text('广告的角色和意图', help='广告的角色和意图',track_visibility='onchange',),

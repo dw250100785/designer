@@ -59,6 +59,10 @@
                             </field>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -176,8 +180,21 @@
                 </p>
             </field>
         </record>
-                <menuitem action="action_designer_agreement" name = "合同" id="designer_action_agreement_menu" sequence="0" parent="base.menu_base_designer_contract_6"/>
-                <!--报价单 ssales.order-->
+        <menuitem action="action_designer_agreement" name = "合同" id="designer_action_agreement_menu" sequence="0" parent="base.menu_base_designer_contract_6"/>
+        <!--报价单 ssales.order-->
+
+         <!--合同编号-->
+
+        <record id="seq_type_designer_agreement" model="ir.sequence.type">
+            <field name="name">designer agreement</field>
+            <field name="code">designer.agreement</field>
+        </record>
+        <record id="seq_designer_agreement" model="ir.sequence">
+            <field name="name">designer agreement</field>
+            <field name="code">designer.agreement</field>
+            <field name="prefix">DK--HT</field>
+            <field name="padding">5</field>
+        </record>
     </data>
 </openerp>
 

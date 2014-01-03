@@ -30,9 +30,6 @@ import designer_archive   #项目备档单
 import designer_order   #项目工单
 import designer_paper   #竟稿申请
 import designer_policy   #创意策略
-#import designer_quotation   #扩展的询价单，报价单
-#import designer_invoice   #扩展发票
-#import designer_contract   #发票合同
 import designer_inquiry   #询价单
 import designer_offer   #报价单
 import designer_bill   #发票

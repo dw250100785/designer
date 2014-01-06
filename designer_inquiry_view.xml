@@ -22,15 +22,13 @@
                             <field name="partner_id"/>
                             <field name="project_ids"/>
                             <field name="date_order"/>
-                            <field name="state" attrs="{'invisible':1}"/>
                             <field name="card_line">
                                     <tree editable="bottom" string="物料清单">
                                         <field name="line_no"/>
                                         <field name="project_request"/>
                                         <field name="number" />
                                         <field name="price"/>
-                                        <field name="subprice"/><!--如何在子列表上隐藏 列-->
-                                        <!--<field name="subprice" attrs="{'invisible':[('_is_zhizuo', '==', 'true')]}" />&lt;!&ndash;在草稿状态，也就是ae处理时，不显示总价&ndash;&gt;-->
+                                        <field name="subprice"/>
                                         <field name="note"/>
                                     </tree>
                             </field>
@@ -157,7 +155,7 @@
             <field name="name">designer inquiry</field>
             <field name="code">designer.inquiry</field>
             <field name="prefix">PO</field>
-            <field name="padding">5</field>
+            <field name="padding">0</field>
         </record>
     </data>
 </openerp>

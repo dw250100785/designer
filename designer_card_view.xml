@@ -158,12 +158,13 @@
 
                             <button name="%(act_designer_card_2_designer_archive)d" string="项目备档单" type="action" style="width:100px;height:24px"/>
                         </div>
+                        <label for="card_no"/>
+                        <h1><field name="card_no"/></h1>
                         <label for="project_id"/>
                         <h1><field name="project_id"/></h1>
                         <label for="partner_id"/>
                         <h1><field name="partner_id"/></h1>
-                        <label for="card_no"/>
-                        <h1><field name="card_no"/></h1>
+
                         <group>
                             <field name="card_line">
                                 <tree editable="bottom" string="物料清单">
@@ -232,14 +233,14 @@
             <field name="name">designer.card.line.tree</field>
             <field name="model">designer.card.line</field>
             <field name="arch" type="xml">
-            <tree  string="工作卡物料单">
-                <field name="line_no"/>
-                <field name="project_request"/>
-                <field name="number"/>
-                <field name="price"/>
-                <field name="subprice"/>
-                <field name="note"/>
-            </tree>
+                <tree  string="工作卡物料单">
+                    <field name="line_no"/>
+                    <field name="project_request"/>
+                    <field name="number"/>
+                    <field name="price"/>
+                    <field name="subprice"/>
+                    <field name="note"/>
+                </tree>
             </field>
         </record>
         <!--设置自增id-->
@@ -261,11 +262,12 @@
             <field name="name">designer card</field>
             <field name="code">designer.card</field>
         </record>
+
         <record id="seq_designer_card" model="ir.sequence">
             <field name="name">designer card</field>
             <field name="code">designer.card</field>
             <field name="prefix">CARD</field>
-            <field name="padding">5</field>
+            <field name="padding">0</field>
         </record>
 
     </data>

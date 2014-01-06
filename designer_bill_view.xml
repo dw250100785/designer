@@ -6,7 +6,6 @@
             <field name="name">designer.bill.form</field>
             <field name="model">designer.bill</field>
             <field name="type">form</field>
-            <!--<field name="inherit_id" ref="account.invoice_form" />-->
             <field name="arch" type="xml">
                 <form string="发票信息" version="7.0">
                     <header>
@@ -32,6 +31,9 @@
                     </header>
                     <sheet>
                         <group>
+                            <field name="datas" filename="datas_fname" attrs="{'invisible': [('state','=','draft')]}" />
+                            <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
+
                             <field name="work_id"/>
                             <field name="partner_id"/>
                             <field name="project_ids"/>
@@ -66,7 +68,7 @@
                         ('accept', '已领取'),
                         ('done', '已确认')],
                         -->
-                <tree colors="blue:draft;pink:send;black:makeout;red:refuse;green:accept;gray:done" string="发票">
+                <tree string="发票">
                     <field name="work_id"/>
                     <field name="partner_id"/>
                     <field name="project_ids"/>

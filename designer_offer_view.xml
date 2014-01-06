@@ -31,7 +31,7 @@
                                         <field name="line_no"/>
                                         <field name="project_request"/>
                                         <field name="number" />
-                                        <field name="price"/>
+                                        <field name="price" on_change="on_change_price(number,price)" />
                                         <field name="subprice"/>
                                         <field name="note"/>
                                     </tree>

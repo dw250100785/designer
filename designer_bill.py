@@ -30,7 +30,7 @@ import pdb #debug
 class designer_bill(osv.osv):
     """ 发票管理"""
     _name = "designer.bill"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread','ir.attachment']
 
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),

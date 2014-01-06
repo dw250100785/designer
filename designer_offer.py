@@ -96,6 +96,16 @@ class designer_offer_line(osv.osv):
     _name = 'designer.offer.line'
     _inherit = ['mail.thread']
 
+    def on_change_price(self, cr, uid, ids, number,price, context=None):
+        if not number:
+            return {}
+        #odometer_unit = self.pool.get('fleet.vehicle').browse(cr, uid, vehicle_id, context=context).odometer_unit
+        return {
+            'value': {
+                'subprice': number*price,
+            }
+        }
+
     def _get_seq(self, cr, uid, ids, context=None):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.offer.line')
 

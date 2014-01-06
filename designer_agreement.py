@@ -50,7 +50,7 @@ class designer_agreement(osv.osv):
     """ 扩展发票管理"""
 
     _name = "designer.agreement"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread','ir.attachment']
 
     def _get_seq(self, cr, uid, ids, context=None):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.agreement')

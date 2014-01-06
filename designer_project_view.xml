@@ -14,9 +14,11 @@
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
                     </header>
                     <sheet>
-                       <!-- <group>
+                        <group>
+                            <field name="datas" filename="datas_fname" attrs="{'invisible': [('state','=','draft')]}" />
+                            <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
                             <field name="work_id"/>
-                        </group>-->
+                        </group>
                         <label for="name"/>
                         <h1><field name="name"/></h1>
                         <label for="project_ids"/>
@@ -41,13 +43,8 @@
                         <field name="how_to_operating"/>
                         <label for="manager_will"/><newline/>
                         <field name="manager_will"/>
-
                     </sheet>
                     <group>
-                        <!--<field name="datas" filename="datas_fname" attrs="{'readonly':['|',('is_manager', '==', 'false'),('state','not in','['draft']') ] }/>-->
-                        <field name="datas" filename="datas_fname" attrs="{'invisible': [('state','=','draft')]}" />
-                        <field name="datas_fname" invisible="1" class="oe_inline oe_right"/>
-
                         <field name="wkf_logs">
                                 <tree string="xxx" colors="red:status== 'no'">
                                     <field name="uid"/>

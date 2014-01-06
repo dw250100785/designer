@@ -28,7 +28,7 @@
                                         <field name="project_request"/>
                                         <field name="number" />
                                         <field name="price"/>
-                                        <field name="subprice"/>
+                                        <field name="subprice" on_change="on_change_price(number,price)" />
                                         <field name="note"/>
                                     </tree>
                             </field>

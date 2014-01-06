@@ -90,7 +90,7 @@ class designer_bill(osv.osv):
         return self.write(cr, uid, ids, {'state': 'send','state_apply': 'true'}, context=context)
 
 
-    def designer_bill_notifer(self, cr, uid, id, context=None):
+    def designer_bill_notifer(self, cr, uid, ids, context=None):
         #current user id    uid
         #list of ids    ids
         #id -- id of the record to copy
@@ -98,7 +98,33 @@ class designer_bill(osv.osv):
         #print id
         #oe方法第三个参数一般是查询参数
 
-        raise osv.except_osv(_('Error!'),_("id is %d.",id))
+        records = self._get_followers(cr, uid, ids, None, None, context=context)
+        followers = records[ids[0]]['message_follower_ids']
+        self.message_post(
+            cr,
+            uid,
+            ids,
+            body='发票已经开出',
+            subtype='mt_comment',
+            partner_ids=followers,
+            context=context
+        )
+
+
+        post_vars = {
+            'subject': "Message subject",
+            'body': "Message body",
+            'partner_ids': [(4, ids[0].create_uid.partner_id)],
+            }
+            # Where "4" adds the ID to the list
+            # of followers and "3" is the partner ID
+        thread_pool = self.pool.get('mail.thread')
+        thread_pool.message_post(
+                cr, uid, False,
+                type="notification",
+                subtype="mt_comment",
+                context=context,
+                **post_vars)
 
         self.message_post(cr, uid, id,
                 _("发票已经开出，请确认."), context=context)

@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
+    <!--
+定时计划
+     <record id="ir_cron_mail_gateway_action" model="ir.cron">
+            <field name="name">Fetchmail Service</field>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model">fetchmail.server</field>
+            <field name="function">_fetch_mails</field>
+            <field name="args">()</field>
+            Active flag is set on fetchmail_server.create/write
+            <field name="active" eval="False"/>
+        </record>
+
+
+    -->
+    <data noupdate="1"> <!--不允许更新次节点数据-->
+       <!--日期 时间-->
+       <!-- Create link to the language with name "lang_pl" in ir.model.data -->
+       <record id="designer_lang_zh" model="ir.model.data">
+            <field name="name">lang_zh</field>
+            <field name="noupdate">TRUE</field>
+            <field name="module">designer</field>
+            <field name="model">res.lang</field>
+            <field name="res_id" model="res.lang" search="[('code', '=', 'zh_CN')]"/>
+       </record>
+
+        <!-- Access link by name "lang_pl" -->
+        <record id="designer_lang_zh" model="res.lang">
+            <field name="date_format">%Y/%m/%d</field>
+            <field name="time_format">%H:%M:%S</field>
+            <!--<field name="grouping">[3,0]</field>-->
+            <!--<field name="decimal_point">,</field>-->
+            <!--<field name="thousands_sep">.</field>-->
+        </record>
+    </data>
     <data>
+        <!--时区-->
+
+        <!--常见邮件服务器demo-->
+        <!--发送-->
+        <record id="ir_mail_server_qq" model="ir.mail_server">
+            <field name="name">qq mail发邮件邮件</field>
+            <field name="smtp_host">pop.qq.com</field>
+            <field eval="465" name="smtp_port"/>
+            <field eval="10" name="sequence"/>
+        </record>
+        <!--接收-->
+        <record id="ir_fetchmail_server_qq" model="fetchmail.server">
+            <field name="name">qq mail 收邮件</field>
+            <field eval="995" name="port"/>
+            <field name="server">smtp.qq.com</field>
+        </record>
+        <!--163-->
+        <!--gmail-->
+        <!--发送-->
+        <record id="ir_mail_server_gmail" model="ir.mail_server">
+            <field name="name">gmail发邮件邮件</field>
+            <field name="smtp_host">pop.gmail.com</field>
+            <field eval="465" name="smtp_port"/>
+            <field eval="10" name="sequence"/>
+        </record>
+        <!--接收-->
+        <record id="ir_fetchmail_server_gmail" model="fetchmail.server">
+            <field name="name">gmail 收邮件</field>
+            <field eval="995" name="port"/>
+            <field name="server">smtp.gmail.com</field>
+        </record>
+
+
         <!--摘抄自 ccdos github-->
         <!--
 
@@ -40,6 +110,7 @@
         <record id="base.rateCNY" model="res.currency.rate">
             <field name="rate">1</field>
         </record>
+
         <record id="base.CNY" model="res.currency">
             <field name="base" eval="True"/>
         </record>

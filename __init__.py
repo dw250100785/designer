@@ -45,5 +45,15 @@ import controller
 import workflow
 import workflow_func
 #end
+"""
+openerp 中文报表打印
+"""
+import oecn_font_installer
+
+"""
+在线预览并打印 pdf报表
+"""
+from . import controllers
+
 
 

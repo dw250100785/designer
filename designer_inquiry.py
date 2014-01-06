@@ -37,7 +37,7 @@ class designer_inquiry(osv.osv):
 
 
     _columns = {
-        'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
+        'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True),
         'name': fields.char('单号', size=64, required=True, select=True,track_visibility='always'),
         'partner_id':fields.many2one('res.partner', '制作部', required=True,
             change_default=True, track_visibility='always'),
@@ -57,7 +57,7 @@ class designer_inquiry(osv.osv):
             string='审批记录',
             type='one2many',
             relation="workflow.logs",
-            readonly=True),
+            readonly=True)
     }
 
     _rec_name = 'name'
@@ -70,15 +70,6 @@ class designer_inquiry(osv.osv):
          'name': _get_seq,
     }
     _order = 'name asc'
-
-    def copy(self, cr, uid, id, default=None, context=None):
-        if not default:
-            default = {}
-        default.update({
-            'state':'draft',
-            'name': self.pool.get('ir.sequence').get(cr, uid, 'designer.inquiry'),
-        })
-        return super(designer_inquiry, self).copy(cr, uid, id, default, context)
 
     def designer_inquiry_cancel(self, cr, uid, ids, context=None):
         return self.write(cr, uid, ids, {'state': 'cancel'}, context=context)
@@ -96,6 +87,18 @@ class designer_inquiry_line(osv.osv):
     """ 项目工作卡物料管理"""
     _name = 'designer.inquiry.line'
     #_inherit = ['mail.thread']
+
+    def on_change_price(self, cr, uid, ids, number,price, context=None):
+        if not number:
+            return {}
+        #odometer_unit = self.pool.get('fleet.vehicle').browse(cr, uid, vehicle_id, context=context).odometer_unit
+        return {
+            'value': {
+                'subprice': number*price,
+            }
+        }
+
+
     def _get_seq(self, cr, uid, ids, context=None):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.inquiry.line')
 
@@ -106,7 +109,7 @@ class designer_inquiry_line(osv.osv):
         'project_request': fields.text('项目要求', size=64, required=True, change_default=True, select=True, track_visibility='always'),
         'number': fields.integer('数量', required=True, change_default=True, select=True, track_visibility='always'),
         'price': fields.float('价格',digits_compute= dp.get_precision('Price'), required=True, change_default=True, select=True, track_visibility='always'),
-        'subprice': fields.float('总价', required=True, change_default=True, select=True, track_visibility='always',write=['group_designer_make_ae']),#只有制作部可以添写总价
+        'subprice': fields.float('总价', required=True, change_default=True, select=True, track_visibility='always'),#只有制作部可以添写总价
         'note': fields.text('备注',size=64,change_default=True, select=True, track_visibility='always'),
     }
     _sql_constraints = [

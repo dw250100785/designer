@@ -127,9 +127,9 @@
             <field name="arch" type="xml">
                 <form string="工作卡" version="7.0">
                     <header>
-                        <button name="designer_card_open" string="提交" states="draft" class="oe_highlight"/>
-                        <button name="designer_card_close" string="批准" states="open" class="oe_highlight"/>
-                        <button name="designer_card_cancel" string="拒绝" states="open"  class="oe_highlight"/>
+                        <button name="designer_card_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                        <button name="designer_card_close" string="批准" states="open" class="oe_highlight" groups="designer.group_designer_customer_manager" />
+                        <button name="designer_card_cancel" string="拒绝" states="open"  class="oe_highlight" groups="designer.group_designer_customer_manager"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
                     </header>
                     <sheet>

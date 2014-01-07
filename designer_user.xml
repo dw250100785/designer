@@ -7,6 +7,8 @@
         系统用户组设定在  security/designer_security.xml里
 
         -->
+
+        <!--更新公司信息-->
         <record id="base.main_partner" model="res.partner" context="{'default_is_company': True}">
             <field name="name">武汉德客天工</field>
             <field name="company_id" eval="None"/>

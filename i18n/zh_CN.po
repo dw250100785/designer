@@ -1,0 +1,2238 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* designer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140106-002615\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-07 08:33+0000\n"
+"PO-Revision-Date: 2014-01-07 08:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: designer
+#: selection:designer.bill,state:0
+msgid "已提交申请"
+msgstr "已提交申请"
+
+#. module: designer
+#: field:designer.idea,competition_scope:0
+#: help:designer.idea,competition_scope:0
+msgid "竞争范畴"
+msgstr "竞争范畴"
+
+#. module: designer
+#: view:designer.card:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_inquiry
+#: model:ir.ui.menu,name:designer.designer_inquiry
+msgid "询价单"
+msgstr "询价单"
+
+#. module: designer
+#: field:designer.agreement,offer_ids:0
+#: view:designer.card:0
+#: view:designer.offer:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_offer
+#: model:ir.actions.act_window,name:designer.action_designer_offer
+#: model:ir.ui.menu,name:designer.designer_offer
+msgid "报价单"
+msgstr "报价单"
+
+#. module: designer
+#: view:designer.card:0
+#: view:designer.policy:0
+#: field:designer.policy,policy_line:0
+#: view:designer.policy.line:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_policy
+#: model:ir.actions.act_window,name:designer.action_designer_policy
+#: model:ir.ui.menu,name:designer.menu_designer_policy_report
+msgid "创意策略"
+msgstr "创意策略"
+
+#. module: designer
+#: field:designer.bill,state_draw:0
+msgid "领取"
+msgstr "领取"
+
+#. module: designer
+#: selection:workflow.logs,status:0
+msgid "通过"
+msgstr "通过"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_idea_manager
+#: model:res.groups,name:designer.group_designer_idea_manager
+msgid "创意部总监"
+msgstr "创意部总监"
+
+#. module: designer
+#: view:ir.attachment:0
+msgid "Group By..."
+msgstr "分组..."
+
+#. module: designer
+#: field:designer.idea,background_information_concerned:0
+#: help:designer.idea,background_information_concerned:0
+msgid "相关背景资料"
+msgstr "相关背景资料"
+
+#. module: designer
+#: help:designer.agreement,res_model:0
+#: help:designer.archive.finished.line,res_model:0
+#: help:designer.archive.image.line,res_model:0
+#: help:designer.archive.product.line,res_model:0
+#: help:designer.archive.sample.line,res_model:0
+#: help:designer.archive.word.line,res_model:0
+#: help:designer.bill,res_model:0
+#: help:designer.idea,res_model:0
+#: help:designer.policy.line,res_model:0
+#: help:designer.project,res_model:0
+msgid "The database object this attachment will be attached to"
+msgstr "The database object this attachment will be attached to"
+
+#. module: designer
+#: selection:designer.agreement,state:0
+#: selection:designer.offer,state:0
+#: selection:designer.order,state:0
+msgid "二次确认"
+msgstr "二次确认"
+
+#. module: designer
+#: field:oecn_base_fonts.map,name:0
+msgid "Font Alias"
+msgstr "字体别名"
+
+#. module: designer
+#: field:designer.idea,adverting_information_and_brand_proposition:0
+#: help:designer.idea,adverting_information_and_brand_proposition:0
+msgid "广告信息或品牌主张"
+msgstr "广告信息或品牌主张"
+
+#. module: designer
+#: view:oecn.font.installer:0
+msgid "Font replace"
+msgstr "字体替换为"
+
+#. module: designer
+#: field:designer.agreement,message_unread:0
+#: field:designer.agreement.rule.line,message_unread:0
+#: field:designer.archive,message_unread:0
+#: field:designer.archive.finished.line,message_unread:0
+#: field:designer.archive.image.line,message_unread:0
+#: field:designer.archive.product.line,message_unread:0
+#: field:designer.archive.sample.line,message_unread:0
+#: field:designer.archive.word.line,message_unread:0
+#: field:designer.bill,message_unread:0
+#: field:designer.card,message_unread:0
+#: field:designer.card.line,message_unread:0
+#: field:designer.idea,message_unread:0
+#: field:designer.inquiry,message_unread:0
+#: field:designer.offer,message_unread:0
+#: field:designer.offer.line,message_unread:0
+#: field:designer.order,message_unread:0
+#: field:designer.order.line,message_unread:0
+#: field:designer.paper,message_unread:0
+#: field:designer.policy,message_unread:0
+#: field:designer.policy.line,message_unread:0
+#: field:designer.project,message_unread:0
+msgid "Unread Messages"
+msgstr "未读信息"
+
+#. module: designer
+#: field:designer.agreement,company_id:0
+#: field:designer.archive.finished.line,company_id:0
+#: field:designer.archive.image.line,company_id:0
+#: field:designer.archive.product.line,company_id:0
+#: field:designer.archive.sample.line,company_id:0
+#: field:designer.archive.word.line,company_id:0
+#: field:designer.bill,company_id:0
+#: field:designer.idea,company_id:0
+#: field:designer.policy.line,company_id:0
+#: field:designer.project,company_id:0
+#: view:ir.attachment:0
+msgid "Company"
+msgstr "公司"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_customer
+#: model:res.groups,name:designer.group_designer_customer
+msgid "客户部"
+msgstr "客户部"
+
+#. module: designer
+#: view:designer.order:0
+msgid "工单搜素"
+msgstr "工单搜素"
+
+#. module: designer
+#: field:workflow.logs,res_id:0
+msgid "资源ID"
+msgstr "资源ID"
+
+#. module: designer
+#: view:designer.offer:0
+#: view:designer.order:0
+msgid "确认2"
+msgstr "确认2"
+
+#. module: designer
+#: view:designer.agreement:0
+#: view:designer.card:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_agreement
+#: model:ir.actions.act_window,name:designer.action_designer_agreement
+#: model:ir.ui.menu,name:designer.designer_action_agreement_menu
+msgid "合同"
+msgstr "合同"
+
+#. module: designer
+#: view:ir.attachment:0
+msgid "My Document(s)"
+msgstr "我的单据"
+
+#. module: designer
+#: field:workflow.logs,act_id:0
+msgid "工作流阶段"
+msgstr "工作流阶段"
+
+#. module: designer
+#: view:designer.idea:0
+msgid "给总监（创意、设计）审核"
+msgstr "给总监（创意、设计）审核"
+
+#. module: designer
+#: view:designer.offer:0
+#: view:designer.order:0
+msgid "确认1"
+msgstr "确认1"
+
+#. module: designer
+#: field:designer.order,project_type:0
+msgid "项目类型"
+msgstr "项目类型"
+
+#. module: designer
+#: field:designer.order.line,date:0
+msgid "交货时间"
+msgstr "交货时间"
+
+#. module: designer
+#: field:designer.contract.type,name:0
+#: field:designer.policy,name:0
+#: field:designer.policy.line,name:0
+msgid "名称"
+msgstr "名称"
+
+#. module: designer
+#: view:ir.attachment:0
+msgid "Filter on my documents"
+msgstr "用于我的单据的过滤器"
+
+#. module: designer
+#: view:designer.bill:0
+msgid "开出发票"
+msgstr "开出发票"
+
+#. module: designer
+#: field:designer.agreement,index_content:0
+#: field:designer.archive.finished.line,index_content:0
+#: field:designer.archive.image.line,index_content:0
+#: field:designer.archive.product.line,index_content:0
+#: field:designer.archive.sample.line,index_content:0
+#: field:designer.archive.word.line,index_content:0
+#: field:designer.bill,index_content:0
+#: field:designer.idea,index_content:0
+#: field:designer.policy.line,index_content:0
+#: field:designer.project,index_content:0
+msgid "Indexed Content"
+msgstr "已经索引内容"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_office
+#: model:res.groups,name:designer.group_designer_office
+msgid "行政部"
+msgstr "行政部"
+
+#. module: designer
+#: field:designer.idea,target_segment_and_its_current_situation:0
+#: help:designer.idea,target_segment_and_its_current_situation:0
+msgid "目标对象及其现状"
+msgstr "目标对象及其现状"
+
+#. module: designer
+#: field:designer.archive.finished.line,note:0
+#: field:designer.archive.image.line,note:0
+#: field:designer.archive.product.line,note:0
+#: field:designer.archive.sample.line,note:0
+#: field:designer.archive.word.line,note:0
+#: field:designer.brand,comment:0
+#: field:designer.card.line,note:0
+#: field:designer.contract.type,comment:0
+#: help:designer.contract.type,comment:0
+#: field:designer.inquiry.line,note:0
+#: field:designer.offer.line,note:0
+#: field:designer.order.line,note:0
+#: field:designer.policy,note:0
+#: help:designer.policy,note:0
+msgid "备注"
+msgstr "备注"
+
+#. module: designer
+#: view:designer.inquiry:0
+msgid "内部询价单搜素"
+msgstr "内部询价单搜素"
+
+#. module: designer
+#: view:designer.bill:0
+#: view:designer.card:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_bill
+#: model:ir.actions.act_window,name:designer.action_designer_bill
+#: model:ir.ui.menu,name:designer.designer_action_bill_menu
+msgid "发票"
+msgstr "发票"
+
+#. module: designer
+#: field:designer.project,client_will:0
+#: help:designer.project,client_will:0
+msgid "客户意向"
+msgstr "客户意向"
+
+#. module: designer
+#: selection:designer.agreement,type:0
+#: selection:designer.archive.finished.line,type:0
+#: selection:designer.archive.image.line,type:0
+#: selection:designer.archive.product.line,type:0
+#: selection:designer.archive.sample.line,type:0
+#: selection:designer.archive.word.line,type:0
+#: selection:designer.bill,type:0
+#: selection:designer.idea,type:0
+#: selection:designer.policy.line,type:0
+#: selection:designer.project,type:0
+#: view:ir.attachment:0
+msgid "URL"
+msgstr "URL"
+
+#. module: designer
+#: help:oecn_base_fonts.map,name:0
+msgid "use this font alias in custom rml report                             template"
+msgstr "use this font alias in custom rml report                             template"
+
+#. module: designer
+#: view:designer.policy:0
+msgid "创意策略列表"
+msgstr "创意策略列表"
+
+#. module: designer
+#: model:ir.model,name:designer.model_project_project
+msgid "Project"
+msgstr "项目"
+
+#. module: designer
+#: help:designer.agreement,res_id:0
+#: help:designer.archive.finished.line,res_id:0
+#: help:designer.archive.image.line,res_id:0
+#: help:designer.archive.product.line,res_id:0
+#: help:designer.archive.sample.line,res_id:0
+#: help:designer.archive.word.line,res_id:0
+#: help:designer.bill,res_id:0
+#: help:designer.idea,res_id:0
+#: help:designer.policy.line,res_id:0
+#: help:designer.project,res_id:0
+msgid "The record id this is attached to"
+msgstr "The record id this is attached to"
+
+#. module: designer
+#: view:designer.paper:0
+#: field:designer.paper,comment:0
+#: help:designer.paper,comment:0
+msgid "意见"
+msgstr "意见"
+
+#. module: designer
+#: selection:designer.agreement,state:0
+#: selection:designer.archive,state:0
+#: selection:designer.bill,state:0
+#: selection:designer.card,state:0
+#: selection:designer.idea,state:0
+#: selection:designer.inquiry,state:0
+#: selection:designer.offer,state:0
+#: selection:designer.order,state:0
+#: selection:designer.policy,state:0
+#: selection:designer.policy.line,state:0
+#: selection:designer.project,state:0
+msgid "草稿中"
+msgstr "草稿中"
+
+#. module: designer
+#: selection:designer.order,project_type:0
+msgid "LOGO"
+msgstr "LOGO"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_finance_manager
+#: model:res.groups,name:designer.group_designer_finance_manager
+msgid "财务部总监"
+msgstr "财务部总监"
+
+#. module: designer
+#: view:designer.archive:0
+msgid "项目备档单搜素"
+msgstr "项目备档单搜素"
+
+#. module: designer
+#: help:designer.agreement,message_unread:0
+#: help:designer.agreement.rule.line,message_unread:0
+#: help:designer.archive,message_unread:0
+#: help:designer.archive.finished.line,message_unread:0
+#: help:designer.archive.image.line,message_unread:0
+#: help:designer.archive.product.line,message_unread:0
+#: help:designer.archive.sample.line,message_unread:0
+#: help:designer.archive.word.line,message_unread:0
+#: help:designer.bill,message_unread:0
+#: help:designer.card,message_unread:0
+#: help:designer.card.line,message_unread:0
+#: help:designer.idea,message_unread:0
+#: help:designer.inquiry,message_unread:0
+#: help:designer.offer,message_unread:0
+#: help:designer.offer.line,message_unread:0
+#: help:designer.order,message_unread:0
+#: help:designer.order.line,message_unread:0
+#: help:designer.paper,message_unread:0
+#: help:designer.policy,message_unread:0
+#: help:designer.policy.line,message_unread:0
+#: help:designer.project,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: designer
+#: view:designer.paper:0
+msgid "总监提交意见"
+msgstr "总监提交意见"
+
+#. module: designer
+#: field:designer.project,product_id:0
+msgid "产品"
+msgstr "产品"
+
+#. module: designer
+#: field:designer.agreement,work_id:0
+#: field:designer.archive,work_id:0
+#: field:designer.bill,work_id:0
+#: field:designer.idea,work_id:0
+#: field:designer.inquiry,work_id:0
+#: field:designer.offer,work_id:0
+#: field:designer.order,work_id:0
+#: field:designer.paper,work_id:0
+#: field:designer.policy,work_id:0
+#: field:designer.project,work_id:0
+#: field:project.project,work_id:0
+msgid "所属工作卡"
+msgstr "所属工作卡"
+
+#. module: designer
+#: model:ir.actions.act_window,help:designer.action_designer_agreement
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                    点击新增合同.\n"
+"                </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                    点击新增合同.\n"
+"                </p>\n"
+"            "
+
+#. module: designer
+#: field:oecn_base_fonts.map,pdf_font:0
+msgid "Original Fonts"
+msgstr "Original Fonts"
+
+#. module: designer
+#: field:designer.brand,name:0
+msgid "品牌名称"
+msgstr "品牌名称"
+
+#. module: designer
+#: field:designer.card.line,price:0
+#: field:designer.inquiry.line,price:0
+#: field:designer.offer.line,price:0
+msgid "价格"
+msgstr "价格"
+
+#. module: designer
+#: field:designer.agreement,res_model:0
+#: field:designer.archive.finished.line,res_model:0
+#: field:designer.archive.image.line,res_model:0
+#: field:designer.archive.product.line,res_model:0
+#: field:designer.archive.sample.line,res_model:0
+#: field:designer.archive.word.line,res_model:0
+#: field:designer.bill,res_model:0
+#: field:designer.idea,res_model:0
+#: field:designer.policy.line,res_model:0
+#: field:designer.project,res_model:0
+msgid "Resource Model"
+msgstr "资源模型"
+
+#. module: designer
+#: field:designer.order.line,print_type:0
+msgid "封面印刷"
+msgstr "封面印刷"
+
+#. module: designer
+#: field:designer.agreement,contract_amount_big:0
+msgid "合同金额大写"
+msgstr "合同金额大写"
+
+#. module: designer
+#: help:designer.agreement,message_summary:0
+#: help:designer.agreement.rule.line,message_summary:0
+#: help:designer.archive,message_summary:0
+#: help:designer.archive.finished.line,message_summary:0
+#: help:designer.archive.image.line,message_summary:0
+#: help:designer.archive.product.line,message_summary:0
+#: help:designer.archive.sample.line,message_summary:0
+#: help:designer.archive.word.line,message_summary:0
+#: help:designer.bill,message_summary:0
+#: help:designer.card,message_summary:0
+#: help:designer.card.line,message_summary:0
+#: help:designer.idea,message_summary:0
+#: help:designer.inquiry,message_summary:0
+#: help:designer.offer,message_summary:0
+#: help:designer.offer.line,message_summary:0
+#: help:designer.order,message_summary:0
+#: help:designer.order.line,message_summary:0
+#: help:designer.paper,message_summary:0
+#: help:designer.policy,message_summary:0
+#: help:designer.policy.line,message_summary:0
+#: help:designer.project,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: designer
+#: model:ir.model,name:designer.model_designer_inquiry_line
+msgid "designer.inquiry.line"
+msgstr "designer.inquiry.line"
+
+#. module: designer
+#: view:oecn.font.installer:0
+msgid "Customer Font Mapping Configuration"
+msgstr "Customer Font Mapping Configuration"
+
+#. module: designer
+#: view:designer.offer:0
+#: view:designer.order:0
+msgid "确认工单及制作文件"
+msgstr "确认工单及制作文件"
+
+#. module: designer
+#: view:designer.idea:0
+msgid "确认(2)"
+msgstr "确认(2)"
+
+#. module: designer
+#: field:designer.agreement,contract_amount:0
+msgid "合同金额"
+msgstr "合同金额"
+
+#. module: designer
+#: field:designer.archive.finished.line,partner_id:0
+#: field:designer.archive.image.line,partner_id:0
+#: field:designer.archive.product.line,partner_id:0
+#: field:designer.archive.sample.line,partner_id:0
+#: field:designer.archive.word.line,partner_id:0
+#: field:designer.policy.line,partner_id:0
+msgid "Partner"
+msgstr "客户"
+
+#. module: designer
+#: field:oecn.font.installer,wrap:0
+msgid "CJK wrap"
+msgstr "CJK wrap"
+
+#. module: designer
+#: view:designer.agreement:0
+msgid "确认"
+msgstr "确认"
+
+#. module: designer
+#: view:designer.card:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_archive
+#: model:ir.actions.act_window,name:designer.action_designer_archive
+#: model:ir.ui.menu,name:designer.menu_designer_archive_report
+msgid "项目备档单"
+msgstr "项目备档单"
+
+#. module: designer
+#: field:designer.agreement.rule.line,price:0
+#: field:designer.bill,invoice_amount:0
+msgid "金额"
+msgstr "金额"
+
+#. module: designer
+#: view:designer.inquiry:0
+#: view:designer.policy:0
+msgid "客户签字"
+msgstr "客户签字"
+
+#. module: designer
+#: view:designer.offer:0
+msgid "报价单搜素"
+msgstr "报价单搜素"
+
+#. module: designer
+#: selection:designer.inquiry,state:0
+msgid "已提交给制作部"
+msgstr "已提交给制作部"
+
+#. module: designer
+#: field:designer.order.line,content:0
+msgid "项目内容"
+msgstr "项目内容"
+
+#. module: designer
+#: field:designer.archive,finished_line:0
+msgid "成品"
+msgstr "成品"
+
+#. module: designer
+#: field:designer.agreement,file_size:0
+#: field:designer.archive.finished.line,file_size:0
+#: field:designer.archive.image.line,file_size:0
+#: field:designer.archive.product.line,file_size:0
+#: field:designer.archive.sample.line,file_size:0
+#: field:designer.archive.word.line,file_size:0
+#: field:designer.bill,file_size:0
+#: field:designer.idea,file_size:0
+#: field:designer.policy.line,file_size:0
+#: field:designer.project,file_size:0
+msgid "File Size"
+msgstr "文件大小"
+
+#. module: designer
+#: field:designer.agreement,file_type:0
+#: field:designer.archive.finished.line,file_type:0
+#: field:designer.archive.image.line,file_type:0
+#: field:designer.archive.product.line,file_type:0
+#: field:designer.archive.sample.line,file_type:0
+#: field:designer.archive.word.line,file_type:0
+#: field:designer.bill,file_type:0
+#: field:designer.idea,file_type:0
+#: field:designer.policy.line,file_type:0
+#: field:designer.project,file_type:0
+msgid "Content Type"
+msgstr "文件类型"
+
+#. module: designer
+#: view:designer.card:0
+#: field:designer.order.line,order_id:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_order
+#: model:ir.actions.act_window,name:designer.action_designer_order
+msgid "工单"
+msgstr "工单"
+
+#. module: designer
+#: selection:designer.idea,state:0
+msgid "确认(2)通过"
+msgstr "确认(2)通过"
+
+#. module: designer
+#: field:designer.agreement,message_follower_ids:0
+#: field:designer.agreement.rule.line,message_follower_ids:0
+#: field:designer.archive,message_follower_ids:0
+#: field:designer.archive.finished.line,message_follower_ids:0
+#: field:designer.archive.image.line,message_follower_ids:0
+#: field:designer.archive.product.line,message_follower_ids:0
+#: field:designer.archive.sample.line,message_follower_ids:0
+#: field:designer.archive.word.line,message_follower_ids:0
+#: field:designer.bill,message_follower_ids:0
+#: field:designer.card,message_follower_ids:0
+#: field:designer.card.line,message_follower_ids:0
+#: field:designer.idea,message_follower_ids:0
+#: field:designer.inquiry,message_follower_ids:0
+#: field:designer.offer,message_follower_ids:0
+#: field:designer.offer.line,message_follower_ids:0
+#: field:designer.order,message_follower_ids:0
+#: field:designer.order.line,message_follower_ids:0
+#: field:designer.paper,message_follower_ids:0
+#: field:designer.policy,message_follower_ids:0
+#: field:designer.policy.line,message_follower_ids:0
+#: field:designer.project,message_follower_ids:0
+msgid "Followers"
+msgstr "关注者"
+
+#. module: designer
+#: field:designer.card.line,number:0
+#: field:designer.inquiry.line,number:0
+#: field:designer.offer.line,number:0
+#: field:designer.order.line,number:0
+msgid "数量"
+msgstr "数量"
+
+#. module: designer
+#: field:designer.project,manager_will:0
+#: help:designer.project,manager_will:0
+msgid "总经理意向"
+msgstr "总经理意向"
+
+#. module: designer
+#: field:workflow.logs,res_type:0
+msgid "资源类型"
+msgstr "资源类型"
+
+#. module: designer
+#: model:ir.ui.menu,name:designer.designer_menu_audit
+msgid "文档修改跟踪"
+msgstr "文档修改跟踪"
+
+#. module: designer
+#: field:designer.agreement,type:0
+#: field:designer.archive.finished.line,type:0
+#: field:designer.archive.image.line,type:0
+#: field:designer.archive.product.line,type:0
+#: field:designer.archive.sample.line,type:0
+#: field:designer.archive.word.line,type:0
+#: field:designer.bill,type:0
+#: field:designer.idea,type:0
+#: field:designer.policy.line,type:0
+#: field:designer.project,type:0
+#: view:ir.attachment:0
+msgid "Type"
+msgstr "类型"
+
+#. module: designer
+#: help:designer.offer,name:0
+msgid "Unique number of the purchase order, computed automatically when the purchase order is created."
+msgstr "Unique number of the purchase order, computed automatically when the purchase order is created."
+
+#. module: designer
+#: view:designer.archive:0
+#: field:designer.archive,image_line:0
+msgid "图片"
+msgstr "图片"
+
+#. module: designer
+#: field:designer.agreement,res_name:0
+#: field:designer.archive.finished.line,res_name:0
+#: field:designer.archive.image.line,res_name:0
+#: field:designer.archive.product.line,res_name:0
+#: field:designer.archive.sample.line,res_name:0
+#: field:designer.archive.word.line,res_name:0
+#: field:designer.bill,res_name:0
+#: field:designer.idea,res_name:0
+#: field:designer.policy.line,res_name:0
+#: field:designer.project,res_name:0
+msgid "Resource Name"
+msgstr "资源名称"
+
+#. module: designer
+#: selection:designer.bill,state_apply:0
+#: selection:designer.bill,state_arrive:0
+#: selection:designer.bill,state_draw:0
+#: selection:designer.bill,state_make_out:0
+msgid "是"
+msgstr "是"
+
+#. module: designer
+#: model:ir.module.category,description:designer.module_category_designer_wuhan
+#: model:ir.module.category,name:designer.module_category_designer_wuhan
+msgid "武汉德客天工"
+msgstr "武汉德客天工"
+
+#. module: designer
+#: view:designer.policy:0
+msgid "创意策略搜素"
+msgstr "创意策略搜素"
+
+#. module: designer
+#: model:ir.model,name:designer.model_designer_brand
+msgid "designer.brand"
+msgstr "designer.brand"
+
+#. module: designer
+#: field:designer.order.line,size:0
+msgid "尺寸"
+msgstr "尺寸"
+
+#. module: designer
+#: field:designer.agreement.rule.line,percentage:0
+msgid "比例"
+msgstr "比例"
+
+#. module: designer
+#: field:designer.project,receiver_uid:0
+msgid "我方对接人"
+msgstr "我方对接人"
+
+#. module: designer
+#: view:designer.bill:0
+msgid "提交开票申请"
+msgstr "提交开票申请"
+
+#. module: designer
+#: view:base.config.settings:0
+msgid "RML Rrepot Font"
+msgstr "RML Rrepot Font"
+
+#. module: designer
+#: selection:designer.idea,state:0
+#: selection:designer.offer,state:0
+#: selection:designer.paper,state:0
+msgid "已提交"
+msgstr "已提交"
+
+#. module: designer
+#: model:ir.actions.act_window,help:designer.action_partner_form
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                        Click to add a contact in your address book.\n"
+"                      </p><p>\n"
+"                        OpenERP helps you easily track all activities related to\n"
+"                        a customer; discussions, history of business opportunities,\n"
+"                        documents, etc.\n"
+"                      </p>\n"
+"                    "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                        Click to add a contact in your address book.\n"
+"                      </p><p>\n"
+"                        OpenERP helps you easily track all activities related to\n"
+"                        a customer; discussions, history of business opportunities,\n"
+"                        documents, etc.\n"
+"                      </p>\n"
+"                    "
+
+#. module: designer
+#: field:designer.agreement,store_fname:0
+#: field:designer.archive.finished.line,store_fname:0
+#: field:designer.archive.image.line,store_fname:0
+#: field:designer.archive.product.line,store_fname:0
+#: field:designer.archive.sample.line,store_fname:0
+#: field:designer.archive.word.line,store_fname:0
+#: field:designer.bill,store_fname:0
+#: field:designer.idea,store_fname:0
+#: field:designer.policy.line,store_fname:0
+#: field:designer.project,store_fname:0
+msgid "Stored Filename"
+msgstr "保存的文件名"
+
+#. module: designer
+#: selection:designer.order.line,print_type:0
+msgid "单"
+msgstr "单"
+
+#. module: designer
+#: field:designer.agreement,wkf_logs:0
+#: field:designer.idea,wkf_logs:0
+#: field:designer.inquiry,wkf_logs:0
+#: field:designer.paper,wkf_logs:0
+#: field:designer.project,wkf_logs:0
+msgid "审批记录"
+msgstr "审批记录"
+
+#. module: designer
+#: model:ir.actions.act_window,help:designer.action_designer_offer
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                点击新增报价单.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                点击新增报价单.\n"
+"              </p>\n"
+"            "
+
+#. module: designer
+#: model:ir.actions.act_window,help:designer.action_designer_bill
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                点击创建发票\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                点击创建发票\n"
+"              </p>\n"
+"            "
+
+#. module: designer
+#: field:designer.inquiry,name:0
+#: field:designer.inquiry.line,card_id:0
+#: field:designer.offer,name:0
+msgid "单号"
+msgstr "单号"
+
+#. module: designer
+#: view:designer.bill:0
+msgid "发票信息"
+msgstr "发票信息"
+
+#. module: designer
+#: selection:designer.idea,state:0
+msgid "已审核"
+msgstr "已审核"
+
+#. module: designer
+#: field:designer.bill,date:0
+#: field:designer.idea,date:0
+#: field:designer.inquiry,date_order:0
+#: field:designer.offer,date_order:0
+#: field:designer.policy,date:0
+#: help:designer.policy,date:0
+#: field:designer.policy.line,date:0
+#: help:designer.policy.line,date:0
+msgid "日期"
+msgstr "日期"
+
+#. module: designer
+#: model:ir.actions.act_window,name:designer.action_attachment
+#: model:ir.ui.menu,name:designer.designer_action_attachment
+msgid "附件"
+msgstr "附件"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_design_ae
+#: model:res.groups,name:designer.group_designer_design_ae
+msgid "设计部设计师"
+msgstr "设计部设计师"
+
+#. module: designer
+#: model:ir.model,name:designer.model_workflow_logs
+msgid "workflow.logs"
+msgstr "workflow.logs"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_idea
+#: model:res.groups,name:designer.group_designer_idea
+msgid "创意部"
+msgstr "创意部"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_make_ae
+#: model:res.groups,name:designer.group_designer_make_ae
+msgid "制作部业务员"
+msgstr "制作部业务员"
+
+#. module: designer
+#: model:ir.actions.act_window,help:designer.action_designer_inquiry
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                点击新增询价单.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                点击新增询价单.\n"
+"              </p>\n"
+"            "
+
+#. module: designer
+#: field:designer.archive,archive_no:0
+#: field:designer.archive.finished.line,line_no:0
+#: field:designer.archive.image.line,line_no:0
+#: field:designer.archive.product.line,line_no:0
+#: field:designer.archive.sample.line,line_no:0
+#: field:designer.archive.word.line,line_no:0
+#: field:designer.card,card_no:0
+#: field:designer.card.line,line_no:0
+#: field:designer.inquiry.line,line_no:0
+#: field:designer.offer.line,line_no:0
+#: field:designer.order.line,line_no:0
+#: field:designer.paper,paper_no:0
+#: field:designer.policy,policy_no:0
+msgid "编号"
+msgstr "编号"
+
+#. module: designer
+#: view:designer.archive:0
+#: field:designer.archive,word_line:0
+msgid "文字"
+msgstr "文字"
+
+#. module: designer
+#: field:designer.idea,impact_of_advertising_you_want:0
+#: help:designer.idea,impact_of_advertising_you_want:0
+msgid "期望广告对消费者有何影响"
+msgstr "期望广告对消费者有何影响"
+
+#. module: designer
+#: field:designer.archive.finished.line,position:0
+#: field:designer.archive.image.line,position:0
+#: field:designer.archive.sample.line,position:0
+#: field:designer.archive.word.line,position:0
+msgid "位置"
+msgstr "位置"
+
+#. module: designer
+#: field:designer.agreement,parent_id:0
+#: field:designer.archive.finished.line,parent_id:0
+#: field:designer.archive.image.line,parent_id:0
+#: field:designer.archive.product.line,parent_id:0
+#: field:designer.archive.sample.line,parent_id:0
+#: field:designer.archive.word.line,parent_id:0
+#: field:designer.bill,parent_id:0
+#: field:designer.idea,parent_id:0
+#: field:designer.policy.line,parent_id:0
+#: field:designer.project,parent_id:0
+msgid "Directory"
+msgstr "目录"
+
+#. module: designer
+#: view:designer.card:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_project_project
+msgid "项目进度"
+msgstr "项目进度"
+
+#. module: designer
+#: field:designer.agreement,write_uid:0
+#: field:designer.archive.finished.line,write_uid:0
+#: field:designer.archive.image.line,write_uid:0
+#: field:designer.archive.product.line,write_uid:0
+#: field:designer.archive.sample.line,write_uid:0
+#: field:designer.archive.word.line,write_uid:0
+#: field:designer.bill,write_uid:0
+#: field:designer.idea,write_uid:0
+#: field:designer.policy.line,write_uid:0
+#: field:designer.project,write_uid:0
+msgid "Last Modification User"
+msgstr "最近修改人"
+
+#. module: designer
+#: view:designer.card:0
+#: view:designer.paper:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_paper
+#: model:ir.actions.act_window,name:designer.action_designer_paper
+#: model:ir.ui.menu,name:designer.menu_designer_paper_report
+msgid "竟稿申请"
+msgstr "竟稿申请"
+
+#. module: designer
+#: model:ir.actions.act_window,help:designer.open_view_project_all
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                              Click to start a new project.\n"
+"                            </p><p>\n"
+"                              Projects are used to organize your activities; plan\n"
+"                              tasks, track issues, invoice timesheets. You can define\n"
+"                              internal projects (R&amp;D, Improve Sales Process),\n"
+"                              private projects (My Todos) or customer ones.\n"
+"                            </p><p>\n"
+"                              You will be able collaborate with internal users on\n"
+"                              projects or invite customers to share your activities.\n"
+"                            </p>\n"
+"                        "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                              Click to start a new project.\n"
+"                            </p><p>\n"
+"                              Projects are used to organize your activities; plan\n"
+"                              tasks, track issues, invoice timesheets. You can define\n"
+"                              internal projects (R&amp;D, Improve Sales Process),\n"
+"                              private projects (My Todos) or customer ones.\n"
+"                            </p><p>\n"
+"                              You will be able collaborate with internal users on\n"
+"                              projects or invite customers to share your activities.\n"
+"                            </p>\n"
+"                        "
+
+#. module: designer
+#: field:designer.order.line,face_page:0
+msgid "封面纸张(g)"
+msgstr "封面纸张(g)"
+
+#. module: designer
+#: field:oecn_base_fonts.map,new_font:0
+msgid "Replaced With"
+msgstr "替换为"
+
+#. module: designer
+#: field:designer.agreement,write_date:0
+#: field:designer.archive.finished.line,write_date:0
+#: field:designer.archive.image.line,write_date:0
+#: field:designer.archive.product.line,write_date:0
+#: field:designer.archive.sample.line,write_date:0
+#: field:designer.archive.word.line,write_date:0
+#: field:designer.bill,write_date:0
+#: field:designer.idea,write_date:0
+#: field:designer.policy.line,write_date:0
+#: field:designer.project,write_date:0
+msgid "Date Modified"
+msgstr "修改日期"
+
+#. module: designer
+#: view:designer.archive:0
+msgid "项目物料"
+msgstr "项目物料"
+
+#. module: designer
+#: field:designer.idea,necessary_information:0
+#: help:designer.idea,necessary_information:0
+msgid "必要事项"
+msgstr "必要事项"
+
+#. module: designer
+#: field:designer.project,ad_requirement:0
+#: help:designer.project,ad_requirement:0
+msgid "广告需求"
+msgstr "广告需求"
+
+#. module: designer
+#: field:designer.agreement,db_datas:0
+#: field:designer.archive.finished.line,db_datas:0
+#: field:designer.archive.image.line,db_datas:0
+#: field:designer.archive.product.line,db_datas:0
+#: field:designer.archive.sample.line,db_datas:0
+#: field:designer.archive.word.line,db_datas:0
+#: field:designer.bill,db_datas:0
+#: field:designer.idea,db_datas:0
+#: field:designer.policy.line,db_datas:0
+#: field:designer.project,db_datas:0
+msgid "Database Data"
+msgstr "数据库建库时间"
+
+#. module: designer
+#: field:workflow.logs,info:0
+msgid "记录"
+msgstr "记录"
+
+#. module: designer
+#: view:oecn.font.installer:0
+msgid "title"
+msgstr "标题"
+
+#. module: designer
+#: view:designer.card:0
+#: field:designer.card,card_line:0
+#: view:designer.inquiry:0
+#: field:designer.inquiry,card_line:0
+#: field:designer.offer,card_line:0
+msgid "物料清单"
+msgstr "物料清单"
+
+#. module: designer
+#: field:designer.bill,state_make_out:0
+msgid "开票"
+msgstr "开票"
+
+#. module: designer
+#: help:designer.brand,comment:0
+msgid "品牌备注"
+msgstr "品牌备注"
+
+#. module: designer
+#: view:ir.attachment:0
+msgid "Month"
+msgstr "月"
+
+#. module: designer
+#: view:oecn.font.installer:0
+msgid "Fonts used in the default report may not support the characters in your lanuage. Use the setting here to replace the Original font with the font you choose."
+msgstr "Fonts used in the default report may not support the characters in your lanuage. Use the setting here to replace the Original font with the font you choose."
+
+#. module: designer
+#: view:designer.idea:0
+msgid "总监审核"
+msgstr "总监审核"
+
+#. module: designer
+#: field:designer.archive,sample_line:0
+msgid "样稿"
+msgstr "样稿"
+
+#. module: designer
+#: view:designer.order:0
+#: field:designer.order,order_line:0
+#: view:designer.order.line:0
+msgid "制作明细"
+msgstr "制作明细"
+
+#. module: designer
+#: view:designer.agreement:0
+msgid "合同搜素"
+msgstr "合同搜素"
+
+#. module: designer
+#: field:designer.agreement,create_uid:0
+#: field:designer.agreement,user_id:0
+#: field:designer.archive.finished.line,create_uid:0
+#: field:designer.archive.finished.line,user_id:0
+#: field:designer.archive.image.line,create_uid:0
+#: field:designer.archive.image.line,user_id:0
+#: field:designer.archive.product.line,create_uid:0
+#: field:designer.archive.product.line,user_id:0
+#: field:designer.archive.sample.line,create_uid:0
+#: field:designer.archive.sample.line,user_id:0
+#: field:designer.archive.word.line,create_uid:0
+#: field:designer.archive.word.line,user_id:0
+#: field:designer.bill,create_uid:0
+#: field:designer.bill,user_id:0
+#: field:designer.idea,create_uid:0
+#: field:designer.idea,user_id:0
+#: field:designer.policy.line,create_uid:0
+#: field:designer.policy.line,user_id:0
+#: field:designer.project,user_id:0
+#: view:ir.attachment:0
+msgid "Owner"
+msgstr "所有者"
+
+#. module: designer
+#: view:designer.archive.finished.line:0
+#: view:designer.archive.image.line:0
+#: view:designer.archive.product.line:0
+#: view:designer.archive.sample.line:0
+#: view:designer.archive.word.line:0
+#: view:designer.card.line:0
+#: view:designer.inquiry:0
+#: view:designer.inquiry.line:0
+msgid "工作卡物料单"
+msgstr "工作卡物料单"
+
+#. module: designer
+#: field:designer.agreement,no:0
+msgid "合同编号"
+msgstr "合同编号"
+
+#. module: designer
+#: field:designer.agreement,create_date:0
+#: field:designer.archive.finished.line,create_date:0
+#: field:designer.archive.image.line,create_date:0
+#: field:designer.archive.product.line,create_date:0
+#: field:designer.archive.sample.line,create_date:0
+#: field:designer.archive.word.line,create_date:0
+#: field:designer.bill,create_date:0
+#: field:designer.idea,create_date:0
+#: field:designer.policy.line,create_date:0
+#: field:designer.project,create_date:0
+msgid "Date Created"
+msgstr "Date Created"
+
+#. module: designer
+#: selection:designer.agreement,type:0
+#: selection:designer.archive.finished.line,type:0
+#: selection:designer.archive.image.line,type:0
+#: selection:designer.archive.product.line,type:0
+#: selection:designer.archive.sample.line,type:0
+#: selection:designer.archive.word.line,type:0
+#: selection:designer.bill,type:0
+#: selection:designer.idea,type:0
+#: selection:designer.policy.line,type:0
+#: selection:designer.project,type:0
+#: view:ir.attachment:0
+msgid "Binary"
+msgstr "二进制数据"
+
+#. module: designer
+#: field:designer.card.line,project_request:0
+#: field:designer.inquiry.line,project_request:0
+#: field:designer.offer.line,project_request:0
+msgid "项目要求"
+msgstr "项目要求"
+
+#. module: designer
+#: field:designer.agreement.rule.line,line_no:0
+#: field:designer.policy.line,line_no:0
+msgid "次数"
+msgstr "次数"
+
+#. module: designer
+#: field:designer.agreement,datas:0
+#: field:designer.archive.finished.line,datas:0
+#: field:designer.archive.image.line,datas:0
+#: field:designer.archive.product.line,datas:0
+#: field:designer.archive.sample.line,datas:0
+#: field:designer.archive.word.line,datas:0
+#: field:designer.bill,datas:0
+#: field:designer.idea,datas:0
+#: field:designer.policy.line,datas:0
+#: field:designer.project,datas:0
+msgid "File Content"
+msgstr "文件内容"
+
+#. module: designer
+#: selection:designer.bill,state:0
+msgid "已开出"
+msgstr "已开出"
+
+#. module: designer
+#: view:designer.inquiry:0
+msgid "开启"
+msgstr "开启"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_design
+#: model:res.groups,name:designer.group_designer_design
+msgid "设计部"
+msgstr "设计部"
+
+#. module: designer
+#: model:ir.ui.menu,name:designer.designer_project_projects
+msgid "项目管理"
+msgstr "项目管理"
+
+#. module: designer
+#: field:designer.agreement,project_ids:0
+#: field:designer.archive,project_id:0
+#: field:designer.bill,project_ids:0
+#: view:designer.card:0
+#: field:designer.card,project_id:0
+#: field:designer.inquiry,project_ids:0
+#: field:designer.offer,project_ids:0
+#: field:designer.order,project_id:0
+#: field:designer.paper,project_id:0
+#: field:designer.policy,project_id:0
+#: view:designer.project:0
+#: field:designer.project,name:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_project
+#: model:ir.actions.act_window,name:designer.action_designer_project
+#: model:ir.ui.menu,name:designer.menu_designer_project_report
+msgid "项目简报"
+msgstr "项目简报"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_office_ae
+#: model:res.groups,name:designer.group_designer_office_ae
+msgid "行政部业务员"
+msgstr "行政部业务员"
+
+#. module: designer
+#: view:ir.attachment:0
+msgid "Attachment"
+msgstr "附件"
+
+#. module: designer
+#: field:designer.order.line,binding_style:0
+msgid "装订方式"
+msgstr "装订方式"
+
+#. module: designer
+#: selection:designer.bill,state_apply:0
+#: selection:designer.bill,state_arrive:0
+#: selection:designer.bill,state_draw:0
+#: selection:designer.bill,state_make_out:0
+#: selection:designer.order.line,print_type:0
+msgid "否"
+msgstr "否"
+
+#. module: designer
+#: selection:designer.idea,state:0
+msgid "确认(1)通过"
+msgstr "确认(1)通过"
+
+#. module: designer
+#: field:designer.order,order_no:0
+msgid "工单编号"
+msgstr "工单编号"
+
+#. module: designer
+#: view:designer.agreement:0
+msgid "客户签字盖章"
+msgstr "客户签字盖章"
+
+#. module: designer
+#: view:designer.offer:0
+msgid "清单"
+msgstr "清单"
+
+#. module: designer
+#: view:designer.offer:0
+#: view:designer.order:0
+msgid "创建客户收货单"
+msgstr "创建客户收货单"
+
+#. module: designer
+#: sql_constraint:designer.archive:0
+#: sql_constraint:designer.archive.word.line:0
+#: sql_constraint:designer.brand:0
+#: sql_constraint:designer.idea:0
+#: sql_constraint:designer.paper:0
+#: sql_constraint:designer.project:0
+msgid "The name of the idea must be unique"
+msgstr "The name of the idea must be unique"
+
+#. module: designer
+#: view:designer.agreement.rule.line:0
+msgid "合同付款方式"
+msgstr "合同付款方式"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_office_manager
+#: model:res.groups,name:designer.group_designer_office_manager
+msgid "行政部总监"
+msgstr "行政部总监"
+
+#. module: designer
+#: model:ir.actions.act_window,name:designer.action_audittrail_log_tree
+#: model:ir.ui.menu,name:designer.designer_menu_audit_logs
+msgid "跟踪日志"
+msgstr "跟踪日志"
+
+#. module: designer
+#: help:designer.offer,date_order:0
+msgid "Date on which this document has been created."
+msgstr "Date on which this document has been created."
+
+#. module: designer
+#: model:ir.actions.act_window,name:designer.action_designer_inquiry
+msgid "内部询价单"
+msgstr "内部询价单"
+
+#. module: designer
+#: selection:designer.agreement,state:0
+#: selection:designer.archive,state:0
+#: selection:designer.card,state:0
+#: selection:designer.order,state:0
+#: selection:designer.policy,state:0
+#: selection:designer.policy.line,state:0
+#: selection:designer.project,state:0
+msgid "已批准"
+msgstr "已批准"
+
+#. module: designer
+#: selection:designer.order.line,print_type:0
+msgid "双"
+msgstr "双"
+
+#. module: designer
+#: view:designer.inquiry:0
+#: view:designer.offer.line:0
+msgid "物料单"
+msgstr "物料单"
+
+#. module: designer
+#: view:designer.card:0
+#: view:designer.idea:0
+#: field:designer.idea,name:0
+#: view:designer.project:0
+#: model:ir.actions.act_window,name:designer.act_designer_card_2_designer_idea
+#: model:ir.actions.act_window,name:designer.action_designer_idea
+#: model:ir.ui.menu,name:designer.menu_designer_idea_report
+msgid "创意简报"
+msgstr "创意简报"
+
+#. module: designer
+#: field:designer.idea,brand_definition:0
+#: help:designer.idea,brand_definition:0
+msgid "品牌定义"
+msgstr "品牌定义"
+
+#. module: designer
+#: view:designer.idea:0
+msgid "确认(1)"
+msgstr "确认(1)"
+
+#. module: designer
+#: field:designer.agreement,message_is_follower:0
+#: field:designer.agreement.rule.line,message_is_follower:0
+#: field:designer.archive,message_is_follower:0
+#: field:designer.archive.finished.line,message_is_follower:0
+#: field:designer.archive.image.line,message_is_follower:0
+#: field:designer.archive.product.line,message_is_follower:0
+#: field:designer.archive.sample.line,message_is_follower:0
+#: field:designer.archive.word.line,message_is_follower:0
+#: field:designer.bill,message_is_follower:0
+#: field:designer.card,message_is_follower:0
+#: field:designer.card.line,message_is_follower:0
+#: field:designer.idea,message_is_follower:0
+#: field:designer.inquiry,message_is_follower:0
+#: field:designer.offer,message_is_follower:0
+#: field:designer.offer.line,message_is_follower:0
+#: field:designer.order,message_is_follower:0
+#: field:designer.order.line,message_is_follower:0
+#: field:designer.paper,message_is_follower:0
+#: field:designer.policy,message_is_follower:0
+#: field:designer.policy.line,message_is_follower:0
+#: field:designer.project,message_is_follower:0
+msgid "Is a Follower"
+msgstr "是关注者"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_customer_ae
+#: model:res.groups,name:designer.group_designer_customer_ae
+msgid "客户部业务员"
+msgstr "客户部业务员"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_base_user
+msgid "所有员工均拥有通用组"
+msgstr "所有员工均拥有通用组"
+
+#. module: designer
+#: field:designer.agreement,state:0
+#: field:designer.archive,state:0
+#: field:designer.bill,state:0
+#: field:designer.card,state:0
+#: field:designer.idea,state:0
+#: field:designer.inquiry,state:0
+#: field:designer.offer,state:0
+#: field:designer.order,state:0
+#: field:designer.paper,state:0
+#: field:designer.policy,state:0
+#: field:designer.policy.line,state:0
+#: field:designer.project,state:0
+#: field:workflow.logs,status:0
+msgid "状态"
+msgstr "状态"
+
+#. module: designer
+#: selection:designer.order,project_type:0
+msgid "广告"
+msgstr "广告"
+
+#. module: designer
+#: field:designer.inquiry,partner_id:0
+#: field:designer.offer,partner_id:0
+#: model:res.groups,comment:designer.group_designer_make
+#: model:res.groups,name:designer.group_designer_make
+msgid "制作部"
+msgstr "制作部"
+
+#. module: designer
+#: view:designer.idea:0
+msgid "请确认客户签字"
+msgstr "请确认客户签字"
+
+#. module: designer
+#: field:designer.idea,project_ids:0
+#: field:designer.project,project_ids:0
+#: model:ir.actions.act_window,name:designer.open_view_project_all
+msgid "项目"
+msgstr "项目"
+
+#. module: designer
+#: view:designer.agreement:0
+#: field:designer.agreement,card_line:0
+msgid "付款方式"
+msgstr "付款方式"
+
+#. module: designer
+#: model:ir.model,name:designer.model_designer_contract_type
+msgid "designer.contract.type"
+msgstr "designer.contract.type"
+
+#. module: designer
+#: selection:designer.order,project_type:0
+msgid "印刷"
+msgstr "印刷"
+
+#. module: designer
+#: view:designer.agreement:0
+#: field:designer.agreement.rule.line,card_id:0
+#: view:designer.archive:0
+#: field:designer.archive.finished.line,finished_id:0
+#: field:designer.archive.image.line,image_id:0
+#: field:designer.archive.product.line,product_id:0
+#: field:designer.archive.sample.line,sample_id:0
+#: field:designer.archive.word.line,word_id:0
+#: view:designer.bill:0
+#: view:designer.card:0
+#: field:designer.card.line,card_id:0
+#: view:designer.idea:0
+#: view:designer.inquiry:0
+#: view:designer.offer:0
+#: field:designer.offer.line,card_id:0
+#: view:designer.order:0
+#: view:designer.paper:0
+#: view:designer.policy:0
+#: view:designer.project:0
+#: model:ir.actions.act_window,name:designer.action_designer_card
+#: model:ir.ui.menu,name:designer.menu_designer_card_report
+msgid "工作卡"
+msgstr "工作卡"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_finance
+#: model:res.groups,name:designer.group_designer_finance
+msgid "财务部"
+msgstr "财务部"
+
+#. module: designer
+#: view:designer.agreement:0
+#: view:designer.idea:0
+#: view:designer.inquiry:0
+#: view:designer.paper:0
+#: view:designer.project:0
+msgid "xxx"
+msgstr "xxx"
+
+#. module: designer
+#: field:designer.archive.finished.line,name:0
+#: field:designer.archive.image.line,name:0
+#: field:designer.archive.product.line,name:0
+#: field:designer.archive.sample.line,name:0
+#: field:designer.archive.word.line,name:0
+msgid "文件"
+msgstr "文件"
+
+#. module: designer
+#: view:designer.offer:0
+#: view:designer.order:0
+msgid "明确注明制作内容、要求、数量等信息"
+msgstr "明确注明制作内容、要求、数量等信息"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_design_manager
+#: model:res.groups,name:designer.group_designer_design_manager
+msgid "设计部总监"
+msgstr "设计部总监"
+
+#. module: designer
+#: field:designer.agreement,message_summary:0
+#: field:designer.agreement.rule.line,message_summary:0
+#: field:designer.archive,message_summary:0
+#: field:designer.archive.finished.line,message_summary:0
+#: field:designer.archive.image.line,message_summary:0
+#: field:designer.archive.product.line,message_summary:0
+#: field:designer.archive.sample.line,message_summary:0
+#: field:designer.archive.word.line,message_summary:0
+#: field:designer.bill,message_summary:0
+#: field:designer.card,message_summary:0
+#: field:designer.card.line,message_summary:0
+#: field:designer.idea,message_summary:0
+#: field:designer.inquiry,message_summary:0
+#: field:designer.offer,message_summary:0
+#: field:designer.offer.line,message_summary:0
+#: field:designer.order,message_summary:0
+#: field:designer.order.line,message_summary:0
+#: field:designer.paper,message_summary:0
+#: field:designer.policy,message_summary:0
+#: field:designer.policy.line,message_summary:0
+#: field:designer.project,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: designer
+#: field:designer.idea,advertising_tone:0
+#: help:designer.idea,advertising_tone:0
+msgid "广告格调"
+msgstr "广告格调"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_customer_manager
+#: model:res.groups,name:designer.group_designer_customer_manager
+msgid "客户部总监"
+msgstr "客户部总监"
+
+#. module: designer
+#: selection:designer.paper,state:0
+msgid "未提交"
+msgstr "未提交"
+
+#. module: designer
+#: field:designer.policy.line,line_id:0
+msgid "策略编号"
+msgstr "策略编号"
+
+#. module: designer
+#: field:designer.agreement,partner_id:0
+#: field:designer.archive,partner_id:0
+#: field:designer.bill,partner_id:0
+#: field:designer.card,partner_id:0
+#: field:designer.idea,partner_id:0
+#: field:designer.order,partner_id:0
+#: field:designer.policy,partner_id:0
+#: field:designer.project,partner_id:0
+#: model:ir.actions.act_window,name:designer.action_partner_form
+#: model:ir.ui.menu,name:designer.designer_partner_form
+msgid "客户"
+msgstr "客户"
+
+#. module: designer
+#: view:designer.bill:0
+msgid "拒绝发票"
+msgstr "拒绝发票"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_manager
+#: model:res.groups,name:designer.group_designer_manager
+msgid "总经理"
+msgstr "总经理"
+
+#. module: designer
+#: selection:designer.bill,state:0
+msgid "已领取"
+msgstr "已领取"
+
+#. module: designer
+#: selection:designer.agreement,state:0
+#: selection:designer.offer,state:0
+#: selection:designer.order,state:0
+msgid "一次确认"
+msgstr "一次确认"
+
+#. module: designer
+#: sql_constraint:designer.contract.type:0
+msgid "名称不能重复"
+msgstr "名称不能重复"
+
+#. module: designer
+#: model:ir.model,name:designer.model_oecn_font_installer
+msgid "oecn.font.installer"
+msgstr "oecn.font.installer"
+
+#. module: designer
+#: view:ir.attachment:0
+msgid "Attachments"
+msgstr "附件"
+
+#. module: designer
+#: sql_constraint:designer.offer.line:0
+msgid "此编号已被占用"
+msgstr "此编号已被占用"
+
+#. module: designer
+#: view:designer.brand:0
+#: field:designer.idea,brand_id:0
+#: model:ir.actions.act_window,name:designer.action_designer_brand
+#: model:ir.ui.menu,name:designer.menu_designer_brand_report
+msgid "品牌"
+msgstr "品牌"
+
+#. module: designer
+#: view:designer.agreement:0
+#: view:designer.offer:0
+msgid "客户确认"
+msgstr "客户确认"
+
+#. module: designer
+#: code:addons\designer\designer_bill.py:130
+#, python-format
+msgid "发票已经开出，请确认."
+msgstr "发票已经开出，请确认."
+
+#. module: designer
+#: view:designer.idea:0
+msgid "通过后，需创建提案PPT"
+msgstr "通过后，需创建提案PPT"
+
+#. module: designer
+#: field:designer.order.line,p_number:0
+msgid "P数"
+msgstr "P数"
+
+#. module: designer
+#: selection:designer.bill,state:0
+msgid "已确认"
+msgstr "已确认"
+
+#. module: designer
+#: field:designer.project,client_current_situation:0
+msgid "客户情况"
+msgstr "客户情况"
+
+#. module: designer
+#: view:designer.bill:0
+msgid "确认发票"
+msgstr "确认发票"
+
+#. module: designer
+#: view:designer.bill:0
+msgid "通知AE"
+msgstr "通知AE"
+
+#. module: designer
+#: view:designer.agreement:0
+msgid "合同草稿生成"
+msgstr "合同草稿生成"
+
+#. module: designer
+#: field:oecn.font.installer,map_ids:0
+msgid "Replace Fonts"
+msgstr "Replace Fonts"
+
+#. module: designer
+#: field:workflow.logs,employee_id:0
+msgid "人员"
+msgstr "人员"
+
+#. module: designer
+#: view:designer.paper:0
+msgid "竟稿申请搜素"
+msgstr "竟稿申请搜素"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_idea_ae
+#: model:res.groups,name:designer.group_designer_idea_ae
+msgid "创意部文案"
+msgstr "创意部文案"
+
+#. module: designer
+#: field:designer.agreement,res_id:0
+#: field:designer.archive.finished.line,res_id:0
+#: field:designer.archive.image.line,res_id:0
+#: field:designer.archive.product.line,res_id:0
+#: field:designer.archive.sample.line,res_id:0
+#: field:designer.archive.word.line,res_id:0
+#: field:designer.bill,res_id:0
+#: field:designer.idea,res_id:0
+#: field:designer.policy.line,res_id:0
+#: field:designer.project,res_id:0
+msgid "Resource ID"
+msgstr "资源 ID"
+
+#. module: designer
+#: view:designer.inquiry:0
+msgid "提交报价"
+msgstr "提交报价"
+
+#. module: designer
+#: view:designer.inquiry:0
+msgid "项目制作明细,印刷、拍摄、动画、3D、插画、摄影、网站等…"
+msgstr "项目制作明细,印刷、拍摄、动画、3D、插画、摄影、网站等…"
+
+#. module: designer
+#: field:designer.idea,role_and_aim_of_advertising:0
+#: help:designer.idea,role_and_aim_of_advertising:0
+msgid "广告的角色和意图"
+msgstr "广告的角色和意图"
+
+#. module: designer
+#: model:ir.ui.menu,name:designer.menu_designer_order_report
+msgid "制作工单"
+msgstr "制作工单"
+
+#. module: designer
+#: field:designer.card.line,subprice:0
+#: field:designer.inquiry.line,subprice:0
+#: field:designer.offer.line,subprice:0
+msgid "总价"
+msgstr "总价"
+
+#. module: designer
+#: view:designer.archive:0
+msgid "项目资料"
+msgstr "项目资料"
+
+#. module: designer
+#: field:designer.idea,critical_support:0
+#: help:designer.idea,critical_support:0
+msgid "重要支持"
+msgstr "重要支持"
+
+#. module: designer
+#: view:designer.archive:0
+msgid "项目实物"
+msgstr "项目实物"
+
+#. module: designer
+#: view:ir.attachment:0
+msgid "Creation Month"
+msgstr "创建月份"
+
+#. module: designer
+#: selection:designer.archive,state:0
+#: selection:designer.card,state:0
+#: selection:designer.idea,state:0
+#: selection:designer.inquiry,state:0
+#: selection:designer.paper,state:0
+#: selection:designer.policy,state:0
+#: selection:designer.policy.line,state:0
+#: selection:designer.project,state:0
+msgid "已完成"
+msgstr "已完成"
+
+#. module: designer
+#: field:designer.policy.line,summary:0
+#: help:designer.policy.line,summary:0
+msgid "策略概要"
+msgstr "策略概要"
+
+#. module: designer
+#: selection:designer.agreement,state:0
+#: selection:designer.archive,state:0
+#: selection:designer.bill,state:0
+#: selection:designer.card,state:0
+#: selection:designer.idea,state:0
+#: selection:designer.inquiry,state:0
+#: selection:designer.offer,state:0
+#: selection:designer.order,state:0
+#: selection:designer.paper,state:0
+#: selection:designer.policy,state:0
+#: selection:designer.policy.line,state:0
+#: selection:designer.project,state:0
+msgid "已拒绝"
+msgstr "已拒绝"
+
+#. module: designer
+#: field:designer.order.line,inside_page:0
+msgid "内页纸张(g)"
+msgstr "内页纸张(g)"
+
+#. module: designer
+#: model:ir.actions.act_window,name:designer.action_font_configuration_installer
+msgid "Configure Font Mapping"
+msgstr "Configure Font Mapping"
+
+#. module: designer
+#: field:designer.project,how_to_operating:0
+#: help:designer.project,how_to_operating:0
+msgid "如何跟进"
+msgstr "如何跟进"
+
+#. module: designer
+#: field:workflow.logs,time:0
+msgid "处理时间"
+msgstr "处理时间"
+
+#. module: designer
+#: view:designer.agreement:0
+msgid "拟写合同"
+msgstr "拟写合同"
+
+#. module: designer
+#: field:designer.bill,state_apply:0
+msgid "申请"
+msgstr "申请"
+
+#. module: designer
+#: help:designer.agreement,type:0
+#: help:designer.archive.finished.line,type:0
+#: help:designer.archive.image.line,type:0
+#: help:designer.archive.product.line,type:0
+#: help:designer.archive.sample.line,type:0
+#: help:designer.archive.word.line,type:0
+#: help:designer.bill,type:0
+#: help:designer.idea,type:0
+#: help:designer.policy.line,type:0
+#: help:designer.project,type:0
+msgid "Binary File or URL"
+msgstr "Binary File or URL"
+
+#. module: designer
+#: field:designer.paper,reason:0
+#: help:designer.paper,reason:0
+msgid "原因"
+msgstr "原因"
+
+#. module: designer
+#: view:designer.offer:0
+#: view:designer.order:0
+msgid "确认及回复制作时长等信息"
+msgstr "确认及回复制作时长等信息"
+
+#. module: designer
+#: help:designer.idea,state:0
+msgid "总监审核，并创建提案ppt.            \n"
+"ae第一次确认并给客户签字.            \n"
+" 第二次确认完稿时间."
+msgstr "总监审核，并创建提案ppt.            \n"
+"ae第一次确认并给客户签字.            \n"
+" 第二次确认完稿时间."
+
+#. module: designer
+#: field:designer.bill,state_arrive:0
+msgid "到账"
+msgstr "到账"
+
+#. module: designer
+#: field:designer.agreement,description:0
+#: field:designer.archive.finished.line,description:0
+#: field:designer.archive.image.line,description:0
+#: field:designer.archive.product.line,description:0
+#: field:designer.archive.sample.line,description:0
+#: field:designer.archive.word.line,description:0
+#: field:designer.bill,description:0
+#: field:designer.idea,description:0
+#: field:designer.policy.line,description:0
+#: field:designer.project,description:0
+msgid "Description"
+msgstr "描述"
+
+#. module: designer
+#: view:designer.idea:0
+msgid "创意简报搜素"
+msgstr "创意简报搜素"
+
+#. module: designer
+#: view:designer.archive:0
+#: field:designer.archive,product_line:0
+msgid "实物照片"
+msgstr "实物照片"
+
+#. module: designer
+#: sql_constraint:designer.order:0
+msgid "工单编号必须唯一"
+msgstr "工单编号必须唯一"
+
+#. module: designer
+#: field:designer.agreement.rule.line,note:0
+msgid "里程碑"
+msgstr "里程碑"
+
+#. module: designer
+#: help:oecn.font.installer,wrap:0
+msgid "If you are using CJK fonts,                                check this option will wrap your                                words properly at the edge of the  pdf report"
+msgstr "If you are using CJK fonts,                                check this option will wrap your                                words properly at the edge of the  pdf report"
+
+#. module: designer
+#. openerp-web
+#: code:addons\designer\code snippets\workflow_info-master\static\src\js\workflow_widget.js:25
+#: code:addons\designer\static\src\js\workflow_widget.js:25
+#: view:designer.agreement:0
+#: view:designer.archive:0
+#: view:designer.card:0
+#: view:designer.idea:0
+#: view:designer.offer:0
+#: view:designer.order:0
+#: view:designer.policy:0
+#: view:designer.project:0
+#: selection:workflow.logs,status:0
+#, python-format
+msgid "提交"
+msgstr "提交"
+
+#. module: designer
+#: field:designer.project,problem:0
+#: help:designer.project,problem:0
+msgid "面临问题"
+msgstr "面临问题"
+
+#. module: designer
+#: model:ir.actions.act_window,name:designer.action_audittrail_rule_tree
+#: model:ir.ui.menu,name:designer.designer_menu_action_audittrail_rule_tree
+msgid "跟踪规则"
+msgstr "跟踪规则"
+
+#. module: designer
+#: view:designer.idea:0
+msgid "完稿时间"
+msgstr "完稿时间"
+
+#. module: designer
+#: field:workflow.logs,job_id:0
+msgid "职位"
+msgstr "职位"
+
+#. module: designer
+#: field:designer.idea,marketing_problem_definition:0
+#: help:designer.idea,marketing_problem_definition:0
+msgid "行销问题"
+msgstr "行销问题"
+
+#. module: designer
+#: field:designer.agreement,contract_type:0
+#: view:designer.contract.type:0
+#: model:ir.actions.act_window,name:designer.action_designer_contract_type
+#: model:ir.ui.menu,name:designer.menu_designer_contract_type_report
+msgid "合同类型"
+msgstr "合同类型"
+
+#. module: designer
+#. openerp-web
+#: code:addons\designer\code snippets\osbzr_help\static\src\xml\osbzr_help.xml:6
+#, python-format
+msgid "在线中文帮助"
+msgstr "在线中文帮助"
+
+#. module: designer
+#: view:designer.agreement:0
+#: view:designer.archive:0
+#: view:designer.card:0
+#: view:designer.idea:0
+#: view:designer.inquiry:0
+#: view:designer.offer:0
+#: view:designer.order:0
+#: view:designer.paper:0
+#: view:designer.policy:0
+#: view:designer.project:0
+#: selection:workflow.logs,status:0
+msgid "拒绝"
+msgstr "拒绝"
+
+#. module: designer
+#: field:designer.agreement,url:0
+#: field:designer.archive.finished.line,url:0
+#: field:designer.archive.image.line,url:0
+#: field:designer.archive.product.line,url:0
+#: field:designer.archive.sample.line,url:0
+#: field:designer.archive.word.line,url:0
+#: field:designer.bill,url:0
+#: field:designer.idea,url:0
+#: field:designer.policy.line,url:0
+#: field:designer.project,url:0
+msgid "Url"
+msgstr "Url"
+
+#. module: designer
+#: field:designer.agreement,message_ids:0
+#: field:designer.agreement.rule.line,message_ids:0
+#: field:designer.archive,message_ids:0
+#: field:designer.archive.finished.line,message_ids:0
+#: field:designer.archive.image.line,message_ids:0
+#: field:designer.archive.product.line,message_ids:0
+#: field:designer.archive.sample.line,message_ids:0
+#: field:designer.archive.word.line,message_ids:0
+#: field:designer.bill,message_ids:0
+#: field:designer.card,message_ids:0
+#: field:designer.card.line,message_ids:0
+#: field:designer.idea,message_ids:0
+#: field:designer.inquiry,message_ids:0
+#: field:designer.offer,message_ids:0
+#: field:designer.offer.line,message_ids:0
+#: field:designer.order,message_ids:0
+#: field:designer.order.line,message_ids:0
+#: field:designer.paper,message_ids:0
+#: field:designer.policy,message_ids:0
+#: field:designer.policy.line,message_ids:0
+#: field:designer.project,message_ids:0
+msgid "Messages"
+msgstr "消息"
+
+#. module: designer
+#: view:designer.bill:0
+msgid "领取发票"
+msgstr "领取发票"
+
+#. module: designer
+#: view:designer.agreement:0
+#: view:designer.archive:0
+#: view:designer.card:0
+#: view:designer.paper:0
+#: view:designer.policy:0
+#: view:designer.project:0
+msgid "批准"
+msgstr "批准"
+
+#. module: designer
+#: field:designer.bill,invoice_head:0
+msgid "发票抬头"
+msgstr "发票抬头"
+
+#. module: designer
+#: view:oecn.font.installer:0
+msgid "Continue"
+msgstr "下一步"
+
+#. module: designer
+#: model:ir.model,name:designer.model_oecn_base_fonts_map
+msgid "The line base fonts mapping"
+msgstr "The line base fonts mapping"
+
+#. module: designer
+#: field:designer.order.line,other_craft:0
+msgid "其他工艺"
+msgstr "其他工艺"
+
+#. module: designer
+#: view:designer.project:0
+msgid "项目简报搜素"
+msgstr "项目简报搜素"
+
+#. module: designer
+#: help:designer.agreement,message_ids:0
+#: help:designer.agreement.rule.line,message_ids:0
+#: help:designer.archive,message_ids:0
+#: help:designer.archive.finished.line,message_ids:0
+#: help:designer.archive.image.line,message_ids:0
+#: help:designer.archive.product.line,message_ids:0
+#: help:designer.archive.sample.line,message_ids:0
+#: help:designer.archive.word.line,message_ids:0
+#: help:designer.bill,message_ids:0
+#: help:designer.card,message_ids:0
+#: help:designer.card.line,message_ids:0
+#: help:designer.idea,message_ids:0
+#: help:designer.inquiry,message_ids:0
+#: help:designer.offer,message_ids:0
+#: help:designer.offer.line,message_ids:0
+#: help:designer.order,message_ids:0
+#: help:designer.order.line,message_ids:0
+#: help:designer.paper,message_ids:0
+#: help:designer.policy,message_ids:0
+#: help:designer.policy.line,message_ids:0
+#: help:designer.project,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: designer
+#: view:designer.bill:0
+msgid "发票搜素"
+msgstr "发票搜素"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_make_manager
+#: model:res.groups,name:designer.group_designer_make_manager
+msgid "制作部总监"
+msgstr "制作部总监"
+
+#. module: designer
+#: model:res.groups,comment:designer.group_designer_finance_ae
+#: model:res.groups,name:designer.group_designer_finance_ae
+msgid "财务部业务员"
+msgstr "财务部业务员"
+
+#. module: designer
+#: view:designer.policy:0
+msgid "细节，包括制作工艺"
+msgstr "细节，包括制作工艺"
+
+#. module: designer
+#: field:workflow.logs,uid:0
+msgid "用户"
+msgstr "用户"
+
+#. module: designer
+#: help:designer.project,client_current_situation:0
+msgid "包括企业背景，历史沿革、经营范围、行业地位、品牌发展状况、产品销售状况、产品特点、价格、消费者关系、通路状况、行销计划、包装策略、当前广告表现、以往广告等"
+msgstr "包括企业背景，历史沿革、经营范围、行业地位、品牌发展状况、产品销售状况、产品特点、价格、消费者关系、通路状况、行销计划、包装策略、当前广告表现、以往广告等"
+
+#. module: designer
+#: view:base.config.settings:0
+msgid "Configure fonts mapping for pdf report"
+msgstr "Configure fonts mapping for pdf report"
+
+#. module: designer
+#: model:ir.model,name:designer.model_ir_mail_server
+msgid "ir.mail_server"
+msgstr "ir.mail_server"
+
+#. module: designer
+#: field:designer.agreement,datas_fname:0
+#: field:designer.archive.finished.line,datas_fname:0
+#: field:designer.archive.image.line,datas_fname:0
+#: field:designer.archive.product.line,datas_fname:0
+#: field:designer.archive.sample.line,datas_fname:0
+#: field:designer.archive.word.line,datas_fname:0
+#: field:designer.bill,datas_fname:0
+#: field:designer.idea,datas_fname:0
+#: field:designer.policy.line,datas_fname:0
+#: field:designer.project,datas_fname:0
+msgid "File Name"
+msgstr "文件名"
+
+#. module: designer
+#: model:ir.model,name:designer.model_ir_module_module
+msgid "Module"
+msgstr "模块"
+
+#. module: designer
+#: field:designer.project,create_uid:0
+msgid "简报撰写人"
+msgstr "简报撰写人"
+
+#. module: designer
+#: field:designer.agreement,name:0
+#: field:designer.bill,name:0
+msgid "Attachment Name"
+msgstr "附件名"
+
+#. module: designer
+#: model:ir.model,name:designer.model_designer_agreement
+#: model:ir.model,name:designer.model_designer_agreement_rule_line
+#: model:ir.model,name:designer.model_designer_archive
+#: model:ir.model,name:designer.model_designer_archive_finished_line
+#: model:ir.model,name:designer.model_designer_archive_image_line
+#: model:ir.model,name:designer.model_designer_archive_product_line
+#: model:ir.model,name:designer.model_designer_archive_sample_line
+#: model:ir.model,name:designer.model_designer_archive_word_line
+#: model:ir.model,name:designer.model_designer_bill
+#: model:ir.model,name:designer.model_designer_card
+#: model:ir.model,name:designer.model_designer_card_line
+#: model:ir.model,name:designer.model_designer_idea
+#: model:ir.model,name:designer.model_designer_inquiry
+#: model:ir.model,name:designer.model_designer_offer
+#: model:ir.model,name:designer.model_designer_offer_line
+#: model:ir.model,name:designer.model_designer_order
+#: model:ir.model,name:designer.model_designer_order_line
+#: model:ir.model,name:designer.model_designer_paper
+#: model:ir.model,name:designer.model_designer_policy
+#: model:ir.model,name:designer.model_designer_policy_line
+#: model:ir.model,name:designer.model_designer_project
+msgid "Email Thread"
+msgstr "邮件链"
+
+#. module: designer
+#: model:res.groups,name:designer.group_designer_base_user
+msgid "武汉德客天工员工通用组"
+msgstr "武汉德客天工员工通用组"
+

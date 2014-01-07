@@ -33,6 +33,7 @@ class designer_bill(osv.osv):
     _inherit = ['mail.thread','ir.attachment']
 
     _columns = {
+        'name': fields.char('附件名',size=256),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         'partner_id':fields.many2one('res.partner', '客户', required=True,
             change_default=True, track_visibility='always'),
@@ -76,6 +77,7 @@ class designer_bill(osv.osv):
     _order = 'id desc'
 
     _defaults = {
+        'name':'附件',
         'state': lambda *a: 'draft',
         'state_apply': 'false',
         'state_make_out': 'false',

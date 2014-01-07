@@ -29,6 +29,8 @@
                                     <field name="line_no"/>
                                     <field name="name"/>
                                     <field name="note"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="datas" filename="datas_fname" invisible="1" />
                                     <field name="datas_fname"/>
                                 </tree>
                         </field>
@@ -37,6 +39,8 @@
                                     <field name="line_no"/>
                                     <field name="name"/>
                                     <field name="note"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="datas" filename="datas_fname" invisible="1"/>
                                     <field name="datas_fname"/>
                                 </tree>
                         </field>
@@ -46,6 +50,8 @@
                                     <field name="line_no"/>
                                     <field name="name"/>
                                     <field name="note"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="datas" filename="datas_fname" invisible="1" />
                                     <field name="datas_fname"/>
                                 </tree>
                         </field>
@@ -54,6 +60,8 @@
                                     <field name="line_no"/>
                                     <field name="name"/>
                                     <field name="note"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="datas" filename="datas_fname" invisible="1" />
                                     <field name="datas_fname"/>
                                 </tree>
                         </field>
@@ -63,6 +71,8 @@
                                     <field name="line_no"/>
                                     <field name="name"/>
                                     <field name="note"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="datas" filename="datas_fname" invisible="1" />
                                     <field name="datas_fname"/>
                                 </tree>
                         </field>
@@ -140,6 +150,7 @@
             <tree  string="工作卡物料单">
                 <field name="name"/>
                 <field name="line_no"/>
+                <field name="datas" filename="datas_fname"/>
                 <field name="datas_fname" />
                 <field name="note"/>
             </tree>
@@ -173,6 +184,7 @@
             <tree  string="工作卡物料单">
                 <field name="name"/>
                 <field name="line_no"/>
+                 <field name="datas" filename="datas_fname"/>
                 <field name="datas_fname" />
                 <field name="note"/>
             </tree>

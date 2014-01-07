@@ -21,6 +21,7 @@
 import openerp.addons.web.http as openerpweb
 from openerp.addons.web.controllers.main import Reports
 import urllib
+import main
 
 class WebPdfReports(Reports):
     _cp_path = "/web/report/pdf"

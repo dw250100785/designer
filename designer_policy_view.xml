@@ -27,7 +27,7 @@
                             <field name="note"/>
                             <separator string="创意策略" colspan="4"/>
                             <field name="policy_line">
-                                    <tree editable="bottom" string="创意策略列表">
+                                    <tree  string="创意策略列表">
                                         <field name="line_no"/>
                                         <field name="name"/>
                                         <field name="summary"/>

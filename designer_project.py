@@ -102,7 +102,7 @@ class designer_project(osv.osv):
             readonly=True),
     }
     _sql_constraints = [
-        ('name', 'unique(name)', 'The name of the idea must be unique')
+        ('name', 'unique(name)', '项目简报名称必填')
     ]
     _defaults = {
         'state': lambda *a: 'draft',

@@ -26,6 +26,7 @@ import time
 class designer_policy(osv.osv):
     """ 创意策略"""
     _name = 'designer.policy'
+    _description = u'创意策略'
     _inherit = ['mail.thread']
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),

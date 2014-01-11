@@ -30,6 +30,7 @@ import workflow_func
 class designer_inquiry(osv.osv):
     """询价单"""
     _name = "designer.inquiry"
+    _description = u'询价单'
     _inherit = ['mail.thread']
 
     def _get_seq(self, cr, uid, ids, context=None):

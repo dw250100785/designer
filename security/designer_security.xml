@@ -31,7 +31,7 @@
     <record id="group_designer_base_user" model="res.groups">
         <field name="name">武汉德客天工员工通用组</field>
         <field name="category_id" ref="module_category_designer_wuhan"/>
-        <field name="implied_ids" eval="[(4, ref('base.group_user')),(4, ref('project.group_project_user'))]"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user')),(4, ref('project.group_project_user')),(4, ref('base.group_document_user'))]"/>
         <field name="comment">所有员工均拥有通用组</field>
     </record>
 

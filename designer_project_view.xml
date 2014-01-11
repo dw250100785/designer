@@ -116,6 +116,16 @@
                         <field name="work_id"/>
                     </div>
                  </notebook>
+                <xpath expr="//button[@name='set_template']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//button[@name='duplicate_template']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="/form/sheet/group[1]" position="replace">
+                    <label for="partner_id"/>
+                    <field name="partner_id" on_change="onchange_partner_id(partner_id)"/>
+                </xpath>
             </field>
        </record>
 

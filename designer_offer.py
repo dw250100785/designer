@@ -28,6 +28,7 @@ import time
 class designer_offer(osv.osv):
     """ 自定义的报价单"""
     _name = "designer.offer"
+    _description = u'报价单'
     _inherit = ['mail.thread']
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),

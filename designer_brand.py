@@ -27,6 +27,7 @@ import time
 class designer_brand(osv.osv):
     """ 品牌"""
     _name = 'designer.brand'
+    _description = u'品牌'
     _columns = {
         'name': fields.char('品牌名称', size=64, required=True),
         'comment': fields.text('备注', help='品牌备注'),

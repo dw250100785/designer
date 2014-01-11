@@ -34,6 +34,7 @@ _logger = logging.getLogger()
 class designer_contract_type(osv.osv):
     """ 品牌"""
     _name = 'designer.contract.type'
+    _description = u'品牌'
     _columns = {
         'name': fields.char('名称', size=64, required=True),
         'comment': fields.text('备注', help='备注'),
@@ -50,6 +51,7 @@ class designer_agreement(osv.osv):
     """ 扩展发票管理"""
 
     _name = "designer.agreement"
+    _description = u'合同'
     _inherit = ['mail.thread','ir.attachment']
 
     def _get_seq(self, cr, uid, ids, context=None):
@@ -219,7 +221,7 @@ class designer_agreement(osv.osv):
         'partner_id':fields.many2one('res.partner', '客户', required=True,
             change_default=True, track_visibility='always'),
         'contract_type': fields.many2one('designer.contract.type',string='合同类型', required=True),
-        'offer_ids': fields.many2one('designer.offer', string='报价单'),#合同金额跟报价单的关系  related
+        'offer_ids': fields.many2one('designer.offer', string='报价单', domain="[('state', '=', verify2)]" ),#合同金额跟报价单的关系  related
        # 'contract_amount': fields.float('合同金额', digits_compute=dp.get_precision('contract_amount'),required=True),
         'contract_amount': fields.function(_cal_contract_amount_by_offer,type='float',method="true", relation='designer.offer',string='合同金额',store=True,digits_compute=dp.get_precision('contract_amount')),
         'contract_amount_big': fields.function(_cal_contract_amount_big_by_offer,type='char',method="true", relation='designer.offer',string='合同金额大写',store=True),

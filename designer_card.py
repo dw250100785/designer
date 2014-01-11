@@ -29,6 +29,7 @@ import time
 class designer_card(osv.osv):
     """ 项目工作卡"""
     _name = 'designer.card'
+    _description = u'工作卡'
     _inherit = ['mail.thread']
 
     def _get_seq(self, cr, uid, ids, context=None):

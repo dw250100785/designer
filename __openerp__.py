@@ -60,6 +60,7 @@
     'data': [
         'security/designer_security.xml',                       #权限组
         'security/designer_rule.xml',                           #访问规则
+        'security/access_designer_base/ir.model.access.csv',    #通用组权限
         'security/access_workflow_log/ir.model.access.csv',     #工作流审批记录
         'security/access_agreement/ir.model.access.csv',
         'security/access_archive/ir.model.access.csv',

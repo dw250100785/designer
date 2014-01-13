@@ -38,7 +38,7 @@ class project_project(osv.osv):
         }
 
     _defaults = {
-        'name': 'project',
+        'name': '项目名称',
     }
 
 project_project()

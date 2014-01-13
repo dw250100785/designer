@@ -25,6 +25,8 @@ from openerp.osv import osv
 from openerp.osv import fields
 from openerp.tools.translate import _
 import time
+from openerp.addons.workflow_info import workflow_func
+
 
 class designer_order(osv.osv):
     """ 工单"""
@@ -61,7 +63,14 @@ class designer_order(osv.osv):
             ('logo', 'LOGO'),
             ('ad', '广告'),],
             '项目类型', track_visibility='onchange',
-        )
+        ),
+        #工作流审批以及记录
+        'wkf_logs':fields.function(
+            workflow_func._get_workflow_logs,
+            string='审批记录',
+            type='one2many',
+            relation="workflow.logs",
+            readonly=True),
     }
     _rec_name = 'name'
     _sql_constraints = [

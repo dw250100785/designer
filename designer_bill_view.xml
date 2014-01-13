@@ -21,12 +21,14 @@
 
                         <button name="designer_bill_notifer" string="通知AE"      states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务开出发票并通知ae-->
                         <button name="designer_bill_makeout" string="开出发票"    states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务开出-->
-                        <!--共享拒绝操作-->
-                        <button name="designer_bill_refuse" string="拒绝发票"     states="send,makeout,accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
+                        <button name="designer_bill_refuse" string="拒绝发票"     states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
 
                         <button name="designer_bill_accept" string="领取发票"     states="makeout" class="oe_highlight" groups="designer.group_designer_customer_ae"/><!--客户部ae领取-->
+                        <button name="designer_bill_refuse" string="拒绝发票"     states="makeout" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
 
                         <button name="designer_bill_done" string="确认发票"       states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务确认发票-->
+                        <button name="designer_bill_refuse" string="拒绝发票"     states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
+
                         <field name="state" widget="statusbar" statusbar_visible="draft,refuse,accept,makeout,done"/>
                     </header>
                     <sheet>

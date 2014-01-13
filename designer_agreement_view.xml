@@ -28,7 +28,7 @@
                         </group>
                         <group>
                             <group>
-                                <field name="no"/>
+                                <field name="name"/>
                                 <field name="partner_id"/><!--查看并选择自己的客户-->
                                 <field name="contract_type"/>
                                 <field name="offer_ids" />
@@ -75,6 +75,7 @@
             <field name="arch" type="xml">
                 <tree string="合同">
                     <field name="work_id"/>
+                    <field name="name"/>
                     <field name="partner_id"/>
                     <field name="contract_type"/>
                     <field name="offer_ids"/>

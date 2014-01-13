@@ -23,7 +23,7 @@ from openerp.osv import osv
 from openerp.osv import fields
 from openerp.tools.translate import _
 import time
-import workflow_func
+from openerp.addons.workflow_info import workflow_func
 
 class designer_paper(osv.osv):
     """ 竟稿申请"""

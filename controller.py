@@ -18,6 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp.osv.osv import except_osv
 
 import openerp.pooler as pooler
 
@@ -27,7 +28,7 @@ import openerp.modules.registry
 from openerp.tools.translate import _
 from openerp.tools import config
 from openerp import SUPERUSER_ID
-import web.http as openerpweb
+import openerp.addons.web.http as openerpweb
 
 
 #----------------------------------------------------------
@@ -36,6 +37,7 @@ import web.http as openerpweb
 
 
 class WklDataSet(openerpweb.Controller):
+    #workflow  comment
     _cp_path = "/web/designer"  #指向当前模块  js调用
 
     @openerpweb.jsonrequest

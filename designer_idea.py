@@ -23,7 +23,7 @@ from openerp.osv import osv
 from openerp.osv import fields
 from openerp.tools.translate import _
 import time
-import workflow_func
+from openerp.addons.workflow_info import workflow_func
 
 class designer_idea(osv.osv):
     """ 创意简报"""
@@ -72,7 +72,7 @@ class designer_idea(osv.osv):
             readonly=True),
     }
     _sql_constraints = [
-        ('name', 'unique(name)', 'The name of the idea must be unique')
+       # ('name', 'unique(name)', 'The name of the idea must be unique')
     ]
     _defaults = {
         'state': lambda *a: 'draft',

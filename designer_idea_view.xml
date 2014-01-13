@@ -9,11 +9,17 @@
                 <form string="创意简报" version="7.0">
                     <header>
                         <button name="designer_idea_submit" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae,designer.group_designer_idea_ae,designer.group_designer_design_ae" help = "给总监（创意、设计）审核" />
+
                         <button name="designer_idea_confirmed" string="总监审核" type="workflow_ok"  states="open" class="oe_highlight" groups="designer.group_designer_idea_manager,designer.group_designer_design_manager" help = "通过后，需创建提案PPT" /><!--创意部 设计部 总监审核-->
+                        <button name="designer_idea_cancel" string="拒绝"  type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_idea_manager,designer.group_designer_design_manager"  />
+
                         <button name="designer_idea_verify1" string="确认(1)"  type="workflow_ok" states="confirmed" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "请确认客户签字" />
+                        <button name="designer_idea_cancel" string="拒绝"  type="workflow_no" states="confirmed"  class="oe_highlight" groups="designer.group_designer_customer_ae"  />
+
                         <button name="designer_idea_verify2" string="确认(2)"  type="workflow_ok" states="verify1" class="oe_highlight" groups="designer.group_designer_customer_ae,designer.group_designer_idea_ae,designer.group_designer_design_ae" help = "完稿时间" />
-                        <!--拒绝按钮共享了,需要额外添加 迁移才行-->
-                        <button name="designer_idea_cancel" string="拒绝"  type="workflow_no" states="open,confirmed,verify1"  class="oe_highlight" groups="designer.group_designer_customer_ae,designer.group_designer_idea_ae,designer.group_designer_design_ae"  />
+                        <button name="designer_idea_cancel" string="拒绝"  type="workflow_no" states="verify1"  class="oe_highlight" groups="designer.group_designer_customer_ae,designer.group_designer_idea_ae,designer.group_designer_design_ae"  />
+
+
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,confirmed,verify1,cancel,done"/>
                     </header>
                     <sheet>

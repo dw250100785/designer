@@ -23,18 +23,20 @@ from openerp.osv import osv
 from openerp.osv import fields
 from openerp.tools.translate import _
 import time
-import workflow_func
+from openerp.addons.workflow_info import workflow_func
 from openerp.addons.base.ir import ir_attachment
-
+from openerp.addons.project.project import project
 #添加工作卡
 
 class project_project(osv.osv):
     _name = 'project.project'
     _description = "project_project"
-    _inherit = "project.project"
+    _inherit = ['project.project','ir.attachment']
     _columns = {
+        'name': fields.function(project._complete_name, string="Project Name", type='char', size=250),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         }
+
 project_project()
 
 class designer_project(osv.osv):

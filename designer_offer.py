@@ -24,6 +24,7 @@ from openerp.osv import osv
 from openerp.osv import fields
 from openerp.tools.translate import _
 import time
+from openerp.addons.workflow_info import workflow_func
 
 class designer_offer(osv.osv):
     """ 自定义的报价单"""
@@ -46,6 +47,13 @@ class designer_offer(osv.osv):
             ('cancel', '已拒绝')],
             '状态', readonly=True, track_visibility='onchange',
         ),
+        #工作流审批以及记录
+        'wkf_logs':fields.function(
+            workflow_func._get_workflow_logs,
+            string='审批记录',
+            type='one2many',
+            relation="workflow.logs",
+            readonly=True),
     }
 
     _rec_name = 'name'

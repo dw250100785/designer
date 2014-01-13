@@ -27,13 +27,16 @@
     'sequence': 300,
     'summary': '武汉设计师广告行业管理软件',
     'maintainer': '250100785@qq.com',
-    'description':
-"""
- 武汉设计师广告行业管理软件
+    'description': """
+
+    武汉设计师广告行业管理软件
+
         系统要求：
+
             openerp7.0
 
         功能:
+
        * 1. 集成中文报表打印
        * 2. 自动初始化中国特色设置，时间，货币，时区
        * 3. 导入淘宝产品, 同步库存
@@ -56,11 +59,19 @@
         'project',                  #项目任务管理 项目阶段，文档，讨论
         'document',                 #文档管理
         'audittrail',               #使用审核跟踪
+
+        #other
+        #工作流审批
+        'workflow_info',
+        #pdf打印 兼容中文
+        #pdf直接浏览器查看
+        #去掉openerp 版权提示
+
+        #隐藏登录页数据库
         ],
+
     'data': [
         'security/designer_security.xml',                       #权限组
-
-        #bugs cannot read  partner
         #'security/designer_rule.xml',                           #访问规则
         'security/access_designer_base/ir.model.access.csv',    #通用组权限
         'security/access_workflow_log/ir.model.access.csv',     #工作流审批记录
@@ -77,8 +88,6 @@
         'security/access_kehu_ae/ir.model.access.csv',#针对客户部AE
         'security/access_card/ir.model.access.csv',
         'cn_auto_setup.xml', #中国化
-        "oecn_font_installer.xml",#中文报表打印
-        "res_config_view.xml",#中文报表打印
         'designer_user.xml',
         'base_menu.xml',
         'audittrail_log.xml',#审核跟踪
@@ -107,12 +116,12 @@
     ],
     'update_xml': [],
     'js': [
-        'static/src/js/*.js' #工作流审批记录   暂时不将 workflow_info模块进行兼容！！！
-        'static/src/js/web_pdf_preview.js'#报表在线预览打印
+        #'static/src/js/*.js' #工作流审批记录   暂时不将 workflow_info模块进行兼容！！！
+
     ],
     'css': [],
     'qweb': [
-        'static/src/xml/*.xml',#工作流审批记录
+        #'static/src/xml/*.xml',#工作流审批记录
     ],
     'demo': [],
     'test':[],
@@ -120,8 +129,8 @@
     'installable': True,
     'auto_install': False,
     'images': [],
-    'web_preload': True,#报表直接预览打印
-    'certificate' : '001292377792581874189',
+    #'web_preload': True,#报表直接预览打印
+    'certificate' : '',
     "license": "GPL-3",
     "active": False,
 }

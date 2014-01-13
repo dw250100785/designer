@@ -28,7 +28,7 @@ from openerp.osv import fields
 from openerp.tools.translate import _
 import math
 import time
-import workflow_func
+from openerp.addons.workflow_info import workflow_func
 
 _logger = logging.getLogger()
 class designer_contract_type(osv.osv):
@@ -36,7 +36,7 @@ class designer_contract_type(osv.osv):
     _name = 'designer.contract.type'
     #双引号
     #_description = "Employee"
-    _description = u"品牌"
+    _description = "designer_contract_type"
     _columns = {
         'name': fields.char('名称', size=64, required=True),
         'comment': fields.text('备注', help='备注'),
@@ -55,6 +55,7 @@ class designer_agreement(osv.osv):
     _name = "designer.agreement"
     _description = "designer_agreement"
     _inherit = ['mail.thread','ir.attachment']
+    #继承了ir.attachment   name字段必须要有！！！
 
     def _get_seq(self, cr, uid, ids, context=None):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.agreement')
@@ -218,12 +219,13 @@ class designer_agreement(osv.osv):
 
 
     _columns = {
+        'name': fields.char('合同编号', required=True,),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
-        'no': fields.char('合同编号', required=True,),
+        #'no': fields.char('合同编号', required=True,), #解决继承了附件之后 name必填 bug
         'partner_id':fields.many2one('res.partner', '客户', required=True,
             change_default=True, track_visibility='always'),
         'contract_type': fields.many2one('designer.contract.type',string='合同类型', required=True),
-        'offer_ids': fields.many2one('designer.offer', string='报价单', domain="[('state', '=', verify2)]" ),#合同金额跟报价单的关系  related
+        'offer_ids': fields.many2one('designer.offer','报价单',domain = [('state','=','verify2')] ),#合同金额跟报价单的关系  related
        # 'contract_amount': fields.float('合同金额', digits_compute=dp.get_precision('contract_amount'),required=True),
         'contract_amount': fields.function(_cal_contract_amount_by_offer,type='float',method="true", relation='designer.offer',string='合同金额',store=True,digits_compute=dp.get_precision('contract_amount')),
         'contract_amount_big': fields.function(_cal_contract_amount_big_by_offer,type='char',method="true", relation='designer.offer',string='合同金额大写',store=True),
@@ -248,10 +250,10 @@ class designer_agreement(osv.osv):
 
 
     }
-    _rec_name = "no"
+    _rec_name = "name"
 
     _defaults = {
-        "no":_get_seq ,
+        "name":_get_seq ,
         'state': lambda *a: 'draft',
 
     }

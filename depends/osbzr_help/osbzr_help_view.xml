@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="oecn_help_from_view">
+            <field name="name">osbzr.help.form</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.module_form"/>
+            <field name="model">ir.module.module</field>
+            <field name="arch" type="xml">
+                <field name="installed_version" position="after">
+                    <button name="open_osbzr_help" type="object" string="在线中文帮助" icon="gtk-help"/>
+                </field>
+            </field>
+        </record>
+</data>
+</openerp>

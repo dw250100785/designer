@@ -2,7 +2,7 @@
  * workflow 增强
  * Copyright 2013 yeahliu <talent_qiao@163.com>
  *---------------------------------------------------------*/
-openerp.designer = function(instance) {
+openerp.workflow_info = function(instance) {
     var _t = instance.web._t,
         _lt = instance.web._lt;
     var QWeb = instance.web.qweb;
@@ -23,7 +23,7 @@ openerp.designer = function(instance) {
 	    		},	QWeb.render("textbox_pft_wkl"));
 	    		buttons=[
 					                {text: _t("提交"), click: function() { 
-						                	return instance.session.rpc('/web/designer/info', {
+						                	return instance.session.rpc('/web/workflow_info/info', {
 										            model: dataset.model,
 										            id: record_id, // wkf_instance id
 										            signal: action_data.name,
@@ -41,7 +41,7 @@ openerp.designer = function(instance) {
 	    		dialog._add_buttons(buttons);
 	    		dialog.open();
 	    	} else if (action_data.type == "workflow_submit"){
-	    		return instance.session.rpc('/web/designer/info', {
+	    		return instance.session.rpc('/web/workflow_info/info', {
 										            model: dataset.model,
 										            id: record_id, // wkf_instance id
 										            signal: action_data.name,

@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <form string="工作卡物料单" version="7.0">
                     <header>
-                        <button name="designer_inquiry_open" string="开启" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "项目制作明细,印刷、拍摄、动画、3D、插画、摄影、网站等…"/>
+                        <button name="designer_inquiry_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "项目制作明细,印刷、拍摄、动画、3D、插画、摄影、网站等…"/>
 
                         <button name="designer_inquiry_close" string="提交报价" type="workflow_ok" states="open"  class="oe_highlight" groups="designer.group_designer_make_ae" help = "客户签字" />
                         <button name="designer_inquiry_cancel" string="拒绝"  type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_make_ae"  help = "客户签字" />

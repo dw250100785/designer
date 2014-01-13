@@ -4,9 +4,12 @@ import simplejson
 import openerp.addons.web.controllers.main as main
 from openerp.addons.web_pdf_preview.controllers.main import content_disposition
 import openerp.addons.web.http as openerpweb
-
+from openerp.addons.web.controllers.main import Reports
+import urllib
+import openerp.addons.web.http as openerpweb
 
 class Binary2(main.Binary):
+    #fix one2many  attachments download bin bugs
     _cp_path = "/web/binary"
 
     @openerpweb.httprequest

@@ -41,6 +41,16 @@
                                     </tree>
                             </field>
                         </group>
+                        <group>
+                        <field name="wkf_logs">
+                                <tree string="xxx" colors="red:status== 'no'">
+                                    <field name="uid"/>
+                                    <field name="time" />
+                                    <field name="status"/>
+                                    <field name="info"/>
+                                </tree>
+                        </field>
+                    </group>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>

@@ -111,6 +111,10 @@
             <field name="inherit_id" ref="project.edit_project"/><!--ref project 前面是 class name -->
             <field name="arch" type="xml">
                  <notebook position="before">
+                     <group>
+                         <field name="datas"  filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','!=','draft')]}" />
+                         <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
+                     </group>
                     <label for="work_id"/>
                     <div name="work_id">
                         <field name="work_id"/>
@@ -123,8 +127,9 @@
                     <attribute name="invisible">True</attribute>
                 </xpath>
                 <xpath expr="/form/sheet/group[1]" position="replace">
-                    <label for="partner_id"/>
-                    <field name="partner_id" on_change="onchange_partner_id(partner_id)"/>
+                    <group>
+                        <field name="partner_id" string="客户" on_change="onchange_partner_id(partner_id)"/>
+                    </group>
                 </xpath>
             </field>
        </record>

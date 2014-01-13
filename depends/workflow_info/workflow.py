@@ -24,26 +24,11 @@ from openerp.tools.translate import _
 from openerp import netsvc
 
 
-#系统用户添加工作流
+
 class wkf_logs(osv.osv):
     _name = "workflow.logs"
     _table = "wkf_logs"
     _order = "id desc"
-
-    def _get_employee(self, cr, uid, ids, field_name, args, context=None):
-        res = {}
-        for log in self.browse(cr,uid,ids,context=context):
-            if log.uid.employee_ids:
-                res[log.id] = log.uid.employee_ids[0].id
-        return res
-
-    def _get_job(self, cr, uid, ids, field_name, args, context=None):
-        res = {}
-        for log in self.browse(cr,uid,ids,context=context):
-            if log.uid.employee_ids and len(log.uid.employee_ids)>=1 :
-                res[log.id] = log.uid.employee_ids[0].job_id.id
-        return res
-
     _columns = {
         'res_type': fields.char('资源类型', size=256, required=True),
         'res_id': fields.integer('资源ID',  required=True),
@@ -51,11 +36,7 @@ class wkf_logs(osv.osv):
         'act_id': fields.many2one('workflow.activity', '工作流阶段'),
         'time': fields.datetime('处理时间'),
         'info': fields.text('记录'),
-        'status':fields.selection([('ok','通过'),('no','拒绝'),('submit','提交')],'状态'),
-        'employee_id': fields.function(_get_employee, string='人员', type='many2one',
-                                relation="hr.employee"),
-        'job_id':fields.function(_get_job, string='职位', type='many2one',
-                                relation="hr.job"),
+        'status':fields.selection([('ok','通过'),('no','拒绝'),('submit','提交')],'状态'),        
     }
 
 wkf_logs()

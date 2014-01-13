@@ -36,24 +36,8 @@ import designer_bill   #发票
 import designer_agreement   #合同
 import cn_auto_select_smtp  #中国化
 import cn_auto_setup        #中国化   自动安装
+import controllers    #one2many attachments 附件下载bug
 
-"""
-openerp工作流增强，在审批或拒绝过程中，可以输入审批信息，同时记录审批记录
-"""
-
-import controller
-import workflow
-import workflow_func
-#end
-"""
-openerp 中文报表打印
-"""
-import oecn_font_installer
-
-"""
-在线预览并打印 pdf报表
-"""
-from . import controllers
 
 
 

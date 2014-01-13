@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 project_designer_customer_ae,project_designer_customer_ae,model_designer_project,group_designer_customer_ae,1,1,1,1
 project_designer_customer_manager,project_designer_customer_manager,model_designer_project,group_designer_customer_manager,1,0,0,0
 project_designer_manager,project_designer_manager,model_designer_project,group_designer_manager,1,0,0,0
+project_designer_idea_ae,project_designer_idea_ae,model_designer_project,group_designer_idea_ae,1,1,0,0
+project_designer_design_ae,project_designer_design_ae,model_designer_project,group_designer_design_ae,1,1,0,0

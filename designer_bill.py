@@ -30,7 +30,7 @@ import pdb #debug
 class designer_bill(osv.osv):
     """ 发票管理"""
     _name = "designer.bill"
-    _description = u'发票'
+    _description = u"发票"
     _inherit = ['mail.thread','ir.attachment']
 
     _columns = {

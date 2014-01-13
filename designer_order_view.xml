@@ -21,6 +21,10 @@
                     </header>
                     <sheet>
                         <group>
+                            <!--确认完成才需要提交客户签字-->
+                            <field name="datas"  filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','verify2')]}" />
+                            <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
+
                             <field name="work_id"/>
                         </group>
                         <label for="project_type"/>

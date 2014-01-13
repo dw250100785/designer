@@ -29,7 +29,7 @@ import time
 class designer_card(osv.osv):
     """ 项目工作卡"""
     _name = 'designer.card'
-    _description = u'工作卡'
+    _description = "designer_card"
     _inherit = ['mail.thread']
 
     def _get_seq(self, cr, uid, ids, context=None):
@@ -54,7 +54,9 @@ class designer_card(osv.osv):
             ('cancel', '已拒绝'),
             ('close', '已完成')],
             '状态', readonly=True, track_visibility='onchange',
-        )
+        ),
+        'idea_id': fields.many2one('res.users','创意部负责人',),
+        'design_id': fields.many2one('res.users','设计部负责人',),
     }
     _rec_name = 'card_no'
     _sql_constraints = [

@@ -16,6 +16,8 @@
                     </header>
                     <sheet>
                         <group>
+                            <field name="datas"  filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','open')]}" />
+                            <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
                             <field name="work_id"/>
                         </group>
                         <label for="policy_no"/>
@@ -31,8 +33,6 @@
                                         <field name="line_no"/>
                                         <field name="name"/>
                                         <field name="summary"/>
-                                        <field name="datas" filename="datas_fname"/>
-                                        <field name="datas_fname" invisible="1" class="oe_inline oe_right"/>
                                         <field name="datas_fname"/>
                                         <field name="state"/>
                                     </tree>

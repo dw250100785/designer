@@ -34,7 +34,9 @@ _logger = logging.getLogger()
 class designer_contract_type(osv.osv):
     """ 品牌"""
     _name = 'designer.contract.type'
-    _description = u'品牌'
+    #双引号
+    #_description = "Employee"
+    _description = u"品牌"
     _columns = {
         'name': fields.char('名称', size=64, required=True),
         'comment': fields.text('备注', help='备注'),
@@ -51,7 +53,7 @@ class designer_agreement(osv.osv):
     """ 扩展发票管理"""
 
     _name = "designer.agreement"
-    _description = u'合同'
+    _description = "designer_agreement"
     _inherit = ['mail.thread','ir.attachment']
 
     def _get_seq(self, cr, uid, ids, context=None):

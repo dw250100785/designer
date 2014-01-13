@@ -29,7 +29,7 @@ import time
 class designer_archive(osv.osv):
     """ 项目备档单"""
     _name = 'designer.archive'
-    _description = u'项目备档单'
+    _description = "designer_archive"
     _inherit = ['mail.thread']
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),

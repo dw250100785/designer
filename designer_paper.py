@@ -29,7 +29,7 @@ class designer_paper(osv.osv):
     """ 竟稿申请"""
     _name = 'designer.paper'
     #如果不定义_description，那么所有的对象对外描述自动继承了 mail.thread  显示为  邮件链
-    _description = u'竟稿申请'
+    _description = "designer_paper"
     _inherit = ['mail.thread']
 
     def _get_seq(self, cr, uid, ids, context=None):

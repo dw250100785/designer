@@ -130,6 +130,10 @@
                         <button name="designer_card_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae"/>
                         <button name="designer_card_close" string="批准" states="open" class="oe_highlight" groups="designer.group_designer_customer_manager" />
                         <button name="designer_card_cancel" string="拒绝" states="open"  class="oe_highlight" groups="designer.group_designer_customer_manager"/>
+                        <!--分配工作卡-->
+                        <button name="designer_card_fenpei_idea" string="创意总监分配" states="close"  class="oe_highlight" groups="designer.group_designer_idea_manager"/>
+                        <button name="designer_card_fenpei_designer" string="设计总监分配" states="close"  class="oe_highlight" groups="designer.group_designer_design_manager"/>
+
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
                     </header>
                     <sheet>
@@ -158,6 +162,11 @@
 
                             <button name="%(act_designer_card_2_designer_archive)d" string="项目备档单" type="action" style="width:100px;height:24px"/>
                         </div>
+                        <label for="idea_id" string="创意总监分配"/>
+                        <field name="idea_id" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','close')]}" />
+                        <label for="design_id" string="设计总监分配"/>
+                        <field name="design_id" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','close')]}" />
+
                         <label for="card_no"/>
                         <h1><field name="card_no"/></h1>
                         <label for="project_id"/>

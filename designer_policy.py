@@ -26,24 +26,23 @@ import time
 class designer_policy(osv.osv):
     """ 创意策略"""
     _name = 'designer.policy'
-    _description = u'创意策略'
-    _inherit = ['mail.thread']
+    _description = "designer_policy"
+    _inherit = ['mail.thread','ir.attachment']
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
-        'project_id': fields.many2one('designer.project', string='项目简报', readonly=True, states={'draft': [('readonly', False)]}),
+        'project_id': fields.many2one('designer.project', string='项目简报',track_visibility='always' ),
         'partner_id':fields.related(
             'project_id',#关联字段
             'partner_id',#项目简报的
             string='客户',
             type='many2one',
             relation='res.partner',
-            readonly=True,
-            store=True
+            store=True,
         ),
-        'policy_no': fields.char('编号', size=64, required=True),
-        'name': fields.char('名称', size=64, required=True),
-        'date': fields.date('日期', help='日期'),
-        'note': fields.text('备注', help='备注'),
+        'policy_no': fields.char('编号', size=64, required=True,track_visibility='always'),
+        'name': fields.char('名称', size=64, required=True,track_visibility='always'),
+        'date': fields.date('日期', help='日期',track_visibility='always'),
+        'note': fields.text('备注', help='备注',track_visibility='always'),
         'policy_line': fields.one2many('designer.policy.line', 'line_id', '创意策略', readonly=True, states={'draft':[('readonly',False)]}),
         'state': fields.selection([('draft', '草稿中'),
             ('open', '已批准'),

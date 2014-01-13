@@ -27,10 +27,10 @@ from openerp.tools.translate import _
 import time
 
 class designer_order(osv.osv):
-    """ 项目工作卡"""
+    """ 工单"""
     _name = 'designer.order'
-    _description = u'工单'
-    _inherit = ['mail.thread']
+    _description = "designer_order"
+    _inherit = ['mail.thread','ir.attachment']
 
     def _get_seq(self, cr, uid, ids, context=None):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.order')

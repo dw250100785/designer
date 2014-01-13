@@ -23,6 +23,8 @@ from openerp.osv import osv
 from openerp.osv import fields
 from openerp.tools.translate import _
 import time
+from openerp.addons.workflow_info import workflow_func
+
 class designer_policy(osv.osv):
     """ 创意策略"""
     _name = 'designer.policy'
@@ -44,12 +46,19 @@ class designer_policy(osv.osv):
         'date': fields.date('日期', help='日期',track_visibility='always'),
         'note': fields.text('备注', help='备注',track_visibility='always'),
         'policy_line': fields.one2many('designer.policy.line', 'line_id', '创意策略', readonly=True, states={'draft':[('readonly',False)]}),
-        'state': fields.selection([('draft', '草稿中'),
-            ('open', '已批准'),
+        'state': fields.selection([('draft', '未提交'),
+            ('open', '已提交'),
             ('cancel', '已拒绝'),
             ('close', '已完成')],
             '状态', readonly=True, track_visibility='onchange',
         ),
+        #工作流审批以及记录
+        'wkf_logs':fields.function(
+            workflow_func._get_workflow_logs,
+            string='审批记录',
+            type='one2many',
+            relation="workflow.logs",
+            readonly=True),
     }
     _sql_constraints = [
        # ('policy_no', 'unique(policy_no)', 'The name of the idea must be unique')

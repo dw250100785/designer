@@ -10,8 +10,8 @@
                     <header>
                         <button name="designer_policy_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae,designer.group_designer_idea_ae,designer.group_designer_design_ae" help = "细节，包括制作工艺"/>
 
-                        <button name="designer_policy_close" string="批准" states="open" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "客户签字" />
-                        <button name="designer_policy_cancel" string="拒绝" states="open"  class="oe_highlight" groups="designer.group_designer_customer_ae"  help = "客户签字" />
+                        <button name="designer_policy_close" string="AE批准" type="workflow_ok"  states="open" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "客户签字" />
+                        <button name="designer_policy_cancel" string="拒绝" type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_customer_ae"  help = "客户签字" />
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
                     </header>
                     <sheet>
@@ -38,7 +38,21 @@
                                     </tree>
                             </field>
                         </group>
+                        <group>
+                            <field name="wkf_logs">
+                                    <tree string="xxx" colors="red:status== 'no'">
+                                        <field name="uid"/>
+                                        <field name="time" />
+                                        <field name="status"/>
+                                        <field name="info"/>
+                                    </tree>
+                            </field>
+                        </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>

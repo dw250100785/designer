@@ -128,8 +128,8 @@
                 <form string="工作卡" version="7.0">
                     <header>
                         <button name="designer_card_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae"/>
-                        <button name="designer_card_close" string="批准" states="open" class="oe_highlight" groups="designer.group_designer_customer_manager" />
-                        <button name="designer_card_cancel" string="拒绝" states="open"  class="oe_highlight" groups="designer.group_designer_customer_manager"/>
+                        <button name="designer_card_close" string="批准"  type="workflow_ok" states="open" class="oe_highlight" groups="designer.group_designer_customer_manager" />
+                        <button name="designer_card_cancel" string="拒绝" type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_customer_manager"/>
                         <!--分配工作卡-->
                         <button name="designer_card_fenpei_idea" string="创意总监分配" states="close"  class="oe_highlight" groups="designer.group_designer_idea_manager"/>
                         <button name="designer_card_fenpei_designer" string="设计总监分配" states="close"  class="oe_highlight" groups="designer.group_designer_design_manager"/>
@@ -164,6 +164,7 @@
                         </div>
                         <label for="idea_id" string="创意总监分配"/>
                         <field name="idea_id" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','close')]}" />
+
                         <label for="design_id" string="设计总监分配"/>
                         <field name="design_id" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','close')]}" />
 
@@ -186,6 +187,16 @@
                                 </tree>
                             </field>
                         </group>
+                        <group>
+                        <field name="wkf_logs">
+                                <tree string="xxx" colors="red:status== 'no'">
+                                    <field name="uid"/>
+                                    <field name="time" />
+                                    <field name="status"/>
+                                    <field name="info"/>
+                                </tree>
+                        </field>
+                    </group>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>

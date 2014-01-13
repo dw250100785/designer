@@ -10,11 +10,11 @@
                 <form string="报价单" version="7.0">
                     <header>
                         <button name="designer_offer_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "明确注明制作内容、要求、数量等信息"/>
-                        <button name="designer_offer_verify1" string="确认1" states="open" class="oe_highlight" groups="designer.group_designer_customer_manager" help = "确认工单及制作文件" />
-                        <button name="designer_offer_cancel1" string="拒绝" states="open"  class="oe_highlight" groups="designer.group_designer_customer_manager" help = "确认工单及制作文件" />
+                        <button name="designer_offer_verify1" string="确认1" type="workflow_ok" states="open" class="oe_highlight" groups="designer.group_designer_customer_manager" help = "确认工单及制作文件" />
+                        <button name="designer_offer_cancel1" string="拒绝" type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_customer_manager" help = "确认工单及制作文件" />
 
-                        <button name="designer_offer_verify2" string="确认2" states="verify1"  class="oe_highlight" groups="designer.group_designer_customer_ae" help = "客户确认" /><!--制作部-->
-                        <button name="designer_offer_cancel2" string="拒绝" states="verify1"  class="oe_highlight" groups="designer.group_designer_customer_ae" help = "确认及回复制作时长等信息" /><!--制作部-->
+                        <button name="designer_offer_verify2" string="确认2" type="workflow_ok"  states="verify1"  class="oe_highlight" groups="designer.group_designer_customer_ae" help = "客户确认" /><!--制作部-->
+                        <button name="designer_offer_cancel2" string="拒绝" type="workflow_no" states="verify1"  class="oe_highlight" groups="designer.group_designer_customer_ae" help = "确认及回复制作时长等信息" /><!--制作部-->
                         <!--wizard-->
                         <button name="designer_offer_cancel2" string="创建客户收货单" states="verify2"  class="oe_highlight" groups="designer.group_designer_customer_ae" /><!--制作部-->
 

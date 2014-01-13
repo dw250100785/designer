@@ -33,9 +33,13 @@ class project_project(osv.osv):
     _description = "project_project"
     _inherit = ['project.project','ir.attachment']
     _columns = {
-        'name': fields.function(project._complete_name, string="Project Name", type='char', size=250),
+        'name': fields.char('项目名', size=64),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         }
+
+    _defaults = {
+        'name': 'project',
+    }
 
 project_project()
 
@@ -105,10 +109,11 @@ class designer_project(osv.osv):
             readonly=True),
     }
     _sql_constraints = [
-        ('name', 'unique(name)', '项目简报名称必填')
+        ('name', 'unique(name)', '项目简报名称重复了')
     ]
     _defaults = {
         'state': lambda *a: 'draft',
+        'create_uid':lambda obj, cr, uid, ctx=None: uid,#简报撰写人
     }
     _order = 'name asc'
 

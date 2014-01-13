@@ -24,6 +24,8 @@
                     </header>
                     <sheet>
                         <group>
+                            <field name="end_time" string="完稿时间" attrs="{'invisible': [('state','not in',('verify1','verify2'))],'required':[('state','=','verify1')]}"/>
+
                             <field name="datas"  filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','confirmed')]}" />
                             <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
 

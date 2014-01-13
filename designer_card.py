@@ -25,6 +25,8 @@ from openerp.osv import osv
 from openerp.osv import fields
 from openerp.tools.translate import _
 import time
+from openerp.addons.workflow_info import workflow_func
+
 
 class designer_card(osv.osv):
     """ 项目工作卡"""
@@ -50,13 +52,20 @@ class designer_card(osv.osv):
             store=True
         ),
         'state': fields.selection([('draft', '草稿中'),
-            ('open', '已批准'),
+            ('open', '已提交'),
             ('cancel', '已拒绝'),
             ('close', '已完成')],
             '状态', readonly=True, track_visibility='onchange',
         ),
         'idea_id': fields.many2one('res.users','创意部负责人',),
         'design_id': fields.many2one('res.users','设计部负责人',),
+        #工作流审批以及记录
+        'wkf_logs':fields.function(
+            workflow_func._get_workflow_logs,
+            string='审批记录',
+            type='one2many',
+            relation="workflow.logs",
+            readonly=True),
     }
     _rec_name = 'card_no'
     _sql_constraints = [

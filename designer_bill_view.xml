@@ -20,14 +20,14 @@
                         <button name="designer_bill_send" string="提交开票申请" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae"/>
 
                         <button name="designer_bill_notifer" string="通知AE"      states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务开出发票并通知ae-->
-                        <button name="designer_bill_makeout" string="开出发票"    states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务开出-->
-                        <button name="designer_bill_refuse" string="拒绝发票"     states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
+                        <button name="designer_bill_makeout" string="开出发票"  type="workflow_ok"  states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务开出-->
+                        <button name="designer_bill_refuse" string="拒绝发票"   type="workflow_no"   states="send" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
 
-                        <button name="designer_bill_accept" string="领取发票"     states="makeout" class="oe_highlight" groups="designer.group_designer_customer_ae"/><!--客户部ae领取-->
-                        <button name="designer_bill_refuse" string="拒绝发票"     states="makeout" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
+                        <button name="designer_bill_accept" string="领取发票"  type="workflow_ok"   states="makeout" class="oe_highlight" groups="designer.group_designer_customer_ae"/><!--客户部ae领取-->
+                        <button name="designer_bill_refuse" string="拒绝发票"   type="workflow_no"   states="makeout" class="oe_highlight" groups="designer.group_designer_customer_ae"/><!--财务拒绝开出-->
 
-                        <button name="designer_bill_done" string="确认发票"       states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务确认发票-->
-                        <button name="designer_bill_refuse" string="拒绝发票"     states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
+                        <button name="designer_bill_done" string="确认发票"   type="workflow_ok"    states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务确认发票-->
+                        <button name="designer_bill_refuse" string="拒绝发票"  type="workflow_no"   states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
 
                         <field name="state" widget="statusbar" statusbar_visible="draft,refuse,accept,makeout,done"/>
                     </header>
@@ -47,6 +47,16 @@
                             <field readonly="1" name="state_make_out"/>
                             <field readonly="1" name="state_draw"/>
                             <field readonly="1" name="state_arrive"/>
+                        </group>
+                         <group>
+                            <field name="wkf_logs">
+                                    <tree string="xxx" colors="red:status== 'no'">
+                                        <field name="uid"/>
+                                        <field name="time" />
+                                        <field name="status"/>
+                                        <field name="info"/>
+                                    </tree>
+                            </field>
                         </group>
                     </sheet>
                     <div class="oe_chatter">

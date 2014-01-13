@@ -9,8 +9,9 @@
                 <form string="竟稿申请" version="7.0">
                     <header>
                         <button name="designer_paper_open" string="总监提交意见" type="workflow_ok" states="draft" class="oe_highlight" groups="designer.group_designer_customer_manager" help = "意见" /><!--客户部总监 提交并添写意见-->
-                        <button name="designer_paper_close" string="批准"  type="workflow_ok" states="open" class="oe_highlight" groups="designer.group_designer_manager" />
+                        <button name="designer_paper_close" string="总经理批准"  type="workflow_ok" states="open" class="oe_highlight" groups="designer.group_designer_manager" />
                         <button name="designer_paper_cancel" string="拒绝" type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_manager" />
+
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,cancel,close"/>
                     </header>
                     <sheet>
@@ -23,7 +24,9 @@
                             <field name="project_id"/>
                             <field name="reason"/>
                             <!--<field name="comment"/>-->
-                            <field name="state"/>
+                            <!--<field name="state"/>-->
+                        </group>
+                        <group>
                             <field name="wkf_logs">
                                     <tree string="xxx" colors="red:status== 'no'">
                                         <field name="uid"/>

@@ -234,7 +234,7 @@ class designer_agreement(osv.osv):
         'card_line': fields.one2many('designer.agreement.rule.line', 'card_id', '付款方式'),
         'state': fields.selection([
             ('draft', '草稿中'),
-            ('open', '已批准'),
+            ('open', '待总监确认'),
             ('verify1', '一次确认'),
             ('verify2', '二次确认'),
             ('cancel', '已拒绝')],

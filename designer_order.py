@@ -37,7 +37,7 @@ class designer_order(osv.osv):
 
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
-        'order_no': fields.char('工单编号', required=True,track_visibility='always'),
+        'name': fields.char('工单编号', required=True,track_visibility='always'),
         'order_line': fields.one2many('designer.order.line', 'order_id', '制作明细',track_visibility='always' ),
         'project_id': fields.many2one('designer.project', string='项目简报',track_visibility='always'),
         'partner_id':fields.related(
@@ -63,15 +63,15 @@ class designer_order(osv.osv):
             '项目类型', track_visibility='onchange',
         )
     }
-    _rec_name = 'order_no'
+    _rec_name = 'name'
     _sql_constraints = [
         ('order_no', 'unique(order_no)', u'工单编号必须唯一')
     ]
     _defaults = {
         'state': lambda *a: 'draft',
-        'order_no':_get_seq
+        'name':_get_seq
     }
-    _order = 'order_no asc'
+    _order = 'name asc'
 
 
 

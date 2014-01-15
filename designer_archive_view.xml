@@ -7,12 +7,12 @@
             <field name="model">designer.archive</field>
             <field name="arch" type="xml">
                 <form string="工作卡" version="7.0">
-                    <header>
+                    <!--<header>
                         <button name="designer_project_open" string="提交" states="draft" class="oe_highlight"/>
                         <button name="designer_project_close" string="批准" states="open" class="oe_highlight"/>
                         <button name="designer_project_cancel" string="拒绝" states="open"  class="oe_highlight"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
-                    </header>
+                    </header>-->
                     <sheet>
                         <group>
                             <field name="work_id"/>

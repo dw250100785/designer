@@ -131,5 +131,18 @@
             </field>
         </record>
 
+        <!--工作卡编号-->
+        <record id="seq_type_designer_policy" model="ir.sequence.type">
+            <field name="name">designer policy</field>
+            <field name="code">designer.policy</field>
+        </record>
+
+        <record id="seq_designer_policy" model="ir.sequence">
+            <field name="name">designer policy</field>
+            <field name="code">designer.policy</field>
+            <field name="prefix">PO</field>
+            <field name="padding">0</field>
+        </record>
+
     </data>
 </openerp>

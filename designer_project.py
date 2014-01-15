@@ -31,15 +31,10 @@ from openerp.addons.project.project import project
 class project_project(osv.osv):
     _name = 'project.project'
     _description = "project_project"
-    _inherit = ['project.project','ir.attachment']
+    _inherit = ['project.project']
     _columns = {
-        'name': fields.char('项目名', size=64),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         }
-
-    _defaults = {
-        'name': '项目名称',
-    }
 
 project_project()
 
@@ -82,7 +77,7 @@ class designer_project(osv.osv):
 # track_visibility='always'  记录文档修改
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
-        'create_uid': fields.many2one('res.users','简报撰写人', required=True, track_visibility='always'),
+        'create_id': fields.many2one('res.users','简报撰写人', required=True, track_visibility='always'),
         'name': fields.char('项目简报', size=64, required=True, track_visibility='always'),
         'partner_id': fields.many2one('res.partner', '客户', required=True, change_default=True, select=True, track_visibility='always'),
         'product_id': fields.many2one('product.product', '产品',  required=True, change_default=True, select=True,),
@@ -113,7 +108,7 @@ class designer_project(osv.osv):
     ]
     _defaults = {
         'state': lambda *a: 'draft',
-        'create_uid':lambda obj, cr, uid, ctx=None: uid,#简报撰写人
+        'create_id':lambda obj, cr, uid, ctx=None: uid,#简报撰写人
     }
     _order = 'name asc'
 

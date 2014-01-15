@@ -30,6 +30,10 @@ class designer_policy(osv.osv):
     _name = 'designer.policy'
     _description = "designer_policy"
     _inherit = ['mail.thread','ir.attachment']
+
+    def _get_seq(self, cr, uid, ids, context=None):
+        return self.pool.get('ir.sequence').get(cr, uid, 'designer.policy')
+
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         'project_id': fields.many2one('designer.project', string='项目简报',track_visibility='always' ),
@@ -68,6 +72,8 @@ class designer_policy(osv.osv):
 
     _defaults = {
         'state': lambda *a: 'draft',
+        'policy_no':_get_seq,
+        'name':_get_seq,
     }
 
     def designer_policy_cancel(self, cr, uid, ids, context=None):

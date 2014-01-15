@@ -34,6 +34,9 @@ class designer_bill(osv.osv):
     _description = u"发票"
     _inherit = ['mail.thread','ir.attachment']
 
+    def _get_seq(self, cr, uid, ids, context=None):
+        return self.pool.get('ir.sequence').get(cr, uid, 'designer.bill')
+
     _columns = {
         'name': fields.char('附件名',size=256),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
@@ -92,6 +95,7 @@ class designer_bill(osv.osv):
         'state_make_out': 'false',
         'state_draw': 'false',
         'state_arrive': 'false',
+        'invoice_head':_get_seq,
     }
 
     def designer_bill_draft(self, cr, uid, ids, context={}):

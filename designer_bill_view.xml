@@ -125,7 +125,20 @@
             </field>
         </record>
 
-                <menuitem action="action_designer_bill" id="designer_action_bill_menu" name = "发票" parent="base.menu_base_designer_invoce_7" sequence="0"/>
+        <menuitem action="action_designer_bill" id="designer_action_bill_menu" name = "发票" parent="base.menu_base_designer_invoce_7" sequence="0"/>
+
+        <!--工作卡编号-->
+        <record id="seq_type_designer_bill" model="ir.sequence.type">
+            <field name="name">designer bill</field>
+            <field name="code">designer.bill</field>
+        </record>
+
+        <record id="seq_designer_bill" model="ir.sequence">
+            <field name="name">designer bill</field>
+            <field name="code">designer.bill</field>
+            <field name="prefix">PO</field>
+            <field name="padding">0</field>
+        </record>
 
 
     </data>

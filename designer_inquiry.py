@@ -108,9 +108,9 @@ class designer_inquiry_line(osv.osv):
         'card_id': fields.many2one('designer.inquiry', '单号', ondelete='cascade', select=True),
         'line_no': fields.char('编号', required=True,change_default=True, select=True, track_visibility='always'),
         'project_request': fields.text('项目要求', size=64, required=True, change_default=True, select=True, track_visibility='always'),
-        'number': fields.integer('数量', required=True, change_default=True, select=True, track_visibility='always'),
-        'price': fields.float('价格',digits_compute= dp.get_precision('Price'), required=True, change_default=True, select=True, track_visibility='always'),
-        'subprice': fields.float('总价', required=True, change_default=True, select=True, track_visibility='always'),#只有制作部可以添写总价
+        'number': fields.integer('数量', change_default=True, select=True, track_visibility='always'),
+        'price': fields.float('价格',digits_compute= dp.get_precision('Price'), change_default=True, select=True, track_visibility='always'),
+        'subprice': fields.float('总价', change_default=True, select=True, track_visibility='always'),#只有制作部可以添写总价
         'note': fields.text('备注',size=64,change_default=True, select=True, track_visibility='always'),
     }
     _sql_constraints = [

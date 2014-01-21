@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <!--询价单 制作部以及总监视图 -->
-        <record model="ir.ui.view" id="designer_view_inquiry_manager_form">
-            <field name="name">designer.inquiry.manager.form</field>
-            <field name="model">designer.inquiry</field>
-            <field name="inherit_id" ref="designer_view_inquiry_form"/><!--注意写法-->
-            <field name="groups_id" eval="[(6, 0, [ref('designer.group_designer_make_ae'),ref('designer.group_designer_customer_manager')])]"/>
-            <field name="type">form</field>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='card_line']" position="replace">
-                    <field name="card_line">
-                            <tree editable="bottom" string="物料清单">
-                                <field name="line_no"/>
-                                <field name="project_request"/>
-                                <field name="number" required="True" />
-                                <field name="price" required="True" />
-                                <field name="subprice" on_change="on_change_price(number,price)" />
-                                <field name="note"/>
-                            </tree>
-                    </field>
 
-                </xpath>
-            </field>
-        </record>
         <record model="ir.ui.view" id="designer_view_inquiry_form">
             <field name="name">designer.inquiry.form</field>
             <field name="model">designer.inquiry</field>
@@ -70,6 +48,30 @@
                         <field name="message_ids" widget="mail_thread"/>
                     </div>
                 </form>
+            </field>
+        </record>
+
+        <!--询价单 制作部以及总监视图 -->
+        <record model="ir.ui.view" id="designer_view_inquiry_manager_form">
+            <field name="name">designer.inquiry.manager.form</field>
+            <field name="model">designer.inquiry</field>
+            <field name="inherit_id" ref="designer_view_inquiry_form"/><!--注意写法-->
+            <field name="groups_id" eval="[(6, 0, [ref('designer.group_designer_make_ae'),ref('designer.group_designer_customer_manager')])]"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='card_line']" position="replace">
+                    <field name="card_line">
+                            <tree editable="bottom" string="物料清单">
+                                <field name="line_no"/>
+                                <field name="project_request"/>
+                                <field name="number" required="True" />
+                                <field name="price" required="True" />
+                                <field name="subprice" on_change="on_change_price(number,price)" />
+                                <field name="note"/>
+                            </tree>
+                    </field>
+
+                </xpath>
             </field>
         </record>
 

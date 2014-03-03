@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+                auto="False"
+                id="report_designer_agreement"
+                model="designer.agreement"
+                name="designer.agreement"
+                rml="designer/report/designer_agreement.rml"
+                string="合同"
+                usage="default"
+
+        />
+
+    </data>
+</openerp>

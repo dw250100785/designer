@@ -43,37 +43,6 @@ class designer_project(osv.osv):
     _name = 'designer.project'
     _inherit = ['mail.thread','ir.attachment']
 
-    def _data_get(self, cr, uid, ids, name, arg, context=None):
-        if context is None:
-            context = {}
-        result = {}
-        location = self.pool.get('ir.config_parameter').get_param(cr, uid, 'ir_attachment.location')
-        bin_size = context.get('bin_size')
-        for attach in self.browse(cr, uid, ids, context=context):
-            if location and attach.store_fname:
-                result[attach.id] = self._file_read(cr, uid, location, attach.store_fname, bin_size)
-            else:
-                result[attach.id] = attach.db_datas
-        return result
-
-    def _data_set(self, cr, uid, id, name, value, arg, context=None):
-        # We dont handle setting data to null
-        if not value:
-            return True
-        if context is None:
-            context = {}
-        location = self.pool.get('ir.config_parameter').get_param(cr, uid, 'ir_attachment.location')
-        file_size = len(value.decode('base64'))
-        if location:
-            attach = self.browse(cr, uid, id, context=context)
-            if attach.store_fname:
-                self._file_delete(cr, uid, location, attach.store_fname)
-            fname = self._file_write(cr, uid, location, value)
-            super(ir_attachment, self).write(cr, uid, [id], {'store_fname': fname, 'file_size': file_size}, context=context)
-        else:
-            super(ir_attachment, self).write(cr, uid, [id], {'db_datas': value, 'file_size': file_size}, context=context)
-        return True
-
 # track_visibility='always'  记录文档修改
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),

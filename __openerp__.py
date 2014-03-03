@@ -103,6 +103,9 @@
         'designer_offer_view.xml',
         'designer_bill_view.xml',
         'designer_agreement_view.xml',
+        #report
+        'designer_agreement_report.xml',
+
         'workflow/designer_workflow.xml',
         'workflow/designer_idea_workflow.xml',
         'workflow/designer_order_workflow.xml',

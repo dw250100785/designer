@@ -33,13 +33,13 @@ class designer_archive(osv.osv):
     _inherit = ['mail.thread']
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
-        'archive_no': fields.char('编号', required=True, readonly=True,states={'draft': [('readonly', False)]}),
-        'word_line': fields.one2many('designer.archive.word.line', 'word_id', '文字', readonly=True, states={'draft':[('readonly',False)]}),
-        'image_line': fields.one2many('designer.archive.image.line', 'image_id', '图片', readonly=True, states={'draft':[('readonly',False)]}),
-        'sample_line': fields.one2many('designer.archive.sample.line', 'sample_id', '样稿', readonly=True, states={'draft':[('readonly',False)]}),
-        'finished_line': fields.one2many('designer.archive.finished.line', 'finished_id', '成品', readonly=True, states={'draft':[('readonly',False)]}),
-        'product_line': fields.one2many('designer.archive.product.line', 'product_id', '实物照片', readonly=True, states={'draft':[('readonly',False)]}),
-        'project_id': fields.many2one('designer.project', string='项目简报', readonly=True, states={'draft': [('readonly', False)]}),
+        'archive_no': fields.char('编号', required=True),
+        'word_line': fields.one2many('designer.archive.word.line', 'word_id', '文字'),
+        'image_line': fields.one2many('designer.archive.image.line', 'image_id', '图片'),
+        'sample_line': fields.one2many('designer.archive.sample.line', 'sample_id', '样稿'),
+        'finished_line': fields.one2many('designer.archive.finished.line', 'finished_id', '成品'),
+        'product_line': fields.one2many('designer.archive.product.line', 'product_id', '实物照片'),
+        'project_id': fields.many2one('designer.project', string='项目简报'),
         'partner_id':fields.related(
             'project_id',#关联字段
             'partner_id',#项目简报的

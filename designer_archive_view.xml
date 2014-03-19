@@ -92,7 +92,7 @@
             <field name="name">designer.archive.tree</field>
             <field name="model">designer.archive</field>
             <field name="arch" type="xml">
-            <tree colors="blue:state == 'draft';black:state in ('open','close');gray:state == 'cancel'" string="工作卡">
+            <tree string="工作卡">
                 <field name="archive_no"/>
                 <field name="work_id"/>
                 <field name="project_id"/>

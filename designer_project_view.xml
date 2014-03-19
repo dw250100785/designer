@@ -67,7 +67,7 @@
             <field name="name">designer.project.tree</field>
             <field name="model">designer.project</field>
             <field name="arch" type="xml">
-            <tree colors="blue:state == 'draft';black:state in ('open','close');gray:state == 'cancel'" string="创意简报">
+            <tree  string="创意简报">
                 <field name="name"/>
                 <field name="work_id"/>
                 <field name="create_id"/>

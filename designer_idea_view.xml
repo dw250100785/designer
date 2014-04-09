@@ -25,43 +25,34 @@
                     <sheet>
                         <group>
                             <field name="end_time" string="完稿时间" attrs="{'invisible': [('state','not in',('verify1','verify2'))],'required':[('state','=','verify1')]}"/>
-
-                            <field name="datas"  filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','confirmed')]}" />
-                            <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
+                            <field name="file_id"   attrs="{'invisible': [('state','=','draft')],'required':[('state','=','verify1')]}"/>
 
                             <field name="work_id"/>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="brand_id"/>
+                            <field name="date"/>
+                            <field name="brand_definition"/>
+                            <field name="marketing_problem_definition"/>
+
+                            <field name="role_and_aim_of_advertising"/>
+
+                            <field name="competition_scope"/>
+
+                            <field name="target_segment_and_its_current_situation"/>
+
+                            <field name="impact_of_advertising_you_want"/>
+
+                            <field name="adverting_information_and_brand_proposition"/>
+
+                            <field name="critical_support"/>
+
+                            <field name="necessary_information"/>
+
+                            <field name="advertising_tone"/>
+
+                            <field name="background_information_concerned"/>
                         </group>
-                        <label for="name"/>
-                        <h1><field name="name"/></h1>
-                        <group>
-                               <group>
-                                   <field name="partner_id"/>
-                                   <field name="brand_id"/>
-                                   <field name="date"/>
-                               </group>
-                        </group>
-                        <label for="brand_definition"/><newline/>
-                        <field name="brand_definition"/>
-                        <label for="marketing_problem_definition"/><newline/>
-                        <field name="marketing_problem_definition"/>
-                        <label for="role_and_aim_of_advertising"/><newline/>
-                        <field name="role_and_aim_of_advertising"/>
-                        <label for="competition_scope"/><newline/>
-                        <field name="competition_scope"/>
-                        <label for="target_segment_and_its_current_situation"/><newline/>
-                        <field name="target_segment_and_its_current_situation"/>
-                        <label for="impact_of_advertising_you_want"/><newline/>
-                        <field name="impact_of_advertising_you_want"/>
-                        <label for="adverting_information_and_brand_proposition"/><newline/>
-                        <field name="adverting_information_and_brand_proposition"/>
-                        <label for="critical_support"/><newline/>
-                        <field name="critical_support"/>
-                        <label for="necessary_information"/><newline/>
-                        <field name="necessary_information"/>
-                        <label for="advertising_tone"/><newline/>
-                        <field name="advertising_tone"/>
-                        <label for="background_information_concerned"/><newline/>
-                        <field name="background_information_concerned"/>
                     </sheet>
                     <group>
                         <field name="wkf_logs">

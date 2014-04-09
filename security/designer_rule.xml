@@ -1,26 +1,6 @@
 <?xml version="1.0"  encoding="utf-8"?>
 <openerp>
 <data noupdate="1">
-    <!--客户部 ae 自能看到自己创建的客户-->
-<!--
-    <record model="ir.rule" id="ir_values_my_costume_rule">
-        <field name="name">客户部 ae 只能看到自己创建的客户</field>
-        <field name="model_id" ref="model_your_model_name"/>
-        <field name="global" eval="True"/>
-        <field name="domain_force">[('field','operator','value'),('user_id','=',user.id)]</field>
-        <field name="groups" eval="[(4,ref('project.group_project_manager'))]"/>
-        <field name="perm_read" eval="True"/>
-        <field name="perm_write" eval="True"/>
-        <field name="perm_unlink" eval="True"/>
-        <field name="perm_create" eval="True"/>
-    </record>
--->
-    <!--客户部 ae 只能看到自己创建的客户-->
-    <!--('create_uid','=',False) 不写导致的bug -->
-    <!--
-
-
-    -->
     <record model="ir.rule" id="ir_rule_group_designer_customer_ae">
         <field name="name">客户部 ae 只能看到自己创建的客户</field>
         <field name="model_id" ref="base.model_res_partner"/>
@@ -34,7 +14,6 @@
         <field name="model_id" ref="base.model_res_partner"/>
         <field name="domain_force">[(1, '=', 1)]</field>
         <field name="groups" eval="[(4,ref('group_designer_customer_manager'))]"/>
-        <field name="perm_read" eval="False"/>
     </record>
 
 

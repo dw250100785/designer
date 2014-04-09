@@ -41,14 +41,27 @@ project_project()
 class designer_project(osv.osv):
     """ 项目简报"""
     _name = 'designer.project'
-    _inherit = ['mail.thread','ir.attachment']
-
+   # _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['mail.thread']
 # track_visibility='always'  记录文档修改
     _columns = {
+       # 'file_ids': fields.one2many('ir.attachment','res_id', string='附件上传', required=False, select=1),
+        'file_id': fields.many2one('ir.attachment', '客户签字', required=False, select=1),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         'create_id': fields.many2one('res.users','简报撰写人', required=True, track_visibility='always'),
         'name': fields.char('项目简报', size=64, required=True, track_visibility='always'),
-        'partner_id': fields.many2one('res.partner', '客户', required=True, change_default=True, select=True, track_visibility='always'),
+        #取自工作卡
+        'partner_id': fields.related(
+            'work_id', #关联字段
+            'partner_id', #工作卡对象字段
+            string='客户',
+            type='many2one',
+            relation='res.partner',
+            readonly=True,
+            store=True
+        ),
+
+        #'partner_id': fields.many2one('res.partner', '客户', required=True, change_default=True, select=True, track_visibility='always'),
         'product_id': fields.many2one('product.product', '产品',  required=True, change_default=True, select=True,),
         'client_current_situation': fields.text('客户情况', help='包括企业背景，历史沿革、经营范围、行业地位、品牌发展状况、产品销售状况、产品特点、价格、消费者关系、通路状况、行销计划、包装策略、当前广告表现、以往广告等', readonly=True, states={'draft': [('readonly', False)]}),
         'problem': fields.text('面临问题', help='面临问题',track_visibility='onchange',),

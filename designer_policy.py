@@ -29,22 +29,34 @@ class designer_policy(osv.osv):
     """ 创意策略"""
     _name = 'designer.policy'
     _description = "designer_policy"
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['mail.thread']
 
     def _get_seq(self, cr, uid, ids, context=None):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.policy')
 
     _columns = {
+        'file_id': fields.many2one('ir.attachment', '客户签字', required=False, select=1),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         'project_id': fields.many2one('designer.project', string='项目简报',track_visibility='always' ),
-        'partner_id':fields.related(
-            'project_id',#关联字段
-            'partner_id',#项目简报的
+        #取自工作卡
+        'partner_id': fields.related(
+            'work_id', #关联字段
+            'partner_id', #工作卡对象字段
             string='客户',
             type='many2one',
             relation='res.partner',
-            store=True,
+            readonly=True,
+            store=True
         ),
+
+        # 'partner_id':fields.related(
+        #     'project_id',#关联字段
+        #     'partner_id',#项目简报的
+        #     string='客户',
+        #     type='many2one',
+        #     relation='res.partner',
+        #     store=True,
+        # ),
         'policy_no': fields.char('编号', size=64, required=True,track_visibility='always'),
         'name': fields.char('名称', size=64, required=True,track_visibility='always'),
         'date': fields.date('日期', help='日期',track_visibility='always'),

@@ -26,16 +26,16 @@
                         <button name="designer_bill_accept" string="领取发票"  type="workflow_ok"   states="makeout" class="oe_highlight" groups="designer.group_designer_customer_ae"/><!--客户部ae领取-->
                         <button name="designer_bill_refuse" string="拒绝发票"   type="workflow_no"   states="makeout" class="oe_highlight" groups="designer.group_designer_customer_ae"/><!--财务拒绝开出-->
 
-                        <button name="designer_bill_done" string="确认发票"   type="workflow_ok"    states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务确认发票-->
+                        <button name="designer_bill_done" string="确认到账"   type="workflow_ok"    states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务确认发票-->
                         <button name="designer_bill_refuse" string="拒绝发票"  type="workflow_no"   states="accept" class="oe_highlight" groups="designer.group_designer_finance_ae"/><!--财务拒绝开出-->
 
                         <field name="state" widget="statusbar" statusbar_visible="draft,refuse,accept,makeout,done"/>
                     </header>
                     <sheet>
                         <group>
-                            <field name="datas" filename="datas_fname" attrs="{'invisible': [('state','=','draft')]}" />
-                            <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
-
+                            <!--
+                            <field name="file_id"  class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
+                            -->
                             <field name="work_id"/>
                             <field name="partner_id"/>
                             <field name="project_ids"/>
@@ -48,7 +48,7 @@
                             <field readonly="1" name="state_draw"/>
                             <field readonly="1" name="state_arrive"/>
                         </group>
-                         <group>
+                        <group>
                             <field name="wkf_logs">
                                     <tree string="xxx" colors="red:status== 'no'">
                                         <field name="uid"/>

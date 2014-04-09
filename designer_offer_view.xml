@@ -22,10 +22,11 @@
                     </header>
                     <sheet>
                         <group>
-
+<!--
                             <field name="datas"  filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','verify1')]}" />
                             <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
-
+                            -->
+                            <field name="file_id"  class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','verify1')]}"/>
                             <field name="work_id"/>
                             <field name="partner_id"/>
                             <field name="project_ids"/>
@@ -42,15 +43,15 @@
                             </field>
                         </group>
                         <group>
-                        <field name="wkf_logs">
-                                <tree string="xxx" colors="red:status== 'no'">
-                                    <field name="uid"/>
-                                    <field name="time" />
-                                    <field name="status"/>
-                                    <field name="info"/>
-                                </tree>
-                        </field>
-                    </group>
+                            <field name="wkf_logs">
+                                    <tree string="xxx" colors="red:status== 'no'">
+                                        <field name="uid"/>
+                                        <field name="time" />
+                                        <field name="status"/>
+                                        <field name="info"/>
+                                    </tree>
+                            </field>
+                        </group>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>

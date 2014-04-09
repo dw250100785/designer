@@ -32,7 +32,7 @@ class designer_bill(osv.osv):
     """ 发票管理"""
     _name = "designer.bill"
     _description = u"发票"
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['mail.thread']
 
     def _get_seq(self, cr, uid, ids, context=None):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.bill')

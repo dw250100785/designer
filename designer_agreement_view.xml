@@ -11,6 +11,10 @@
             <field name="arch" type="xml">
                 <form string="合同" version="7.0">
                     <header>
+                        <!-- web_pdf_preview   webkit-->
+
+                        <button name="designer_agreement_open" string="预览" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "拟写合同"/>
+
                         <button name="designer_agreement_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "拟写合同"/>
                         <button name="designer_agreement_verify1" string="批准" type="workflow_ok" states="open" class="oe_highlight" groups="designer.group_designer_customer_manager" help = "合同草稿生成" />
                         <button name="designer_agreement_cancel1" string="拒绝" type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_customer_manager" help = "合同草稿生成" />
@@ -22,24 +26,17 @@
                     </header>
                     <sheet>
                         <group>
-                            <field name="datas" filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','verify1')]}" />
-                            <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
+                            <field name="file_id" attrs="{'invisible': [('state','=','draft')]}"/>
                             <field name="work_id"/>
-                        </group>
-                        <group>
-                            <group>
-                                <field name="name"/>
-                                <field name="partner_id"/><!--查看并选择自己的客户-->
-                                <field name="contract_type"/>
-                                <field name="offer_ids" />
-                                <!--<field name="offer_ids" domain="[('state','=','verify2')]" />过滤出 已经生效的报价单-->
-                                <field name="contract_amount"  widget="monetary"/><!--显示货币符号-->
-                                <!--<field name="contract_amount"  widget="monetary" on_change="onchange_contractamount(contract_amount)"/>-->
-                                <field name="contract_amount_big"/>
-                            </group>
-                            <group>
-                                <field name="project_ids"/>
-                            </group>
+                            <field name="name"/>
+                            <field name="partner_id"/><!--查看并选择自己的客户-->
+                            <field name="contract_type"/>
+                            <field name="offer_ids" />
+                            <!--<field name="offer_ids" domain="[('state','=','verify2')]" />过滤出 已经生效的报价单-->
+                            <field name="contract_amount"  widget="monetary"/><!--显示货币符号-->
+                            <!--<field name="contract_amount"  widget="monetary" on_change="onchange_contractamount(contract_amount)"/>-->
+                            <field name="contract_amount_big"/>
+                            <field name="project_ids"/>
                         </group>
                         <group>
                             <field name="card_line">

@@ -30,15 +30,25 @@ class designer_offer(osv.osv):
     """ 自定义的报价单"""
     _name = "designer.offer"
     _description = "designer_offer"
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['mail.thread']
     _columns = {
+        'file_id': fields.many2one('ir.attachment', '客户签字', required=False, select=1),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
-        'name': fields.char('单号', size=64, required=True, select=True, help="Unique number of the purchase order, computed automatically when the purchase order is created."),
-        'partner_id':fields.many2one('res.partner', '制作部', required=True,
-            change_default=True, track_visibility='always'),
+        'name': fields.char('编号', size=64, required=True, select=True, help="Unique number of the purchase order, computed automatically when the purchase order is created."),
+        #取自工作卡
+        'partner_id': fields.related(
+            'work_id', #关联字段
+            'partner_id', #工作卡对象字段
+            string='客户',
+            type='many2one',
+            relation='res.partner',
+            readonly=True,
+            store=True
+        ),
+        #'partner_id':fields.many2one('res.partner', '制作部', required=True,change_default=True, track_visibility='always'),
         'project_ids': fields.many2one('designer.project', string='项目简报'),
         'date_order':fields.date('日期', required=True, select=True, help="Date on which this document has been created."),
-        'card_line': fields.one2many('designer.offer.line', 'card_id', '物料清单'),
+        'card_line': fields.one2many('designer.offer.line', 'card_id', '工作清单'),
         'state': fields.selection([
             ('draft', '草稿中'),
             ('open', '已提交'),

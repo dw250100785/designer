@@ -54,7 +54,7 @@ class designer_agreement(osv.osv):
 
     _name = "designer.agreement"
     _description = "designer_agreement"
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['mail.thread']
     #继承了ir.attachment   name字段必须要有！！！
 
     def _get_seq(self, cr, uid, ids, context=None):
@@ -219,6 +219,7 @@ class designer_agreement(osv.osv):
 
 
     _columns = {
+        'file_id': fields.many2one('ir.attachment', '客户签字', required=False, select=1),
         'name': fields.char('合同编号', required=True,),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         #'no': fields.char('合同编号', required=True,), #解决继承了附件之后 name必填 bug

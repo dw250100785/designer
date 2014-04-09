@@ -13,6 +13,7 @@
                         <button name="designer_inquiry_open" string="提交" states="draft" class="oe_highlight" groups="designer.group_designer_customer_ae" help = "项目制作明细,印刷、拍摄、动画、3D、插画、摄影、网站等…"/>
 
                         <button name="designer_inquiry_close" string="提交报价" type="workflow_ok" states="open"  class="oe_highlight" groups="designer.group_designer_make_ae" help = "客户签字" />
+                        <!-- 提交报价视图，总价必填 -->
                         <button name="designer_inquiry_cancel" string="拒绝"  type="workflow_no" states="open"  class="oe_highlight" groups="designer.group_designer_make_ae"  help = "客户签字" />
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,close"/>
                     </header>
@@ -27,9 +28,9 @@
                                     <tree editable="bottom" string="物料清单">
                                         <field name="line_no"/>
                                         <field name="project_request"/>
-                                        <field name="number" readonly="True"/>
-                                        <field name="price" readonly="True" />
-                                        <field name="subprice" readonly="True" on_change="on_change_price(number,price)" />
+                                        <field name="number"/>
+                                        <field name="price" readonly="True" invisible="1" />
+                                        <field name="subprice" readonly="True" />
                                         <field name="note"/>
                                     </tree>
                             </field>
@@ -64,9 +65,9 @@
                             <tree editable="bottom" string="物料清单">
                                 <field name="line_no"/>
                                 <field name="project_request"/>
-                                <field name="number" required="True" />
-                                <field name="price" required="True" />
-                                <field name="subprice" on_change="on_change_price(number,price)" />
+                                <field name="number" />
+                                <field name="price" required="True" on_change="on_change_price(number,price)" />
+                                <field name="subprice"/>
                                 <field name="note"/>
                             </tree>
                     </field>

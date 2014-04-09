@@ -29,13 +29,24 @@ class designer_idea(osv.osv):
     """ 创意简报"""
     _name = 'designer.idea'
     _description = "designer_idea"
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['mail.thread']
     _columns = {
+        'file_id': fields.many2one('ir.attachment', '客户签字', required=False, select=1),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         #'create_uid': fields.many2one('res.users','撰写人', required=True, readonly=True,states={'draft': [('readonly', False)]}),
         'name': fields.char('创意简报', size=64, required=True, ),
         'brand_id': fields.many2one('designer.brand', '品牌', required=True, change_default=True, select=True, track_visibility='always'),
-        'partner_id': fields.many2one('res.partner', '客户', required=True, change_default=True, select=True, track_visibility='always'),
+        #取自工作卡
+        'partner_id':fields.related(
+             'work_id',#关联字段
+             'partner_id',#项目简报的
+             string='客户',
+             type='many2one',
+             relation='res.partner',
+             readonly=True,
+             store=True
+        ),
+       # 'partner_id': fields.many2one('res.partner', '客户', required=True, change_default=True, select=True, track_visibility='always'),
         #'product_id': fields.many2one('product.product', '产品', readonly=True, required=True, change_default=True, select=True,states={'draft': [('readonly', False)]}),
         'date':fields.date('日期',required=True,track_visibility='onchange',),
         'end_time':fields.date('完稿时间',track_visibility='onchange',),

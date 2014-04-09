@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <!--工作卡 右侧按钮  跳转-->
+
+        <!--工作卡 右侧按钮  跳转
+        跳转按钮  肯定不是这样直接添加的，必须是 各个模块各自扩展添加
+        -->
         <!--
         工作卡连带起所有其他模块designer.card
         designer_project        #项目简报
@@ -120,6 +123,130 @@
         <!--工作卡 右侧按钮群  end-->
 
 
+        <!-- 快捷创建按钮 -->
+
+        <record id="designer_quick_create_project_project" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_project_project</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_project_project(context=context)</field>
+        </record>
+
+        <record id="designer_quick_create_designer_project" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_designer_project</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_designer_project(context=context)</field>
+        </record>
+
+        <record id="designer_quick_create_designer_idea" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_designer_idea</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_designer_idea(context=context)</field>
+        </record>
+
+
+        <record id="designer_quick_create_designer_inquiry" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_designer_inquiry</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_designer_inquiry(context=context)</field>
+        </record>
+
+        <record id="designer_quick_create_designer_offer" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_designer_offer</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_designer_offer(context=context)</field>
+        </record>
+
+        <record id="designer_quick_create_designer_agreement" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_designer_agreement</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_designer_agreement(context=context)</field>
+        </record>
+
+        <record id="designer_quick_createdesigner_bill" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_createdesigner_bill</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_createdesigner_bill(context=context)</field>
+        </record>
+
+
+
+        <record id="designer_quick_create_designer_paper" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_designer_paper</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_designer_paper(context=context)</field>
+        </record>
+
+
+
+
+        <record id="designer_quick_create_designer_policy" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_designer_policy</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_designer_policy(context=context)</field>
+        </record>
+
+
+        <record id="designer_quick_create_designer_archive" model="ir.actions.server">
+            <field name="type">ir.actions.server</field>
+            <field name="name">designer_quick_create_designer_archive</field>
+            <field name="condition">True</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_designer_card"/>
+            <field eval="5" name="sequence"/>
+            <field name="code">action=obj.designer_quick_create_designer_archive(context=context)</field>
+        </record>
+
+
+
+
+        <record id="designer_quick_create_designer_order" model="ir.actions.server">
+                    <field name="type">ir.actions.server</field>
+                    <field name="name">designer_quick_create_designer_order</field>
+                    <field name="condition">True</field>
+                    <field name="state">code</field>
+                    <field name="model_id" ref="model_designer_card"/>
+                    <field eval="5" name="sequence"/>
+                    <field name="code">action=obj.designer_quick_create_designer_order(context=context)</field>
+                </record>
+
+
+
         <!--定义创意简报 form-->
         <record model="ir.ui.view" id="view_designer_card_form">
             <field name="name">designer.card.form</field>
@@ -162,22 +289,21 @@
 
                             <button name="%(act_designer_card_2_designer_archive)d" string="项目备档单" type="action" style="width:100px;height:24px"/>
                         </div>
-                        <label for="idea_id" string="创意总监分配"/>
-                        <field name="idea_id" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','close')]}" />
-
-                        <label for="design_id" string="设计总监分配"/>
-                        <field name="design_id" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','close')]}" />
-
-                        <label for="card_no"/>
-                        <h1><field name="card_no"/></h1>
-                        <label for="project_id"/>
-                        <h1><field name="project_id"/></h1>
-                        <label for="partner_id"/>
-                        <h1><field name="partner_id"/></h1>
-
                         <group>
+
+                            <!--
+                            <field name="idea_id" string="创意总监分配" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','close')]}" />
+
+
+                            <field name="design_id" string="设计总监分配" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','close')]}" />
+                            -->
+
+                            <field name="card_no"/>
+
+                            <field name="partner_id"/>
+
                             <field name="card_line">
-                                <tree editable="bottom" string="物料清单">
+                                <tree editable="bottom" string="工作清单">
                                     <field name="line_no"/>
                                     <field name="project_request"/>
                                     <field name="number" />
@@ -186,17 +312,121 @@
                                     <field name="note"/>
                                 </tree>
                             </field>
+                            <field colspan="4" name="members" widget="many2many_kanban">
+                                <kanban quick_create="false" create="true" delete="true">
+                                    <field name="name"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div style="position: relative">
+                                                <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+                                                <div class="oe_module_vignette">
+                                                    <div class="oe_module_desc">
+                                                        <field name="name"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                            <notebook colspan="4">
+                                <page string="项目">
+
+                                    <button name="%(designer_quick_create_project_project)d" string="快捷创建"  type="action" class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+                                    <field colspan="4" name="project_project_ids" nolabel="1" widget="one2many_list"/>
+                                </page>
+                                <page string="项目简报">
+                                    <button name="%(designer_quick_create_designer_project)d" type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+                                    <field colspan="4" name="designer_project_ids" nolabel="1" widget="one2many_list"/>
+                                </page>
+                                <page string="创意简报">
+
+
+                                    <button name="%(designer_quick_create_designer_idea)d" type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+                                    <field colspan="4" name="idea_ids" nolabel="1" widget="one2many_list"/>
+                                </page>
+                                <page string="询价单">
+
+                                    <button name="%(designer_quick_create_designer_inquiry)d"  type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+                                    <field colspan="4" name="inquiry_ids" nolabel="1"/>
+                                </page>
+                                <page string="报价单">
+
+
+                                    <button name="%(designer_quick_create_designer_offer)d" type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+                                    <field colspan="4" name="offer_ids" nolabel="1"/>
+                                </page>
+                                <page string="合同">
+
+                                    <button name="%(designer_quick_create_designer_agreement)d"  type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+                                    <field colspan="4" name="agreement_ids" nolabel="1" />
+                                </page>
+                                <page string="发票">
+
+
+                                    <button name="%(designer_quick_createdesigner_bill)d" type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+
+                                    <field colspan="4" name="bill_ids" nolabel="1" widget="one2many_list"/>
+                                </page>
+                                <page string="竟稿申请">
+
+
+                                    <button name="%(designer_quick_create_designer_paper)d" type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+
+                                    <field colspan="4" name="paper_ids" nolabel="1" widget="one2many_list"/>
+                                </page>
+                                <page string="创意策略">
+
+
+                                    <button name="%(designer_quick_create_designer_policy)d"  type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+                                    <field colspan="4" name="policy_ids" nolabel="1"/>
+                                </page>
+                                <page string="工单">
+
+
+                                    <button name="%(designer_quick_create_designer_order)d"  type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+
+                                    <field colspan="4" name="order_ids" nolabel="1"/>
+                                </page>
+                                <page string="项目备档单">
+
+
+                                    <button name="%(designer_quick_create_designer_archive)d" type="action" string="快捷创建"  class="oe_highlight" groups="designer.group_designer_customer_ae"/>
+                                    <newline/>
+
+
+                                    <field colspan="4" name="archive_ids" nolabel="1"/>
+                                </page>
+                            </notebook>
                         </group>
                         <group>
-                        <field name="wkf_logs">
-                                <tree string="xxx" colors="red:status== 'no'">
-                                    <field name="uid"/>
-                                    <field name="time" />
-                                    <field name="status"/>
-                                    <field name="info"/>
-                                </tree>
-                        </field>
-                    </group>
+                            <field name="wkf_logs">
+                                    <tree string="xxx" colors="red:status== 'no'">
+                                        <field name="uid"/>
+                                        <field name="time" />
+                                        <field name="status"/>
+                                        <field name="info"/>
+                                    </tree>
+                            </field>
+                        </group>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
@@ -214,7 +444,6 @@
             <tree colors="blue:state == 'draft';black:state in ('open','close');gray:state == 'cancel'" string="工作卡">
                 <field name="partner_id"/>
                 <field name="card_no"/>
-                <field name="project_id"/>
                 <field name="state"/>
             </tree>
             </field>

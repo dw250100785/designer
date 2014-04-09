@@ -37,7 +37,7 @@ import designer_agreement   #合同
 import cn_auto_select_smtp  #中国化
 import cn_auto_setup        #中国化   自动安装
 import controllers    #one2many attachments 附件下载bug
-import res_partner
+#import res_partner
 
 
 

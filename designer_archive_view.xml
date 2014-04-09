@@ -16,66 +16,62 @@
                     <sheet>
                         <group>
                             <field name="work_id"/>
-                        </group>
-                        <label for="project_id"/>
-                        <h1><field name="project_id"/></h1>
-                        <h1><field name="partner_id"/></h1>
-                        <label for="archive_no"/>
-                        <h1><field name="archive_no"/></h1>
-                        <group>
+                            <field name="project_id"/>
+                            <field name="partner_id"/>
+                            <field name="archive_no"/>
                             <separator string="项目资料" colspan="4"/>
-                        <field name="word_line">
-                                <tree string="文字">
-                                    <field name="line_no"/>
-                                    <field name="name"/>
-                                    <field name="note"/>
-                                    <field name="type" invisible="1"/>
-                                    <field name="datas" filename="datas_fname" invisible="1" />
-                                    <field name="datas_fname"/>
-                                </tree>
-                        </field>
-                        <field name="image_line">
-                                <tree string="图片">
-                                    <field name="line_no"/>
-                                    <field name="name"/>
-                                    <field name="note"/>
-                                    <field name="type" invisible="1"/>
-                                    <field name="datas" filename="datas_fname" invisible="1"/>
-                                    <field name="datas_fname"/>
-                                </tree>
-                        </field>
-                        <separator string="项目物料" colspan="4"/>
-                        <field name="sample_line">
-                                <tree string="图片">
-                                    <field name="line_no"/>
-                                    <field name="name"/>
-                                    <field name="note"/>
-                                    <field name="type" invisible="1"/>
-                                    <field name="datas" filename="datas_fname" invisible="1" />
-                                    <field name="datas_fname"/>
-                                </tree>
-                        </field>
-                        <field name="finished_line">
-                                <tree string="图片">
-                                    <field name="line_no"/>
-                                    <field name="name"/>
-                                    <field name="note"/>
-                                    <field name="type" invisible="1"/>
-                                    <field name="datas" filename="datas_fname" invisible="1" />
-                                    <field name="datas_fname"/>
-                                </tree>
-                        </field>
-                        <separator string="项目实物" colspan="4"/>
-                        <field name="product_line">
-                                <tree string="实物照片">
-                                    <field name="line_no"/>
-                                    <field name="name"/>
-                                    <field name="note"/>
-                                    <field name="type" invisible="1"/>
-                                    <field name="datas" filename="datas_fname" invisible="1" />
-                                    <field name="datas_fname"/>
-                                </tree>
-                        </field>
+                            <field name="word_line">
+                                    <tree string="文字">
+                                        <field name="line_no"/>
+                                        <field name="name"/>
+                                        <field name="note"/>
+                                        <field name="type" invisible="1"/>
+                                        <field name="datas" filename="datas_fname"  />
+                                        <field name="datas_fname"/>
+                                    </tree>
+                            </field>
+                            <field name="image_line">
+                                    <tree string="图片">
+                                        <field name="line_no"/>
+                                        <field name="name"/>
+                                        <field name="note"/>
+                                        <field name="type" invisible="1"/>
+                                        <field name="datas" filename="datas_fname" />
+                                        <field name="datas_fname"/>
+                                    </tree>
+                            </field>
+                            <separator string="项目物料" colspan="4"/>
+                            <field name="sample_line">
+                                    <tree string="图片">
+                                        <field name="line_no"/>
+                                        <field name="name"/>
+                                        <field name="note"/>
+                                        <field name="type" invisible="1"/>
+                                        <field name="datas" filename="datas_fname" />
+                                        <field name="datas_fname"/>
+                                    </tree>
+                            </field>
+                            <field name="finished_line">
+                                    <tree string="图片">
+                                        <field name="line_no"/>
+                                        <field name="name"/>
+                                        <field name="note"/>
+                                        <field name="type" invisible="1"/>
+                                        <field name="datas" filename="datas_fname"  />
+                                        <field name="datas_fname"/>
+                                    </tree>
+                            </field>
+                            <separator string="项目实物" colspan="4"/>
+                            <field name="product_line">
+                                    <tree string="实物照片">
+                                        <field name="line_no"/>
+                                        <field name="name"/>
+                                        <field name="note"/>
+                                        <field name="type" invisible="1"/>
+                                        <field name="datas" filename="datas_fname"  />
+                                        <field name="datas_fname"/>
+                                    </tree>
+                            </field>
                         </group>
 
                     </sheet>
@@ -290,5 +286,23 @@
             </tree>
             </field>
         </record>
+
+
+        <!--工作卡编号-->
+        <record id="seq_type_designer_archive" model="ir.sequence.type">
+            <field name="name">designer archive</field>
+            <field name="code">designer.archive</field>
+        </record>
+
+        <record id="seq_designer_archive" model="ir.sequence">
+            <field name="name">designer archive</field>
+            <field name="code">designer.archive</field>
+            <field name="prefix">TK %(year)s/%(month)s/%(day)s/</field>
+            <field name="padding">0</field>
+        </record>
+
+
+
+
     </data>
 </openerp>

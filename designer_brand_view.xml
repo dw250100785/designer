@@ -8,10 +8,10 @@
             <field name="arch" type="xml">
                 <form string="品牌" version="7.0">
                     <sheet>
-                        <label for="name"/>
-                        <h1><field name="name"/></h1>
-                        <label for="comment"/>
-                        <field name="comment"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="comment"/>
+                        </group>
                     </sheet>
                 </form>
             </field>

@@ -36,7 +36,18 @@ class designer_paper(osv.osv):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.order')
 
     _columns = {
+        'file_id': fields.many2one('ir.attachment', '客户签字', required=False, select=1),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
+        #取自工作卡
+        'partner_id': fields.related(
+            'work_id', #关联字段
+            'partner_id', #工作卡对象字段
+            string='客户',
+            type='many2one',
+            relation='res.partner',
+            readonly=True,
+            store=True
+        ),
         'project_id': fields.many2one('designer.project', string='项目简报', readonly=True, states={'draft': [('readonly', False)]}),
         'paper_no': fields.char('编号', size=64, required=True),
         'reason': fields.text('原因', help='原因'),

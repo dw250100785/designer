@@ -16,13 +16,13 @@
                     </header>
                     <sheet>
                         <group>
+                            <field name="file_id"  class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','open')]}"/>
+                            <!--
                             <field name="datas"  filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','open')]}" />
                             <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
+                            -->
                             <field name="work_id"/>
-                        </group>
-                        <label for="policy_no"/>
-                        <h1><field name="policy_no"/></h1>
-                        <group>
+                            <field name="policy_no"/>
                             <field name="name"/>
                             <field name="project_id"/>
                             <field name="partner_id"/>

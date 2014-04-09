@@ -22,19 +22,18 @@
                     <sheet>
                         <group>
                             <!--确认完成才需要提交客户签字-->
+                            <field name="file_id"  class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','verify2')]}"/>
+        <!--
                             <field name="datas"  filename="datas_fname" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','verify2')]}" />
                             <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
 
+                            -->
                             <field name="work_id"/>
+                            <field name="project_type"/>
+                            <field name="project_id"/>
+                            <field name="partner_id"/>
+                            <field name="name"/>
                         </group>
-                        <label for="project_type"/>
-                        <h1><field name="project_type"/></h1>
-                        <label for="project_id"/>
-                        <h1><field name="project_id"/></h1>
-                        <label for="partner_id"/>
-                        <h1><field name="partner_id"/></h1>
-                        <label for="name"/>
-                        <h1><field name="name"/></h1>
                         <group>
                             <field name="order_line">
                                     <tree editable="bottom" string="制作明细">

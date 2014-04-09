@@ -30,6 +30,14 @@ class designer_archive(osv.osv):
     """ 项目备档单"""
     _name = 'designer.archive'
     _description = "designer_archive"
+    #多继承会导致 tree  view 无法加载数据
+    #对于 ir.attachment模块尽量使用  关系引用来实现！！！
+
+
+    def _get_seq(self, cr, uid, ids, context=None):
+        return self.pool.get('ir.sequence').get(cr, uid, 'designer.archive')
+
+
     _inherit = ['mail.thread']
     _columns = {
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
@@ -62,6 +70,7 @@ class designer_archive(osv.osv):
         ('archive_no', 'unique(archive_no)', 'The name of the idea must be unique')
     ]
     _defaults = {
+        'archive_no':_get_seq,
         'state': lambda *a: 'draft',
     }
     _order = 'archive_no asc'
@@ -82,7 +91,7 @@ class designer_archive(osv.osv):
 class designer_archive_word_line(osv.osv):
     """ 文字"""
     _name = 'designer.archive.word.line'
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['ir.attachment']
     _columns = {
         'word_id': fields.many2one('designer.archive', '工作卡', ondelete='cascade', select=True),
         'name': fields.char('文件', size=64, required=True),
@@ -100,7 +109,7 @@ class designer_archive_word_line(osv.osv):
 class designer_archive_image_line(osv.osv):
     """ 图片"""
     _name = 'designer.archive.image.line'
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['ir.attachment']
     _columns = {
         'image_id': fields.many2one('designer.archive', '工作卡', ondelete='cascade', select=True),
         'name': fields.char('文件', size=64, required=True),
@@ -118,7 +127,7 @@ class designer_archive_image_line(osv.osv):
 class designer_archive_sample_line(osv.osv):
     """ 样稿"""
     _name = 'designer.archive.sample.line'
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['ir.attachment']
     _columns = {
         'sample_id': fields.many2one('designer.archive', '工作卡', ondelete='cascade', select=True),
         'name': fields.char('文件', size=64, required=True),
@@ -136,7 +145,7 @@ class designer_archive_sample_line(osv.osv):
 class designer_archive_finished_line(osv.osv):
     """ 成品"""
     _name = 'designer.archive.finished.line'
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['ir.attachment']
     _columns = {
         'finished_id': fields.many2one('designer.archive', '工作卡', ondelete='cascade', select=True),
         'name': fields.char('文件', size=64, required=True),
@@ -154,7 +163,7 @@ class designer_archive_finished_line(osv.osv):
 class designer_archive_product_line(osv.osv):
     """ 实物照片"""
     _name = 'designer.archive.product.line'
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['ir.attachment']
     _columns = {
         'product_id': fields.many2one('designer.archive', '工作卡', ondelete='cascade', select=True),
         'line_no': fields.char('编号', required=True,change_default=True, select=True, track_visibility='always'),

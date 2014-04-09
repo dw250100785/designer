@@ -30,8 +30,12 @@ class Binary2(main.Binary):
             res = { field: data }
             # FIX  one2many attachment download bug
             if filename_field:
+
                 filename_name = Model.read([int(id)], [filename_field], context)
+
+                raise ValueError(_("No content found for field %s'") %( filename_name))
                 res[filename_field] = filename_name and filename_name[0] and filename_name[0][filename_field] or ''
+                print "::::::::::::::::::::::", str(filename_name)
         elif id:
             res = Model.read([int(id)], fields, context)[0]
         else:

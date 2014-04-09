@@ -32,25 +32,37 @@ class designer_order(osv.osv):
     """ 工单"""
     _name = 'designer.order'
     _description = "designer_order"
-    _inherit = ['mail.thread','ir.attachment']
+    _inherit = ['mail.thread']
 
     def _get_seq(self, cr, uid, ids, context=None):
         return self.pool.get('ir.sequence').get(cr, uid, 'designer.order')
 
     _columns = {
+        'file_id': fields.many2one('ir.attachment', '客户签字', required=False, select=1),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True, track_visibility='always'),
         'name': fields.char('工单编号', required=True,track_visibility='always'),
         'order_line': fields.one2many('designer.order.line', 'order_id', '制作明细',track_visibility='always' ),
         'project_id': fields.many2one('designer.project', string='项目简报',track_visibility='always'),
-        'partner_id':fields.related(
-            'project_id',#关联字段
-            'partner_id',#项目简报的
+
+        #取自工作卡
+        'partner_id': fields.related(
+            'work_id', #关联字段
+            'partner_id', #工作卡对象字段
             string='客户',
             type='many2one',
             relation='res.partner',
             readonly=True,
             store=True
-         ),
+        ),
+        # 'partner_id':fields.related(
+        #     'project_id',#关联字段
+        #     'partner_id',#项目简报的
+        #     string='客户',
+        #     type='many2one',
+        #     relation='res.partner',
+        #     readonly=True,
+        #     store=True
+        #  ),
         'state': fields.selection([
             ('draft', '草稿中'),
             ('open', '已批准'),

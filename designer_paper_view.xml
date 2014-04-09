@@ -17,14 +17,10 @@
                     <sheet>
                         <group>
                             <field name="work_id"/>
-                        </group>
-                        <label for="paper_no"/>
-                        <h1><field name="paper_no"/></h1>
-                        <group>
+                            <field name="paper_no"/>
                             <field name="project_id"/>
+                            <field name="partner_id"/>
                             <field name="reason"/>
-                            <!--<field name="comment"/>-->
-                            <!--<field name="state"/>-->
                         </group>
                         <group>
                             <field name="wkf_logs">

@@ -15,34 +15,33 @@
                     </header>
                     <sheet>
                         <group>
+                            <!--<field name="file_id"  attrs="{'invisible': [('state','=','draft')]}" />-->
+                            <!--
                             <field name="datas" filename="datas_fname" attrs="{'invisible': [('state','=','draft')]}" />
                             <field name="datas_fname" invisible="1" class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')]}"/>
+
+                            <field name="file_ids"/>
+                             -->
+                            <field name="file_id"  class="oe_inline oe_right" attrs="{'invisible': [('state','=','draft')],'required':[('state','=','open')]}"/>
                             <field name="work_id"/>
+                            <field name="name"/>
+                            <field name="project_ids" />
+                            <field name="partner_id"/>
+                            <field name="product_id"/>
+                            <field name="create_id"/>
+                            <field name="receiver_uid"/>
+                            <field name="client_current_situation"/>
+
+                            <field name="problem"/>
+
+                            <field name="ad_requirement"/>
+
+                            <field name="client_will"/>
+
+                            <field name="how_to_operating"/>
+
+                            <field name="manager_will"/>
                         </group>
-                        <label for="name"/>
-                        <h1><field name="name"/></h1>
-                        <label for="project_ids"/>
-                        <field name="project_ids" />
-                        <group>
-                               <group>
-                                   <field name="partner_id"/>
-                                   <field name="product_id"/>
-                                   <field name="create_id"/>
-                                   <field name="receiver_uid"/>
-                               </group>
-                        </group>
-                        <label for="client_current_situation"/><newline/>
-                        <field name="client_current_situation"/>
-                        <label for="problem"/><newline/>
-                        <field name="problem"/>
-                        <label for="ad_requirement"/><newline/>
-                        <field name="ad_requirement"/>
-                        <label for="client_will"/><newline/>
-                        <field name="client_will"/>
-                        <label for="how_to_operating"/><newline/>
-                        <field name="how_to_operating"/>
-                        <label for="manager_will"/><newline/>
-                        <field name="manager_will"/>
                     </sheet>
                     <group>
                         <field name="wkf_logs">
@@ -67,16 +66,16 @@
             <field name="name">designer.project.tree</field>
             <field name="model">designer.project</field>
             <field name="arch" type="xml">
-            <tree  string="创意简报">
-                <field name="name"/>
-                <field name="work_id"/>
-                <field name="create_id"/>
-                <field name="partner_id"/>
-                <field name="product_id"/>
-                <field name="project_ids"/>
-                <field name="receiver_uid"/>
-                <field name="state"/>
-            </tree>
+                <tree  string="创意简报">
+                    <field name="name"/>
+                    <field name="work_id"/>
+                    <field name="create_id"/>
+                    <field name="partner_id"/>
+                    <field name="product_id"/>
+                    <field name="project_ids"/>
+                    <field name="receiver_uid"/>
+                    <field name="state"/>
+                </tree>
             </field>
         </record>
 

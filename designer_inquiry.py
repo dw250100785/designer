@@ -38,13 +38,24 @@ class designer_inquiry(osv.osv):
 
 
     _columns = {
+       # 'file_id': fields.many2one('ir.attachment', '附件上传', required=False, select=1),
         'work_id': fields.many2one('designer.card', '所属工作卡', change_default=True, select=True),
         'name': fields.char('单号', size=64, required=True, select=True,track_visibility='always'),
-        'partner_id':fields.many2one('res.partner', '制作部', required=True,
-            change_default=True, track_visibility='always'),
+
+        #取自工作卡
+        'partner_id': fields.related(
+            'work_id', #关联字段
+            'partner_id', #工作卡对象字段
+            string='客户',
+            type='many2one',
+            relation='res.partner',
+            readonly=True,
+            store=True
+        ),
+        #'partner_id':fields.many2one('res.partner', '制作部', required=True,change_default=True, track_visibility='always'),
         'project_ids': fields.many2one('designer.project', string='项目简报',track_visibility='always'),
         'date_order':fields.date('日期', required=True, select=True,track_visibility='always'),
-        'card_line': fields.one2many('designer.inquiry.line', 'card_id', '物料清单'),
+        'card_line': fields.one2many('designer.inquiry.line', 'card_id', '工作清单'),
         'state': fields.selection([
             ('draft', '草稿中'),
             ('open', '已提交给制作部'),
